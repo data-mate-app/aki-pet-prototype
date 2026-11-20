@@ -10,7 +10,7 @@ import { Onboarding } from './screens/Onboarding';
 import { RecordsScreen } from './screens/Records';
 import { ShopScreen } from './screens/Shop';
 import { hourOf, now, useApp, useNow } from './store';
-import { setSoundEnabled } from './ui/feedback';
+import { Soundscape } from './ui/Soundscape';
 import { FxLayer } from './ui/FxLayer';
 import { IconBag, IconBook, IconFocus, IconHome } from './ui/icons';
 import { Island } from './ui/Island';
@@ -89,7 +89,6 @@ function StatusBar({ onClock, light }: { onClock: () => void; light: boolean }) 
 
 export function App() {
   const onboarded = useApp((s) => s.onboarded);
-  const sound = useApp((s) => s.sound);
   const [tab, setTab] = useState<Tab>('home');
   const [dir, setDir] = useState(1);
   const [immersive, setImmersive] = useState(false);
@@ -100,7 +99,6 @@ export function App() {
   const deviceRef = useRef<HTMLDivElement>(null);
 
   useLivingLight(deviceRef);
-  useEffect(() => setSoundEnabled(sound), [sound]);
 
   // 放っておいた時間の分だけおなかが減る、などを定期的に反映する
   useEffect(() => {
@@ -136,6 +134,7 @@ export function App() {
     <div className="stage">
       <div className="device" ref={deviceRef}>
         <SvgDefs />
+        <Soundscape focusing={immersive} />
         <div className="app">
           <Home
             active={tab === 'home'}

@@ -29,6 +29,8 @@ type AppState = {
   /** デモ用の時計のずれ（ms）。実時刻にこれを足したものを「いま」とする */
   clockOffset: number;
   sound: boolean;
+  /** BGM（部屋の曲） */
+  music: boolean;
   /** null は自動（夜に灯る） */
   lampOn: boolean | null;
   lastInteraction: number;
@@ -54,6 +56,7 @@ type AppState = {
   setVitals: (v: Partial<Vitals>) => void;
   addCoins: (n: number) => void;
   setSound: (on: boolean) => void;
+  setMusic: (on: boolean) => void;
   setLamp: (on: boolean | null) => void;
   touch: () => void;
   reset: () => void;
@@ -130,6 +133,7 @@ const initial = () => ({
   ] as Task[],
   clockOffset: 0,
   sound: true,
+  music: true,
   lampOn: null as boolean | null,
   lastInteraction: 0,
   undo: [] as Placement[],
@@ -214,6 +218,7 @@ export const useApp = create<AppState>()(
       addCoins: (n) => set((s) => ({ coins: Math.max(0, s.coins + n) })),
 
       setSound: (on) => set({ sound: on }),
+      setMusic: (on) => set({ music: on }),
 
       setLamp: (on) => set({ lampOn: on }),
 

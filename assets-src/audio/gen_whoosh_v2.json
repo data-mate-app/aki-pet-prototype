@@ -1,0 +1,31 @@
+{
+  "kind": "generate",
+  "title": "whoosh",
+  "original_idea": "音もいい感じにつけて（しまう・スワイプ）",
+  "audio_type": "sfx",
+  "prompt": "",
+  "prompt_used": "TrackType: SFX, soft cloth swish through the air, UI swipe, quick airy whoosh passing by, fast fade, soft, breathy, light, close-up, dry.",
+  "sound_fields": {
+    "source": "soft cloth swish through the air, UI swipe",
+    "action": "quick airy whoosh passing by, fast fade",
+    "material": "soft, breathy, light",
+    "space": "close-up, dry"
+  },
+  "bpm": null,
+  "seconds": 0.8,
+  "negative_prompt": null,
+  "cfg": 1.0,
+  "steps": 8,
+  "variations": 3,
+  "seed": 1602,
+  "candidate": 2,
+  "file": "whoosh_v2.wav",
+  "sample_rate": 44100,
+  "bit_depth": 24,
+  "created": "2026-11-20T23:18:00",
+  "backend": "sa3-mlx",
+  "model": "medium + same-l",
+  "peak_dbfs": -1.13,
+  "raw_peak_dbfs": -1.13,
+  "ceiling_gain_db": 0.0
+}

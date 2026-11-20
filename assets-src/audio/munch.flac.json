@@ -1,0 +1,51 @@
+{
+  "kind": "process",
+  "input_audio": "~/Develop/tools/audio-studio-mcp/outputs/munch_v1.wav",
+  "source": {
+    "kind": "generate",
+    "title": "munch",
+    "original_idea": "音もいい感じにつけて（ごはんを食べる音）",
+    "audio_type": "sfx",
+    "prompt": "",
+    "prompt_used": "TrackType: SFX, small pet nibbling a crunchy biscuit, three quick light crunchy bites, dry crispy crunch, light and cute, close-up, dry.",
+    "sound_fields": {
+      "source": "small pet nibbling a crunchy biscuit",
+      "action": "three quick light crunchy bites",
+      "material": "dry crispy crunch, light and cute",
+      "space": "close-up, dry"
+    },
+    "bpm": null,
+    "seconds": 1.2,
+    "negative_prompt": null,
+    "cfg": 1.0,
+    "steps": 8,
+    "variations": 3,
+    "seed": 1501,
+    "candidate": 1,
+    "file": "munch_v1.wav",
+    "sample_rate": 44100,
+    "bit_depth": 24,
+    "created": "2026-11-20T23:17:56",
+    "backend": "sa3-mlx",
+    "model": "medium + same-l",
+    "peak_dbfs": -6.65,
+    "raw_peak_dbfs": -6.65,
+    "ceiling_gain_db": 0.0
+  },
+  "created": "2026-11-20T23:21:16",
+  "format": "flac",
+  "sample_rate": 44100,
+  "channels": 1,
+  "seconds": 0.928,
+  "steps": [
+    "trim 0.0–0.95",
+    "trim_silence -50.0 dB",
+    "mono",
+    "fade 0.0/80.0 ms",
+    "peak normalize -1.0 dBFS (+5.65 dB)"
+  ],
+  "peak": 0.891,
+  "peak_dbfs": -1.0,
+  "rms": 0.034,
+  "file": "aki_munch.flac"
+}

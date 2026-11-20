@@ -1,0 +1,31 @@
+{
+  "kind": "generate",
+  "title": "levelup",
+  "original_idea": "音もいい感じにつけて（レベルアップ）",
+  "audio_type": "sfx",
+  "prompt": "",
+  "prompt_used": "TrackType: SFX, marimba and glockenspiel, short cheerful ascending fanfare jingle ending on a bright held major chord, warm wooden mallets, sparkling, celebratory, cute, small room, light reverb.",
+  "sound_fields": {
+    "source": "marimba and glockenspiel",
+    "action": "short cheerful ascending fanfare jingle ending on a bright held major chord",
+    "material": "warm wooden mallets, sparkling, celebratory, cute",
+    "space": "small room, light reverb"
+  },
+  "bpm": null,
+  "seconds": 2.5,
+  "negative_prompt": null,
+  "cfg": 1.0,
+  "steps": 8,
+  "variations": 4,
+  "seed": 2001,
+  "candidate": 1,
+  "file": "levelup_v1.wav",
+  "sample_rate": 44100,
+  "bit_depth": 24,
+  "created": "2026-11-20T23:18:32",
+  "backend": "sa3-mlx",
+  "model": "medium + same-l",
+  "peak_dbfs": -2.94,
+  "raw_peak_dbfs": -2.94,
+  "ceiling_gain_db": 0.0
+}

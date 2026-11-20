@@ -1,0 +1,31 @@
+{
+  "kind": "generate",
+  "title": "bgm_night",
+  "original_idea": "音もいい感じにつけて（部屋のBGM・夜）",
+  "audio_type": "music",
+  "prompt": "Soft lullaby ambient track with gentle felt piano, warm airy pads and a faint music box melody, slow and sparse, no drums, calm, sleepy and cozy night mood.",
+  "prompt_used": "TrackType: Music, VocalType: Instrumental, Soft lullaby ambient track with gentle felt piano, warm airy pads and a faint music box melody, slow and sparse, no drums, calm, sleepy and cozy night mood. BPM: 64.",
+  "sound_fields": {
+    "source": "",
+    "action": "",
+    "material": "",
+    "space": ""
+  },
+  "bpm": 64,
+  "seconds": 46.0,
+  "negative_prompt": null,
+  "cfg": 1.0,
+  "steps": 8,
+  "variations": 3,
+  "seed": 3103,
+  "candidate": 3,
+  "file": "bgm_night_v3.wav",
+  "sample_rate": 44100,
+  "bit_depth": 24,
+  "created": "2026-11-20T23:19:17",
+  "backend": "sa3-mlx",
+  "model": "medium + same-l",
+  "peak_dbfs": -1.98,
+  "raw_peak_dbfs": -1.98,
+  "ceiling_gain_db": 0.0
+}

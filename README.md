@@ -34,6 +34,7 @@ pnpm verify     # 型チェック → テスト → 本番ビルド
 | 集中 | 目盛りを横に送って分数を決める → タイマー中はペットが隣で勉強する（デモ用の早送りあり） |
 | きろく | きょう／1週間。記録は左へスワイプで消せる。記録のない日は「不明」 |
 | おみせ | カードを開く → 長押しで買う → 「部屋に置く」で部屋へ運ばれ、空いている場所へ置かれる |
+| 音 | 最初のタップで鳴りはじめる。部屋の曲は昼と夜で変わり、集中中は雨音。右上のボタンで消せる。デモ操作の「音を聞く」で効果音を聞き比べられる（[docs/sound.md](docs/sound.md)） |
 
 ## 構成
 
@@ -42,12 +43,14 @@ src/
   domain/     生活・ペット・部屋のルール（純粋関数。テストあり）
   data/       種族・家具・置き場所の定義
   art/        部屋・家具・ペットの SVG（等角投影）
-  ui/         共通部品（BottomSheet, TabBar, Island, Pressable, 目盛り, 触覚・効果音）
+  ui/         共通部品（BottomSheet, TabBar, Island, Pressable, 目盛り, 触覚・効果音・BGM）
+  assets/     音の素材（MP3。編集元は assets-src/）
   screens/    画面（home / Focus / Records / Shop / Onboarding / LevelUp / DemoPanel）
   store.ts    zustand（persist）
 ```
 
 - キャラデータの設計: [docs/character-model.md](docs/character-model.md)
+- 音（素材の一覧・作り方・差し替え方）: [docs/sound.md](docs/sound.md)
 - 案件の目的・範囲: [docs/ai/project.md](docs/ai/project.md)
 - 引き継ぎ: [docs/ai/handoff.md](docs/ai/handoff.md)
 

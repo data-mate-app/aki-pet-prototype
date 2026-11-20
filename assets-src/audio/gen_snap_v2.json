@@ -1,0 +1,31 @@
+{
+  "kind": "generate",
+  "title": "snap",
+  "original_idea": "音もいい感じにつけて（家具が置き場所に吸い付く音）",
+  "audio_type": "sfx",
+  "prompt": "",
+  "prompt_used": "TrackType: SFX, small wooden toy block set down on a felt-covered wooden table, single soft knock, quick settle, no bounce, warm hollow wood, muted rounded thock, close-up, dry.",
+  "sound_fields": {
+    "source": "small wooden toy block set down on a felt-covered wooden table",
+    "action": "single soft knock, quick settle, no bounce",
+    "material": "warm hollow wood, muted rounded thock",
+    "space": "close-up, dry"
+  },
+  "bpm": null,
+  "seconds": 1.0,
+  "negative_prompt": null,
+  "cfg": 1.0,
+  "steps": 8,
+  "variations": 3,
+  "seed": 1202,
+  "candidate": 2,
+  "file": "snap_v2.wav",
+  "sample_rate": 44100,
+  "bit_depth": 24,
+  "created": "2026-11-20T23:17:41",
+  "backend": "sa3-mlx",
+  "model": "medium + same-l",
+  "peak_dbfs": -4.37,
+  "raw_peak_dbfs": -4.37,
+  "ceiling_gain_db": 0.0
+}

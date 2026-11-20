@@ -1,0 +1,31 @@
+{
+  "kind": "generate",
+  "title": "error",
+  "original_idea": "音もいい感じにつけて（できない操作のときのやさしい音）",
+  "audio_type": "sfx",
+  "prompt": "",
+  "prompt_used": "TrackType: SFX, soft wooden block, gentle UI error, two low muted knocks, the second slightly lower, dull, warm, rounded, not harsh, close-up, dry.",
+  "sound_fields": {
+    "source": "soft wooden block, gentle UI error",
+    "action": "two low muted knocks, the second slightly lower",
+    "material": "dull, warm, rounded, not harsh",
+    "space": "close-up, dry"
+  },
+  "bpm": null,
+  "seconds": 0.8,
+  "negative_prompt": null,
+  "cfg": 1.0,
+  "steps": 8,
+  "variations": 3,
+  "seed": 1801,
+  "candidate": 1,
+  "file": "error_v1.wav",
+  "sample_rate": 44100,
+  "bit_depth": 24,
+  "created": "2026-11-20T23:18:21",
+  "backend": "sa3-mlx",
+  "model": "medium + same-l",
+  "peak_dbfs": -4.69,
+  "raw_peak_dbfs": -4.69,
+  "ceiling_gain_db": 0.0
+}

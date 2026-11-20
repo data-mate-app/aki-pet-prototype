@@ -1,0 +1,31 @@
+{
+  "kind": "generate",
+  "title": "pop",
+  "original_idea": "音もいい感じにつけて（ペット育成アプリのUI効果音）",
+  "audio_type": "sfx",
+  "prompt": "",
+  "prompt_used": "TrackType: SFX, soft cartoon bubble pop, cute UI sound, single quick pop with a tiny airy tail, very short, round, rubbery, warm mid tone, gentle, close-up, dry studio.",
+  "sound_fields": {
+    "source": "soft cartoon bubble pop, cute UI sound",
+    "action": "single quick pop with a tiny airy tail, very short",
+    "material": "round, rubbery, warm mid tone, gentle",
+    "space": "close-up, dry studio"
+  },
+  "bpm": null,
+  "seconds": 1.0,
+  "negative_prompt": null,
+  "cfg": 1.0,
+  "steps": 8,
+  "variations": 3,
+  "seed": 1103,
+  "candidate": 3,
+  "file": "pop_v3.wav",
+  "sample_rate": 44100,
+  "bit_depth": 24,
+  "created": "2026-11-20T23:16:54",
+  "backend": "sa3-mlx",
+  "model": "medium + same-l",
+  "peak_dbfs": -2.93,
+  "raw_peak_dbfs": -2.93,
+  "ceiling_gain_db": 0.0
+}
