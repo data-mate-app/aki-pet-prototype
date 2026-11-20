@@ -5,6 +5,14 @@
 
 このプロトタイプで確かめたいのは **UI コンポーネントと演出の手ざわり**。サーバーはなく、データは端末のブラウザ（localStorage）にだけ保存する。
 
+## 触ってみる
+
+**https://hasseeee.github.io/aki-pet-prototype/**
+
+- スマホでもPCでも開ける。スマホはホーム画面に追加すると全画面で使える。
+- 記録は開いた端末のブラウザにだけ残る（人どうしで共有されない）。最初からやり直すときはデモ操作の「データを消して最初から」。
+- `main` に入った変更は GitHub Actions で自動的に公開版へ反映される（[.github/workflows/deploy.yml](.github/workflows/deploy.yml)）。
+
 ## 動かす
 
 ```bash

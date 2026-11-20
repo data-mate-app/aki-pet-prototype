@@ -7,12 +7,14 @@
 - 作業状態・引き継ぎ: [docs/ai/handoff.md](docs/ai/handoff.md)
 - 設計判断の正本: キャラデータは [docs/character-model.md](docs/character-model.md)。それ以外は未設定（ADR なし）
 - 検証コマンド: `pnpm verify`（`tsc -b` → `vitest run` → `vite build`）。開発サーバーは `pnpm dev`（port 5320）
+- 公開版: https://hasseeee.github.io/aki-pet-prototype/ （GitHub Pages。ソースは private のまま）
 - AGMSG チーム・役割対応: 未設定（このリポジトリ用のチームはまだ作っていない）
 - AGMSG 起動・受信方法: 未設定
 - 関連する共有ノート: 製品概要は ChatGPT プロジェクト「秋プロ」。家具の配置・作画の進め方は New Roots の開発を参考にした
 
 ## このリポジトリの約束
 
+- **`main` へのマージで公開版が更新される**（GitHub Actions → Pages）。マージ前に `pnpm verify` とブラウザでの確認を済ませる。公開版を壊す変更・公開の停止は本人に確認してから。
 - これは **モックのプロトタイプ**。サーバー・ログイン・外部連携は持たない。保存は localStorage だけ。
 - 最優先は UI コンポーネントと演出の手ざわり。見た目や動きを変えたら、ブラウザ（スマホ幅 375×812 と PC 幅）で実際に触って確かめる。
 - 罰を与えない設計を守る。数値には下限があり、記録がないものは推測せず「不明」にする（[docs/character-model.md](docs/character-model.md)）。
