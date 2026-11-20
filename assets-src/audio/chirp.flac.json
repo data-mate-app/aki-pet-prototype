@@ -1,0 +1,50 @@
+{
+  "kind": "process",
+  "input_audio": "~/Develop/tools/audio-studio-mcp/outputs/chirp_v2.wav",
+  "source": {
+    "kind": "generate",
+    "title": "chirp",
+    "original_idea": "音もいい感じにつけて（ペットがよろこぶ声）",
+    "audio_type": "sfx",
+    "prompt": "",
+    "prompt_used": "TrackType: SFX, tiny cute cartoon creature, toy squeak voice, short happy rising chirp, two quick notes, bright, soft, whistle-like, playful, close-up, dry.",
+    "sound_fields": {
+      "source": "tiny cute cartoon creature, toy squeak voice",
+      "action": "short happy rising chirp, two quick notes",
+      "material": "bright, soft, whistle-like, playful",
+      "space": "close-up, dry"
+    },
+    "bpm": null,
+    "seconds": 1.0,
+    "negative_prompt": null,
+    "cfg": 1.0,
+    "steps": 8,
+    "variations": 4,
+    "seed": 1302,
+    "candidate": 2,
+    "file": "chirp_v2.wav",
+    "sample_rate": 44100,
+    "bit_depth": 24,
+    "created": "2026-11-20T23:17:47",
+    "backend": "sa3-mlx",
+    "model": "medium + same-l",
+    "peak_dbfs": -6.45,
+    "raw_peak_dbfs": -6.45,
+    "ceiling_gain_db": 0.0
+  },
+  "created": "2026-11-20T23:21:16",
+  "format": "flac",
+  "sample_rate": 44100,
+  "channels": 1,
+  "seconds": 0.289,
+  "steps": [
+    "trim_silence -50.0 dB",
+    "mono",
+    "fade 0.0/40.0 ms",
+    "peak normalize -1.0 dBFS (+5.45 dB)"
+  ],
+  "peak": 0.891,
+  "peak_dbfs": -1.0,
+  "rms": 0.1959,
+  "file": "aki_chirp.flac"
+}

@@ -12,10 +12,10 @@ import { compatibleSlots, nearestSlot, placeFurniture, removeFurniture, slotOf, 
 import { celebrate } from '../../flows/reward';
 import { hourOf, now, useApp, useNow } from '../../store';
 import { BottomSheet } from '../../ui/BottomSheet';
-import { feedback } from '../../ui/feedback';
+import { feedback, setSoundEnabled, sound as playSound } from '../../ui/feedback';
 import { toLocal, useFx, type Point } from '../../ui/fx';
 import { Bar, Ring, Ticker } from '../../ui/gauges';
-import { Coin, IconBox, IconBrush, IconMoon, IconSun, IconUndo } from '../../ui/icons';
+import { Coin, IconBox, IconBrush, IconMoon, IconSound, IconSun, IconUndo } from '../../ui/icons';
 import { SlideToConfirm } from '../../ui/inputs';
 import { useIsland } from '../../ui/Island';
 import { clamp, ease, spring } from '../../ui/motion';
@@ -1031,10 +1031,13 @@ function Hud({ pet, coins, onOpenDetail, onEnergyUnknown }: { pet: PetSave; coin
             <Bar value={pet.xp / need} color="linear-gradient(90deg, #ffd36b, #ffb648)" height={7} />
           </span>
         </Pressable>
-        <motion.div className="coin-pill glass" data-fx-target="coins" style={{ scale: coinScale }} aria-label={`コイン ${coins}`}>
-          <Coin size={22} />
-          <Ticker value={coins - pendingCoins} />
-        </motion.div>
+        <div className="hud-r">
+          <SoundToggle />
+          <motion.div className="coin-pill glass" data-fx-target="coins" style={{ scale: coinScale }} aria-label={`コイン ${coins}`}>
+            <Coin size={22} />
+            <Ticker value={coins - pendingCoins} />
+          </motion.div>
+        </div>
       </div>
       <div className="vitals">
         {vitals.map((x) => (
@@ -1056,6 +1059,34 @@ function Hud({ pet, coins, onOpenDetail, onEnergyUnknown }: { pet: PetSave; coin
         ))}
       </div>
     </div>
+  );
+}
+
+/** 効果音と BGM をまとめて切り替える。細かい切り替えはデモ操作から */
+function SoundToggle() {
+  const sound = useApp((s) => s.sound);
+  const music = useApp((s) => s.music);
+  const on = sound || music;
+  return (
+    <Pressable
+      className="hud-sound glass"
+      data-on={on}
+      depth={0.9}
+      haptic="selection"
+      sound={false}
+      aria-label={on ? '音を消す' : '音を出す'}
+      aria-pressed={on}
+      onPress={() => {
+        const next = !on;
+        const st = useApp.getState();
+        st.setSound(next);
+        st.setMusic(next);
+        setSoundEnabled(next);
+        if (next) playSound('pop');
+      }}
+    >
+      <IconSound size={19} filled={on} />
+    </Pressable>
   );
 }
 

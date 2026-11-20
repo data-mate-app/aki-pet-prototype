@@ -12,6 +12,7 @@ import { CountUp, Ticker } from '../ui/gauges';
 import { IconPause, IconPlay, IconRotate, IconSound, IconStop } from '../ui/icons';
 import { Ruler } from '../ui/inputs';
 import { spring } from '../ui/motion';
+import { setRain } from '../ui/music';
 import { Pressable } from '../ui/Pressable';
 import './Focus.css';
 
@@ -20,63 +21,6 @@ type Phase = 'idle' | 'run' | 'done';
 const MOD = { speed: 1, bounce: 1, earDroop: 0, eyeOpen: 1, idleExpression: 'happy' as const };
 const R = 118;
 const C = 2 * Math.PI * R;
-
-/* ------------------------------------------------------------------ */
-/* 環境音（ブラウンノイズをその場で合成）                                */
-/* ------------------------------------------------------------------ */
-function useAmbient() {
-  const ctxRef = useRef<AudioContext | null>(null);
-  const gainRef = useRef<GainNode | null>(null);
-
-  const set = useCallback((on: boolean) => {
-    try {
-      if (!ctxRef.current) {
-        if (!on) return;
-        const ctx = new AudioContext();
-        const len = ctx.sampleRate * 4;
-        const buf = ctx.createBuffer(1, len, ctx.sampleRate);
-        const d = buf.getChannelData(0);
-        let last = 0;
-        for (let i = 0; i < len; i++) {
-          last = (last + 0.02 * (Math.random() * 2 - 1)) / 1.02;
-          d[i] = last * 3.5;
-        }
-        const src = ctx.createBufferSource();
-        src.buffer = buf;
-        src.loop = true;
-        const lp = ctx.createBiquadFilter();
-        lp.type = 'lowpass';
-        lp.frequency.value = 900;
-        const g = ctx.createGain();
-        g.gain.value = 0;
-        src.connect(lp).connect(g).connect(ctx.destination);
-        src.start();
-        ctxRef.current = ctx;
-        gainRef.current = g;
-      }
-      const ctx = ctxRef.current;
-      const g = gainRef.current;
-      if (!ctx || !g) return;
-      void ctx.resume();
-      const t = ctx.currentTime;
-      g.gain.cancelScheduledValues(t);
-      g.gain.setValueAtTime(g.gain.value, t);
-      g.gain.linearRampToValueAtTime(on ? 0.12 : 0, t + (on ? 1.6 : 0.9));
-    } catch {
-      /* 音が使えない環境では黙る */
-    }
-  }, []);
-
-  useEffect(
-    () => () => {
-      const ctx = ctxRef.current;
-      ctxRef.current = null;
-      if (ctx) void ctx.close().catch(() => undefined);
-    },
-    [],
-  );
-  return set;
-}
 
 const fmt = (sec: number) => {
   const s = Math.max(0, Math.ceil(sec));
@@ -92,13 +36,13 @@ export function FocusScreen({ onImmersive }: { onImmersive: (on: boolean) => voi
   const [paused, setPaused] = useState(false);
   const [fast, setFast] = useState(false);
   const [land, setLand] = useState(false);
-  const [sound, setSound] = useState(false);
+  // 雨音。BGM をつけている人は最初からつける
+  const [sound, setSound] = useState(() => useApp.getState().music);
   const [confirm, setConfirm] = useState(false);
   const [result, setResult] = useState<{ min: number; total: number } | null>(null);
   const [act, setAct] = useState<{ a: Action; k: number }>({ a: 'none', k: 0 });
   const ringRef = useRef<HTMLDivElement>(null);
   const finished = useRef(false);
-  const setAmbient = useAmbient();
 
   const totalMs = minutes * 60000;
   const running = phase === 'run' && !paused && !confirm;
@@ -111,14 +55,12 @@ export function FocusScreen({ onImmersive }: { onImmersive: (on: boolean) => voi
       const res = useApp.getState().record({ type: 'focus', source: 'timer', value: min });
       celebrate(res, centerOf(ringRef.current), 'しゅうちゅう');
       const total = summarize(useApp.getState().log, dayKey(now())).focusMin;
-      setAmbient(false);
-      setSound(false);
       setResult({ min, total });
       setConfirm(false);
       setPhase('done');
       setAct((p) => ({ a: 'celebrate', k: p.k + 1 }));
     },
-    [setAmbient],
+    [],
   );
 
   // 時間を進める
@@ -162,6 +104,12 @@ export function FocusScreen({ onImmersive }: { onImmersive: (on: boolean) => voi
     [onImmersive],
   );
 
+  // 雨音はタイマーが動いているあいだだけ（一時停止中は流したまま）
+  useEffect(() => {
+    setRain(sound && phase === 'run');
+  }, [sound, phase]);
+  useEffect(() => () => setRain(false), []);
+
   const start = () => {
     finished.current = false;
     setElapsed(0);
@@ -180,9 +128,7 @@ export function FocusScreen({ onImmersive }: { onImmersive: (on: boolean) => voi
     feedback('light', 'tap');
   };
   const toggleSound = () => {
-    const next = !sound;
-    setSound(next);
-    setAmbient(next);
+    setSound((v) => !v);
     feedback('selection', 'tick');
   };
 

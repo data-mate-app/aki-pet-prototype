@@ -1,0 +1,53 @@
+{
+  "kind": "process",
+  "input_audio": "~/Develop/tools/audio-studio-mcp/outputs/bgm_rain_v2.wav",
+  "source": {
+    "kind": "generate",
+    "title": "bgm_rain",
+    "original_idea": "音もいい感じにつけて（集中中の雨音）",
+    "audio_type": "sfx",
+    "prompt": "",
+    "prompt_used": "TrackType: SFX, gentle rain on a window, steady soft continuous rainfall, no thunder, soft patter, cozy, smooth, even, indoors, quiet room, slightly distant.",
+    "sound_fields": {
+      "source": "gentle rain on a window",
+      "action": "steady soft continuous rainfall, no thunder",
+      "material": "soft patter, cozy, smooth, even",
+      "space": "indoors, quiet room, slightly distant"
+    },
+    "bpm": null,
+    "seconds": 24.0,
+    "negative_prompt": null,
+    "cfg": 1.0,
+    "steps": 8,
+    "variations": 2,
+    "seed": 3202,
+    "candidate": 2,
+    "file": "bgm_rain_v2.wav",
+    "sample_rate": 44100,
+    "bit_depth": 24,
+    "created": "2026-11-20T23:19:25",
+    "backend": "sa3-mlx",
+    "model": "medium + same-l",
+    "peak_dbfs": -2.0,
+    "raw_peak_dbfs": -2.0,
+    "ceiling_gain_db": 0.0
+  },
+  "created": "2026-11-20T23:21:19",
+  "format": "flac",
+  "sample_rate": 44100,
+  "channels": 2,
+  "seconds": 14.5,
+  "steps": [
+    "trim 4.5–21.0",
+    "loudnorm -20.0 LUFS",
+    "loop xfade 2000.0 ms"
+  ],
+  "peak": 0.891,
+  "peak_dbfs": -1.0,
+  "rms": 0.123,
+  "input_lufs": -26.31,
+  "input_true_peak_db": -2.0,
+  "output_lufs": -20.18,
+  "loudnorm_mode": "dynamic",
+  "file": "aki_bgm_rain.flac"
+}

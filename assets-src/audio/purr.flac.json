@@ -1,0 +1,50 @@
+{
+  "kind": "process",
+  "input_audio": "~/Develop/tools/audio-studio-mcp/outputs/purr_v3.wav",
+  "source": {
+    "kind": "generate",
+    "title": "purr",
+    "original_idea": "音もいい感じにつけて（なでたとき・寝かせたとき）",
+    "audio_type": "sfx",
+    "prompt": "",
+    "prompt_used": "TrackType: SFX, small cat purring contentedly, gentle steady rumble that softly fades out, soft, warm, low velvety vibration, close-up, quiet room.",
+    "sound_fields": {
+      "source": "small cat purring contentedly",
+      "action": "gentle steady rumble that softly fades out",
+      "material": "soft, warm, low velvety vibration",
+      "space": "close-up, quiet room"
+    },
+    "bpm": null,
+    "seconds": 2.0,
+    "negative_prompt": null,
+    "cfg": 1.0,
+    "steps": 8,
+    "variations": 3,
+    "seed": 1403,
+    "candidate": 3,
+    "file": "purr_v3.wav",
+    "sample_rate": 44100,
+    "bit_depth": 24,
+    "created": "2026-11-20T23:17:51",
+    "backend": "sa3-mlx",
+    "model": "medium + same-l",
+    "peak_dbfs": -11.95,
+    "raw_peak_dbfs": -11.95,
+    "ceiling_gain_db": 0.0
+  },
+  "created": "2026-11-20T23:21:16",
+  "format": "flac",
+  "sample_rate": 44100,
+  "channels": 1,
+  "seconds": 1.686,
+  "steps": [
+    "trim_silence -50.0 dB",
+    "mono",
+    "fade 40.0/500.0 ms",
+    "peak normalize -1.0 dBFS (+15.03 dB)"
+  ],
+  "peak": 0.891,
+  "peak_dbfs": -1.0,
+  "rms": 0.2067,
+  "file": "aki_purr.flac"
+}

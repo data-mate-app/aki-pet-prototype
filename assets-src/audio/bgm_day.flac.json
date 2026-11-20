@@ -1,0 +1,53 @@
+{
+  "kind": "process",
+  "input_audio": "~/Develop/tools/audio-studio-mcp/outputs/bgm_day_v2.wav",
+  "source": {
+    "kind": "generate",
+    "title": "bgm_day",
+    "original_idea": "音もいい感じにつけて（部屋のBGM・昼）",
+    "audio_type": "music",
+    "prompt": "Cozy acoustic loop for a cute pet room game, warm kalimba melody over soft fingerpicked nylon guitar and gentle round upright bass, light shaker, no heavy drums, relaxed, sunny and homely mood.",
+    "prompt_used": "TrackType: Music, VocalType: Instrumental, Cozy acoustic loop for a cute pet room game, warm kalimba melody over soft fingerpicked nylon guitar and gentle round upright bass, light shaker, no heavy drums, relaxed, sunny and homely mood. BPM: 80.",
+    "sound_fields": {
+      "source": "",
+      "action": "",
+      "material": "",
+      "space": ""
+    },
+    "bpm": 80,
+    "seconds": 42.0,
+    "negative_prompt": null,
+    "cfg": 1.0,
+    "steps": 8,
+    "variations": 3,
+    "seed": 3002,
+    "candidate": 2,
+    "file": "bgm_day_v2.wav",
+    "sample_rate": 44100,
+    "bit_depth": 24,
+    "created": "2026-11-20T23:18:59",
+    "backend": "sa3-mlx",
+    "model": "medium + same-l",
+    "peak_dbfs": -1.93,
+    "raw_peak_dbfs": -1.93,
+    "ceiling_gain_db": 0.0
+  },
+  "created": "2026-11-20T23:21:18",
+  "format": "flac",
+  "sample_rate": 44100,
+  "channels": 2,
+  "seconds": 30.0,
+  "steps": [
+    "trim 6.0–37.5",
+    "loudnorm -18.0 LUFS",
+    "loop xfade 1500.0 ms"
+  ],
+  "peak": 0.725,
+  "peak_dbfs": -2.8,
+  "rms": 0.1045,
+  "input_lufs": -17.13,
+  "input_true_peak_db": -1.92,
+  "output_lufs": -17.92,
+  "loudnorm_mode": "linear",
+  "file": "aki_bgm_day.flac"
+}

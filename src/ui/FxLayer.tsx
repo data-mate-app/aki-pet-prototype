@@ -35,7 +35,7 @@ function FlightView({ f }: { f: Flight }) {
       }
       await animate(scope.current, { x: xs, y: ys, scale: [1.25, 1, 0.55] }, { duration: 0.5 + Math.random() * 0.12, ease: [0.55, 0, 0.9, 0.5] });
       if (cancelled) return;
-      feedback('selection', f.kind === 'coin' ? 'tick' : undefined);
+      feedback('selection', f.kind === 'coin' ? 'coin' : undefined);
       land(f.id);
     };
     void run();
@@ -135,7 +135,7 @@ export function FxLayer() {
   useEffect(() => {
     if (!confetti) return;
     setShown((s) => [...s, confetti]);
-    feedback('success', 'reward');
+    feedback('success', 'levelup');
     const t = window.setTimeout(() => setShown((s) => s.filter((x) => x !== confetti)), 2800);
     return () => window.clearTimeout(t);
   }, [confetti]);

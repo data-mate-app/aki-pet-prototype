@@ -1,0 +1,50 @@
+{
+  "kind": "process",
+  "input_audio": "~/Develop/tools/audio-studio-mcp/outputs/pop_v1_2.wav",
+  "source": {
+    "kind": "generate",
+    "title": "pop",
+    "original_idea": "音もいい感じにつけて（ペット育成アプリのUI効果音）",
+    "audio_type": "sfx",
+    "prompt": "",
+    "prompt_used": "TrackType: SFX, soft cartoon bubble pop, cute UI sound, single quick pop with a tiny airy tail, very short, round, rubbery, warm mid tone, gentle, close-up, dry studio.",
+    "sound_fields": {
+      "source": "soft cartoon bubble pop, cute UI sound",
+      "action": "single quick pop with a tiny airy tail, very short",
+      "material": "round, rubbery, warm mid tone, gentle",
+      "space": "close-up, dry studio"
+    },
+    "bpm": null,
+    "seconds": 1.0,
+    "negative_prompt": null,
+    "cfg": 1.0,
+    "steps": 8,
+    "variations": 3,
+    "seed": 1101,
+    "candidate": 1,
+    "file": "pop_v1_2.wav",
+    "sample_rate": 44100,
+    "bit_depth": 24,
+    "created": "2026-11-20T23:16:54",
+    "backend": "sa3-mlx",
+    "model": "medium + same-l",
+    "peak_dbfs": -2.02,
+    "raw_peak_dbfs": -2.02,
+    "ceiling_gain_db": 0.0
+  },
+  "created": "2026-11-20T23:21:16",
+  "format": "flac",
+  "sample_rate": 44100,
+  "channels": 1,
+  "seconds": 0.075,
+  "steps": [
+    "trim_silence -50.0 dB",
+    "mono",
+    "fade 0.0/30.0 ms",
+    "peak normalize -1.0 dBFS (+1.02 dB)"
+  ],
+  "peak": 0.891,
+  "peak_dbfs": -1.0,
+  "rms": 0.1378,
+  "file": "aki_pop2.flac"
+}

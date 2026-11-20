@@ -78,6 +78,26 @@
   width: 64px;
 }
 
+.hud-r {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-sound {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  color: var(--ink);
+  transition: opacity 0.2s ease;
+}
+
+.hud-sound[data-on='false'] {
+  opacity: 0.6;
+}
+
 .coin-pill {
   display: inline-flex;
   align-items: center;

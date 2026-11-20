@@ -1,0 +1,31 @@
+{
+  "kind": "generate",
+  "title": "chirp",
+  "original_idea": "音もいい感じにつけて（ペットがよろこぶ声）",
+  "audio_type": "sfx",
+  "prompt": "",
+  "prompt_used": "TrackType: SFX, tiny cute cartoon creature, toy squeak voice, short happy rising chirp, two quick notes, bright, soft, whistle-like, playful, close-up, dry.",
+  "sound_fields": {
+    "source": "tiny cute cartoon creature, toy squeak voice",
+    "action": "short happy rising chirp, two quick notes",
+    "material": "bright, soft, whistle-like, playful",
+    "space": "close-up, dry"
+  },
+  "bpm": null,
+  "seconds": 1.0,
+  "negative_prompt": null,
+  "cfg": 1.0,
+  "steps": 8,
+  "variations": 4,
+  "seed": 1301,
+  "candidate": 1,
+  "file": "chirp_v1.wav",
+  "sample_rate": 44100,
+  "bit_depth": 24,
+  "created": "2026-11-20T23:17:47",
+  "backend": "sa3-mlx",
+  "model": "medium + same-l",
+  "peak_dbfs": -6.66,
+  "raw_peak_dbfs": -6.66,
+  "ceiling_gain_db": 0.0
+}

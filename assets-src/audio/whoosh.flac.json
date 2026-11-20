@@ -1,0 +1,50 @@
+{
+  "kind": "process",
+  "input_audio": "~/Develop/tools/audio-studio-mcp/outputs/whoosh_v2.wav",
+  "source": {
+    "kind": "generate",
+    "title": "whoosh",
+    "original_idea": "音もいい感じにつけて（しまう・スワイプ）",
+    "audio_type": "sfx",
+    "prompt": "",
+    "prompt_used": "TrackType: SFX, soft cloth swish through the air, UI swipe, quick airy whoosh passing by, fast fade, soft, breathy, light, close-up, dry.",
+    "sound_fields": {
+      "source": "soft cloth swish through the air, UI swipe",
+      "action": "quick airy whoosh passing by, fast fade",
+      "material": "soft, breathy, light",
+      "space": "close-up, dry"
+    },
+    "bpm": null,
+    "seconds": 0.8,
+    "negative_prompt": null,
+    "cfg": 1.0,
+    "steps": 8,
+    "variations": 3,
+    "seed": 1602,
+    "candidate": 2,
+    "file": "whoosh_v2.wav",
+    "sample_rate": 44100,
+    "bit_depth": 24,
+    "created": "2026-11-20T23:18:00",
+    "backend": "sa3-mlx",
+    "model": "medium + same-l",
+    "peak_dbfs": -1.13,
+    "raw_peak_dbfs": -1.13,
+    "ceiling_gain_db": 0.0
+  },
+  "created": "2026-11-20T23:21:17",
+  "format": "flac",
+  "sample_rate": 44100,
+  "channels": 1,
+  "seconds": 0.249,
+  "steps": [
+    "trim_silence -50.0 dB",
+    "mono",
+    "fade 0.0/40.0 ms",
+    "peak normalize -1.0 dBFS (+4.88 dB)"
+  ],
+  "peak": 0.891,
+  "peak_dbfs": -1.0,
+  "rms": 0.1461,
+  "file": "aki_whoosh.flac"
+}

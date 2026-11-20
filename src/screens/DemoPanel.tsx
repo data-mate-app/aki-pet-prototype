@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { labelFor } from '../domain/daylight';
 import { hourOf, useApp, useNow } from '../store';
 import { BottomSheet } from '../ui/BottomSheet';
-import { feedback } from '../ui/feedback';
+import { feedback, sound as playSound, SOUND_LIST, type SoundKind } from '../ui/feedback';
 import { Switch } from '../ui/inputs';
 import { ease } from '../ui/motion';
 import { Pressable } from '../ui/Pressable';
@@ -49,11 +49,18 @@ function travelTo(hour: number) {
   });
 }
 
+/** コインは続けて届いたときの音階の上がり方も聞けるように、5 枚ぶん鳴らす */
+function audition(kind: SoundKind) {
+  if (kind !== 'coin') return playSound(kind);
+  for (let i = 0; i < 5; i++) window.setTimeout(() => playSound('coin'), i * 90);
+}
+
 export function DemoControls() {
   const t = useNow(1000);
   const hour = hourOf(t);
   const offset = useApp((s) => s.clockOffset);
   const sound = useApp((s) => s.sound);
+  const music = useApp((s) => s.music);
   const [armed, setArmed] = useState(false);
   const d = new Date(t);
 
@@ -130,6 +137,22 @@ export function DemoControls() {
       <section className="demo-row">
         <span className="demo-label">効果音</span>
         <Switch on={sound} onChange={(v) => useApp.getState().setSound(v)} label="効果音" />
+      </section>
+
+      <section className="demo-row">
+        <span className="demo-label">BGM</span>
+        <Switch on={music} onChange={(v) => useApp.getState().setMusic(v)} label="BGM" />
+      </section>
+
+      <section>
+        <div className="demo-label">音を聞く</div>
+        <div className="demo-chips">
+          {SOUND_LIST.map((x) => (
+            <Pressable key={x.kind} className="demo-chip" haptic={false} sound={false} onPress={() => audition(x.kind)}>
+              {x.label}
+            </Pressable>
+          ))}
+        </div>
       </section>
 
       <section>

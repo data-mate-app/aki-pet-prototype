@@ -1,0 +1,50 @@
+{
+  "kind": "process",
+  "input_audio": "~/Develop/tools/audio-studio-mcp/outputs/reward_v1.wav",
+  "source": {
+    "kind": "generate",
+    "title": "reward",
+    "original_idea": "音もいい感じにつけて（記録できた・買えた）",
+    "audio_type": "sfx",
+    "prompt": "",
+    "prompt_used": "TrackType: SFX, glockenspiel and soft bells, UI success chime, quick bright ascending sparkle arpeggio of four notes, short ringing tail, crystalline, cheerful, warm, small room, light reverb.",
+    "sound_fields": {
+      "source": "glockenspiel and soft bells, UI success chime",
+      "action": "quick bright ascending sparkle arpeggio of four notes, short ringing tail",
+      "material": "crystalline, cheerful, warm",
+      "space": "small room, light reverb"
+    },
+    "bpm": null,
+    "seconds": 1.6,
+    "negative_prompt": null,
+    "cfg": 1.0,
+    "steps": 8,
+    "variations": 4,
+    "seed": 1701,
+    "candidate": 1,
+    "file": "reward_v1.wav",
+    "sample_rate": 44100,
+    "bit_depth": 24,
+    "created": "2026-11-20T23:18:18",
+    "backend": "sa3-mlx",
+    "model": "medium + same-l",
+    "peak_dbfs": -11.61,
+    "raw_peak_dbfs": -11.61,
+    "ceiling_gain_db": 0.0
+  },
+  "created": "2026-11-20T23:21:17",
+  "format": "flac",
+  "sample_rate": 44100,
+  "channels": 2,
+  "seconds": 1.008,
+  "steps": [
+    "trim 0.0–1.4",
+    "trim_silence -50.0 dB",
+    "fade 0.0/400.0 ms",
+    "peak normalize -1.0 dBFS (+10.61 dB)"
+  ],
+  "peak": 0.891,
+  "peak_dbfs": -1.0,
+  "rms": 0.1401,
+  "file": "aki_reward.flac"
+}
