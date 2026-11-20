@@ -1,0 +1,1119 @@
+/*
+ * ホーム（部屋）の画面。
+ * 地の色は部屋の空の色（--sky-top / --sky-bottom）から作るので、時間帯で画面全体の空気が変わる。
+ */
+.home {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 14px 96px;
+  background:
+    radial-gradient(120% 60% at 50% 62%, rgba(255, 255, 255, 0.55), transparent 70%),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--sky-top) 38%, var(--haze)) 0%,
+      color-mix(in oklab, var(--sky-bottom) 50%, var(--haze)) 52%,
+      var(--haze) 100%
+    );
+  transition: opacity 0.18s ease;
+}
+
+/* 他のタブの間も状態を保つため消さずに隠す */
+.home[data-active='false'] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ---------- 上の帯 ---------- */
+
+.home-top {
+  position: relative;
+  z-index: 4;
+  min-height: 104px;
+}
+
+.hud {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hud-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.hud-pet {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 4px 6px 4px 4px;
+  border-radius: 14px;
+  text-align: left;
+}
+
+.hud-name {
+  font-size: 24px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hud-lv {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #6b3d00;
+  background: linear-gradient(180deg, #ffe08c, #ffbf4d);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.hud-xp {
+  width: 64px;
+}
+
+.coin-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px 5px 6px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.vitals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.vital {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px 6px 6px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.vital-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.vital-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink-3);
+}
+
+.vital-value {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.vital-value[data-unknown='true'] {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.edit-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.edit-undo {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.edit-undo:disabled {
+  opacity: 0.4;
+}
+
+.edit-title {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.edit-title .display {
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.edit-title span:last-child {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink-2);
+}
+
+/* ---------- 部屋 ---------- */
+
+.home-room {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.room-top {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.room-top > * {
+  pointer-events: auto;
+}
+
+.time-chip,
+.room-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.home-zoom {
+  position: relative;
+  transform-origin: 50% 40%;
+}
+
+/* 持ち物から家具を引き出している間は、シートより手前に部屋を出す */
+.home-zoom[data-lifted='true'] {
+  z-index: 70;
+}
+
+.home-scene {
+  position: relative;
+}
+
+/* 台の影（filter だと家具が動くたびに描き直しになるので、ぼかした楕円を敷く） */
+.home-scene::before {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 4%;
+  height: 14%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(37, 35, 64, 0.22), transparent);
+}
+
+.room-shell,
+.room-tint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.room-shell {
+  pointer-events: none;
+}
+
+.room-floor {
+  pointer-events: visiblePainted;
+  cursor: pointer;
+}
+
+.home-scene[data-editing='true'] .room-floor {
+  cursor: default;
+}
+
+.room-tint {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.twinkle {
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.clouds {
+  animation: clouds 18s ease-in-out infinite alternate;
+}
+
+@keyframes clouds {
+  to {
+    transform: translateX(14px);
+  }
+}
+
+.curtain-l,
+.curtain-r {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: curtain 5.5s ease-in-out infinite;
+}
+
+.curtain-r {
+  animation-delay: -2.2s;
+}
+
+@keyframes curtain {
+  0%,
+  100% {
+    transform: skewX(0deg);
+  }
+  50% {
+    transform: skewX(-1.6deg);
+  }
+}
+
+.sway {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: sway 4.2s ease-in-out infinite;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-1.5deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+}
+
+/* 家具とペットの層。キャンバス座標のまま描き、まとめて縮める */
+.scene-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 880px;
+  height: 968px;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+.piece,
+.pet-sprite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+.piece-lift,
+.piece-jiggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+}
+
+.piece-svg,
+.pet-svg {
+  position: absolute;
+  overflow: visible;
+}
+
+.piece-svg {
+  transition: filter 0.2s ease;
+}
+
+.piece-art,
+.pet-hit {
+  pointer-events: visiblePainted;
+  cursor: pointer;
+}
+
+.home-scene[data-editing='true'] .piece-art {
+  cursor: grab;
+}
+
+.piece[data-dragging='true'] .piece-art {
+  cursor: grabbing;
+}
+
+.piece[data-selected='true'] .piece-svg {
+  filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 2px #fff) drop-shadow(0 0 10px rgba(255, 182, 72, 0.85));
+}
+
+.piece[data-dragging='true'] .piece-svg {
+  filter: drop-shadow(0 30px 16px rgba(37, 35, 64, 0.26));
+}
+
+/* もようがえ中のゆらゆら（iOS のホーム画面の編集と同じ合図） */
+.piece-jiggle[data-on='true'] {
+  animation: jiggle 0.32s ease-in-out infinite;
+}
+
+@keyframes jiggle {
+  0%,
+  100% {
+    transform: rotate(-1.1deg);
+  }
+  50% {
+    transform: rotate(1.1deg);
+  }
+}
+
+.pet-sprite[data-dim='true'] .pet-hit {
+  pointer-events: none;
+}
+
+.slot-markers {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 950;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.slot-marker {
+  fill: rgba(255, 255, 255, 0.28);
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 3;
+  stroke-dasharray: 12 9;
+  stroke-linejoin: round;
+  animation: march 0.9s linear infinite;
+  transition:
+    fill 0.15s ease,
+    stroke 0.15s ease;
+}
+
+.slot-marker[data-occupied='true'] {
+  fill: rgba(37, 35, 64, 0.08);
+}
+
+.slot-marker[data-on='true'] {
+  fill: rgba(255, 182, 72, 0.42);
+  stroke: var(--lamp-deep);
+  stroke-width: 4;
+  stroke-dasharray: none;
+}
+
+@keyframes march {
+  to {
+    stroke-dashoffset: -21;
+  }
+}
+
+.ripple {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 960;
+  pointer-events: none;
+}
+
+.ripple-ring {
+  position: absolute;
+  left: -64px;
+  top: -32px;
+  width: 128px;
+  height: 64px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.95);
+}
+
+/* 縮めない上乗せの層（吹き出し・家具のメニュー） */
+.scene-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bubble-anchor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+.bubble {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  translate: -50% 0;
+  transform-origin: 50% 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 18px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: var(--shadow-2);
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 2px;
+  translate: -50% 0;
+  rotate: 45deg;
+}
+
+.bubble-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.zzz {
+  position: absolute;
+  left: 16px;
+  bottom: 0;
+}
+
+.zzz span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: var(--font-display);
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(20, 18, 46, 0.4);
+  opacity: 0;
+  animation: zzz 2.7s ease-out infinite;
+}
+
+.zzz span:nth-child(1) {
+  font-size: 14px;
+}
+
+.zzz span:nth-child(2) {
+  font-size: 18px;
+  animation-delay: 0.9s;
+}
+
+.zzz span:nth-child(3) {
+  font-size: 24px;
+  animation-delay: 1.8s;
+}
+
+@keyframes zzz {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(26px, -54px) scale(1.1);
+  }
+}
+
+.callout {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 5;
+}
+
+.callout-inner {
+  position: absolute;
+  left: 0;
+  bottom: 12px;
+  translate: -50% 0;
+  pointer-events: auto;
+}
+
+.callout-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 7px 7px 14px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.86);
+  white-space: nowrap;
+}
+
+.callout-name {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.callout-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.callout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(37, 35, 64, 0.07);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.callout-btn[data-primary] {
+  padding: 0 16px;
+  background: linear-gradient(180deg, #ffc35e, var(--lamp-deep));
+  color: #3b2300;
+  box-shadow: 0 6px 14px -6px rgba(240, 138, 28, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.callout-tail {
+  position: absolute;
+  bottom: -6px;
+  width: 14px;
+  height: 14px;
+  translate: -50% 0;
+  rotate: 45deg;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.86);
+  z-index: -1;
+}
+
+/* ---------- きょうの記録 ---------- */
+
+.today {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.today-tile {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 5px;
+  row-gap: 2px;
+  padding: 9px 10px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.today-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.today-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+.today-value {
+  grid-column: 1 / -1;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.today-tile[data-unknown='true'] .today-value {
+  font-size: 14px;
+  color: var(--ink-3);
+}
+
+/* ---------- 寝ている間 ---------- */
+
+.wake,
+.sweep {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: max(26px, env(safe-area-inset-bottom));
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 14px 14px;
+  border-radius: 30px;
+  color: #fff;
+  background: rgba(22, 20, 52, 0.55);
+  backdrop-filter: blur(22px) saturate(1.4);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 20px 40px -12px rgba(10, 8, 30, 0.5);
+}
+
+.sweep {
+  pointer-events: none;
+  padding-bottom: 22px;
+}
+
+.wake-time,
+.sweep-time {
+  font-size: 56px;
+  line-height: 1;
+}
+
+.wake-sub,
+.sweep-sub {
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 10px;
+}
+
+.wake .slide {
+  width: 100%;
+}
+
+/* ---------- もようがえの持ち物 ---------- */
+
+.tray {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.tray-list {
+  display: flex;
+  gap: 10px;
+  padding: 2px 16px 14px;
+  overflow-x: auto;
+  touch-action: pan-x;
+  scrollbar-width: none;
+}
+
+.tray-list::-webkit-scrollbar {
+  display: none;
+}
+
+.tray-item {
+  flex: 0 0 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px 9px;
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: var(--shadow-1);
+  font-size: 11px;
+  font-weight: 800;
+  touch-action: pan-x;
+  cursor: grab;
+}
+
+.tray-item span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tray-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 16px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink-3);
+}
+
+.tray-drop {
+  position: absolute;
+  inset: 0 14px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 20px;
+  border: 2px dashed var(--lamp-deep);
+  background: rgba(255, 228, 180, 0.9);
+  color: #a85400;
+  font-size: 15px;
+  font-weight: 900;
+  pointer-events: none;
+}
+
+/* ---------- ペットの様子 ---------- */
+
+.pd {
+  padding: 0 18px 28px;
+}
+
+.pd-hero {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 0 14px;
+}
+
+.pd-figure {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 118px;
+  height: 118px;
+  border-radius: 30px;
+  background: radial-gradient(circle at 50% 70%, #fff3d6, #ffe3b0 60%, #ffd590);
+  box-shadow: inset 0 -6px 14px rgba(240, 138, 28, 0.16);
+  overflow: hidden;
+}
+
+.pd-name {
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.pd-kind {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ink-3);
+}
+
+.pd-mood {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.pd-mood b {
+  color: var(--lamp-deep);
+  font-weight: 900;
+}
+
+.pd-level {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px 16px;
+}
+
+.pd-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.pd-lv {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.pd-xp {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.pd-bond {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.pd-growth {
+  padding: 4px 16px;
+}
+
+.pd-growth-row {
+  display: grid;
+  gap: 6px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.pd-growth-row:last-child {
+  border-bottom: 0;
+}
+
+.pd-hint {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+
+.pd-unlocks {
+  overflow: hidden;
+}
+
+.pd-unlock {
+  display: grid;
+  grid-template-columns: 46px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.pd-unlock:last-child {
+  border-bottom: 0;
+}
+
+.pd-unlock[data-got='false'] {
+  opacity: 0.5;
+}
+
+.pd-unlock[data-got='true'] svg {
+  color: var(--sprout);
+}
+
+.pd-unlock-lv {
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--lamp-deep);
+}
+
+.pd-unlock-title {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* ---------- タスク ---------- */
+
+.tasks {
+  padding: 0 16px 28px;
+}
+
+.task-add {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.task-add input {
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 16px;
+  background: rgba(37, 35, 64, 0.06);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.task-add input:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 0;
+}
+
+.task-add-btn {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.task-add-btn:disabled {
+  opacity: 0.3;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--card);
+}
+
+.task-row[data-done] {
+  background: transparent;
+  min-height: 44px;
+  opacity: 0.6;
+}
+
+.task-row[data-done] .task-title {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.task-check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(37, 35, 64, 0.2);
+  color: #fff;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.task-check[data-on='true'],
+.task-check[data-on=''] {
+  background: var(--sprout);
+  border-color: var(--sprout);
+}
+
+.task-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.tasks-empty,
+.tasks-note {
+  margin: 16px 0 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+/* ---------- ごはん ---------- */
+
+.food-sub {
+  margin: -4px 0 12px;
+  padding: 0 20px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink-3);
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 0 16px 22px;
+}
+
+.food-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 6px 12px;
+  border-radius: 22px;
+  background: var(--card);
+  box-shadow: var(--shadow-1);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.food-icon {
+  font-size: 34px;
+  line-height: 1;
+}
+
+/* ---------- すいみん ---------- */
+
+.sleep-sheet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 18px 22px;
+  text-align: center;
+}
+
+.sleep-eyebrow {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  color: var(--lamp-deep);
+}
+
+.sleep-q {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.sleep-value {
+  margin: 6px 0 10px;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.sleep-sheet .ruler {
+  align-self: stretch;
+}
+
+.sleep-note {
+  margin: 10px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+
+.sleep-actions {
+  align-self: stretch;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .piece-jiggle[data-on='true'],
+  .twinkle,
+  .clouds,
+  .curtain-l,
+  .curtain-r,
+  .sway,
+  .slot-marker {
+    animation: none;
+  }
+}

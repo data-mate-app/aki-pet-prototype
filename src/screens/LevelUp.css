@@ -1,0 +1,11 @@
+.lvl { position: absolute; inset: 0; z-index: 140; display: grid; place-items: center; background: rgba(20, 18, 40, 0.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); overflow: hidden; }
+.lvl-rays { position: absolute; width: 900px; height: 900px; left: 50%; top: 50%; margin: -450px 0 0 -450px; background: repeating-conic-gradient(from 0deg, rgba(255, 200, 100, 0.28) 0deg 10deg, rgba(255, 200, 100, 0) 10deg 30deg); -webkit-mask-image: radial-gradient(circle, #000 8%, transparent 62%); mask-image: radial-gradient(circle, #000 8%, transparent 62%); pointer-events: none; }
+.lvl-card { position: relative; width: 310px; padding: 22px 22px 24px; border-radius: var(--r-xl); background: var(--card); box-shadow: var(--shadow-2); display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; color: var(--ink); }
+.lvl-pet { margin-top: -70px; }
+.lvl-title { font-size: 44px; line-height: 1.1; color: var(--lamp-deep); }
+.lvl-unlock { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.lvl-sub { font-size: 14px; font-weight: 800; color: var(--ink-2); }
+.lvl-item { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: var(--r-m); background: var(--haze); }
+.lvl-item b { font-size: 16px; }
+.lvl-item span { font-size: 13px; font-weight: 700; color: var(--ink-2); }
+.lvl-btn { min-width: 200px; min-height: 52px; margin-top: 6px; }

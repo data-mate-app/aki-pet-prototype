@@ -1,0 +1,82 @@
+.fx-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 150;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.fx-flight {
+  position: absolute;
+  left: -12px;
+  top: -12px;
+  will-change: transform;
+  filter: drop-shadow(0 3px 4px rgba(120, 70, 0, 0.3));
+}
+
+.fx-float {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-weight: 900;
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-1);
+  color: var(--ink);
+}
+
+.fx-float[data-tone='heart'] {
+  color: var(--berry);
+}
+
+.fx-float[data-tone='xp'] {
+  color: #4d68e6;
+}
+
+.fx-float[data-tone='coin'] {
+  color: var(--lamp-deep);
+}
+
+.fx-confetti {
+  position: absolute;
+  left: 50%;
+  top: 36%;
+}
+
+.cf-x {
+  position: absolute;
+  animation: cf-x 2s cubic-bezier(0.15, 0.7, 0.35, 1) both;
+}
+
+.cf-y {
+  display: block;
+  animation: cf-y 2s cubic-bezier(0.3, 0, 0.6, 1) both;
+}
+
+@keyframes cf-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--dx));
+  }
+}
+
+@keyframes cf-y {
+  0% {
+    transform: translateY(0) rotate(0) scale(0.4);
+    opacity: 1;
+  }
+  22% {
+    transform: translateY(var(--up)) rotate(calc(var(--rot) * 0.3)) scale(1);
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(var(--down)) rotate(var(--rot)) scale(0.9);
+    opacity: 0;
+  }
+}

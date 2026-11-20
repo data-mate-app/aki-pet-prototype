@@ -1,0 +1,47 @@
+/*
+ * タブの中身（ホーム以外）の共通の型。
+ * 上はステータスバー＋Island ぶん、下は浮かぶタブバーぶんを空ける。
+ */
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 58px 18px 120px;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.screen::-webkit-scrollbar {
+  display: none;
+}
+
+.screen-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 6px 2px 14px;
+}
+
+.screen-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.screen-sub {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink-3);
+  margin-top: 4px;
+}
+
+/* 画面の切り替え。App が .screen-swap に入れる */
+.screen-swap {
+  position: absolute;
+  inset: 0;
+}

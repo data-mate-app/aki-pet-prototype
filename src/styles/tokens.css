@@ -1,0 +1,56 @@
+/*
+ * デザイントークン。色・文字・角丸・影はここからだけ引く。
+ *
+ * 色の名前は役割ではなく、この世界の物の名前で付ける。
+ *   夜インク  ink    文字、夜、Island
+ *   朝もや    haze   画面の地
+ *   ランプ    lamp   コイン、報酬、夜の灯り
+ *   若葉      sprout 元気
+ *   もも      peach  おなか、ハート
+ *   そら      sky    かしこさ、集中
+ */
+:root {
+  --ink: #252340;
+  --ink-2: #4a4766;
+  --ink-3: #8a87a6;
+  --haze: #eef1fa;
+  --haze-2: #e2e6f4;
+  --card: #ffffff;
+  --lamp: #ffb648;
+  --lamp-deep: #f08a1c;
+  --sprout: #4cc49d;
+  --peach: #ff8a8a;
+  --sky: #7c9cff;
+  --berry: #ff6f9c;
+
+  --line: rgba(37, 35, 64, 0.08);
+  --shadow-1: 0 1px 2px rgba(37, 35, 64, 0.06), 0 4px 14px rgba(37, 35, 64, 0.06);
+  --shadow-2: 0 2px 6px rgba(37, 35, 64, 0.08), 0 18px 40px rgba(37, 35, 64, 0.14);
+  --glass: rgba(255, 255, 255, 0.62);
+  --glass-edge: rgba(255, 255, 255, 0.8);
+
+  --font-display: 'Dela Gothic One', 'Zen Maru Gothic', system-ui, sans-serif;
+  --font-body: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', system-ui, sans-serif;
+
+  --r-s: 12px;
+  --r-m: 18px;
+  --r-l: 26px;
+  --r-xl: 34px;
+
+  /* 部屋の光。時間帯で書き換える（living light） */
+  --sky-top: #8fb6ff;
+  --sky-bottom: #d9e6ff;
+  --wall-l: #f4efe7;
+  --wall-r: #e9e2d6;
+  --floor-a: #d9b48f;
+  --floor-b: #cfa880;
+  --room-tint: rgba(255, 255, 255, 0);
+  --lamp-glow: 0;
+  --sun-x: 70%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --reduced: 1;
+  }
+}

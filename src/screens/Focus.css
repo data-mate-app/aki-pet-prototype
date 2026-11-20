@@ -1,0 +1,77 @@
+.focus-idle { display: flex; flex-direction: column; align-items: center; }
+.focus-idle .screen-head { align-self: stretch; }
+.focus-pet { margin-top: 4px; }
+.focus-minutes { display: flex; align-items: baseline; gap: 6px; margin-top: 6px; color: var(--ink); }
+.focus-minutes-num { font-size: 64px; line-height: 1; }
+.focus-minutes-unit { font-size: 20px; font-weight: 700; }
+.focus-ruler { align-self: stretch; margin-top: 14px; }
+.focus-note { margin: 12px 0 0; font-size: 13px; color: var(--ink-3); }
+.focus-start { margin-top: 18px; min-height: 58px; align-self: stretch; font-size: 18px; border-radius: var(--r-l); }
+
+.focus-root { position: absolute; inset: 0; overflow: hidden; background: #14122a; color: #f1eefc; z-index: 5; }
+.focus-stage {
+  position: absolute; left: 50%; top: 50%; margin: 0; translate: -50% -50%;
+  display: flex; flex-direction: column; align-items: center;
+  background: radial-gradient(120% 90% at 50% 0%, #2b2754 0%, #14122a 70%);
+  padding: 62px 20px 34px; box-sizing: border-box; overflow: hidden;
+}
+.focus-stage[data-land='true'] { padding: 20px 28px; }
+.focus-glow {
+  position: absolute; width: 360px; height: 360px; border-radius: 50%; top: 18%; left: 50%; translate: -50% 0;
+  background: radial-gradient(circle, rgba(255, 182, 72, 0.18), transparent 65%); pointer-events: none;
+}
+.focus-top { position: absolute; top: 56px; left: 18px; right: 18px; display: flex; justify-content: space-between; align-items: center; z-index: 3; }
+.focus-stage[data-land='true'] .focus-top { top: 14px; }
+.focus-top-r { display: flex; gap: 8px; }
+.focus-chip {
+  min-height: 44px; padding: 0 14px; border-radius: 22px; border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06); color: #cfcae8; font: inherit; font-size: 13px; font-weight: 700;
+}
+.focus-chip[data-on='true'] { background: var(--lamp); color: #3b2300; border-color: transparent; }
+.focus-icon {
+  width: 44px; height: 44px; border-radius: 50%; border: 0; display: grid; place-items: center;
+  background: rgba(255, 255, 255, 0.08); color: #cfcae8;
+}
+.focus-icon[data-on='true'] { background: rgba(255, 182, 72, 0.25); color: var(--lamp); }
+.focus-icon svg { width: 22px; height: 22px; }
+
+.focus-body { flex: 1; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; position: relative; z-index: 1; }
+.focus-stage[data-land='true'] .focus-body { flex-direction: row; justify-content: space-around; gap: 20px; }
+.focus-ring { position: relative; width: 290px; height: 290px; flex: none; }
+.focus-stage[data-land='true'] .focus-ring { width: 250px; height: 250px; }
+.focus-track { fill: none; stroke: rgba(255, 255, 255, 0.09); stroke-width: 10; }
+.focus-arc { fill: none; stroke: var(--lamp); stroke-width: 10; stroke-linecap: round; transition: stroke-dashoffset 0.3s linear; filter: drop-shadow(0 0 8px rgba(255, 182, 72, 0.5)); }
+.focus-time { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.focus-clock { font-size: 54px; line-height: 1; letter-spacing: 1px; }
+.focus-state { font-size: 13px; color: #a9a4cc; }
+.focus-pet-run { flex: none; }
+
+.focus-controls { display: flex; gap: 22px; z-index: 2; margin-top: 4px; }
+.focus-stage[data-land='true'] .focus-controls { position: absolute; bottom: 14px; left: 50%; translate: -50% 0; }
+.focus-round {
+  width: 68px; height: 68px; border-radius: 50%; border: 0; display: grid; place-items: center;
+  background: rgba(255, 255, 255, 0.12); color: #fff;
+}
+.focus-round[data-tone='stop'] { background: rgba(255, 138, 138, 0.22); color: #ffb0b0; }
+.focus-round svg { width: 28px; height: 28px; }
+
+.focus-scrim { position: absolute; inset: 0; z-index: 10; display: grid; place-items: center; background: rgba(10, 8, 24, 0.6); backdrop-filter: blur(6px); }
+.focus-dialog { width: 280px; padding: 22px; border-radius: var(--r-l); background: #25224a; display: flex; flex-direction: column; gap: 10px; text-align: center; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+.focus-dialog-t { margin: 0; font-size: 18px; font-weight: 800; }
+.focus-dialog-d { margin: 0 0 6px; font-size: 13px; color: #a9a4cc; }
+.focus-dialog .btn[data-tone='soft'] { background: rgba(255, 255, 255, 0.1); color: #f1eefc; }
+
+.focus-result {
+  position: absolute; z-index: 8; left: 20px; right: 20px; bottom: 34px; padding: 20px; border-radius: var(--r-l);
+  background: #25224a; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+.focus-stage[data-land='true'] .focus-result { left: auto; right: 28px; bottom: 20px; width: 320px; }
+.focus-result-msg { margin: 0; font-size: 15px; font-weight: 700; text-align: center; }
+.focus-result-row { display: flex; justify-content: space-around; text-align: center; }
+.focus-result-k { display: block; font-size: 12px; color: #a9a4cc; margin-bottom: 4px; }
+.focus-result-v { font-size: 34px; }
+.focus-result-v small { font-size: 14px; margin-left: 2px; font-family: var(--font-body); }
+
+@media (prefers-reduced-motion: reduce) {
+  .focus-arc { transition: none; }
+}
