@@ -3,7 +3,7 @@
 ## 現在の状態（2026-11-28）
 
 - ブランチ: `main`
-- 状態: プロトタイプの全画面が動く。音（効果音・部屋の曲・集中中の雨音）付き。スマホ（タッチ）でも家具を運べるようにした。ラグは 3 か所から選んで敷ける。絵を Figma 用の SVG に書き出せる（`design/`、`pnpm design:export`）。公開版に素材ギャラリー `gallery.html` がある。`pnpm verify` 成功（型チェック・テスト 10 ファイル 123 件・本番ビルド）。
+- 状態: プロトタイプの全画面が動く。音（効果音・部屋の曲・集中中の雨音）付き。スマホ（タッチ）でも家具を運べるようにした。ラグは 3 か所から選んで敷ける。絵を Figma 用の SVG に書き出せる（`design/`、`pnpm design:export`）。壁と床も面ごとの素材として書き出す。公開版に素材ギャラリー `gallery.html` がある。`pnpm verify` 成功（型チェック・テスト 11 ファイル 133 件・本番ビルド）。
 - 公開: https://data-mate-app.github.io/aki-pet-prototype/ （GitHub Pages、`main` へのマージで自動更新。2026-11-27 に Organization `data-mate-app` へ移管し public にした。旧 URL の hasseeee.github.io/aki-pet-prototype/ は、個人のホームページ（リポジトリ `hasseeee/hasseeee.github.io` の `preview` ブランチ）に置いた転送ページで新しい URL へ飛ぶ。localStorage の記録は引き継がれない）
 
 ## 確かめたこと（ブラウザ、スマホ幅 375×812 と PC 幅 1440×900）
@@ -112,6 +112,15 @@ Playwright でスマホ幅 375×812（タッチ）、PC 幅 1440×900（マウ�
 
 - Figma に実際に貼って、ぼかし影（`feGaussianBlur`）と日だまり（`mix-blend-mode: soft-light`）がどう見えるか。
 - ギャラリーの押し込みの手ざわりを実機で。
+
+## 壁と床の素材を書き出しに足した（2026-11-28）
+
+本人の依頼「壁紙や床の面の素材もアセットとして増やして」。
+
+- kind `surface` を 12 件足した（`design/svg/surface/`・`design/png/surface/`）。面は左の壁・右の壁・床。見え方は、部屋の中の斜めの形（違いなし）と正面から見た平らな形（`flat`、Figma で柄を描き直す用）。それぞれ昼と夜。窓・日だまり・床と壁の厚みは入れていない。
+- `src/art/Room.tsx` の壁と床を `WallSurface`・`FloorSurface` に切り出し、`RoomShell` はそれを使う。平らな形の投影は `src/art/iso.ts`（`flatLeftWall`・`flatRightWall`・`flatFloor`。`PLANE` の行列で部屋の形へ戻せることを `iso.test.ts` で確かめる）。平らな素材を部屋へ戻す行列は design/README.md。
+- 確かめたこと: `pnpm design:export` で全 122 件が閾値内（surface は差 0.000%）。家具・おみせ・ペット・アイコンの出力は不変、部屋の PNG は変更前と画素差 0。アプリの部屋の殻（375×812、昼 12:00・夜 21:00）も変更前と画素差 0。ギャラリーに「壁と床」の絞り込み（スマホ幅・PC 幅で表示を確認）。
+- ついでに直したこと: ギャラリーで縦に長い絵（壁・ベッド・机・本棚・部屋）の下が枠で切れていた（PR #11 から）。`.g-view` の行と列を `minmax(0, 1fr)` に固定して収めた。
 
 ## 未実施・残る問題
 
