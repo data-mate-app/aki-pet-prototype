@@ -49,6 +49,7 @@ src/
   store.ts    zustand（persist）
 ```
 
+- ユーザーフロー（画面のつながり・記録とごほうび）: [docs/user-flow.md](docs/user-flow.md)
 - キャラデータの設計: [docs/character-model.md](docs/character-model.md)
 - 音（素材の一覧・作り方・差し替え方）: [docs/sound.md](docs/sound.md)
 - 案件の目的・範囲: [docs/ai/project.md](docs/ai/project.md)
