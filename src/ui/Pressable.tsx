@@ -24,6 +24,8 @@ export const Pressable = forwardRef<HTMLButtonElement, Props>(function Pressable
 ) {
   const timer = useRef<number | null>(null);
   const longFired = useRef(false);
+  /** 押し始めがこのボタンだったか（別の場所で押して、指の下に現れたこのボタンで離したときの click を無視する） */
+  const pressedHere = useRef(false);
 
   const clear = () => {
     if (timer.current) window.clearTimeout(timer.current);
@@ -37,6 +39,7 @@ export const Pressable = forwardRef<HTMLButtonElement, Props>(function Pressable
       whileTap={{ scale: depth }}
       transition={spring.snappy}
       onPointerDown={() => {
+        pressedHere.current = true;
         longFired.current = false;
         if (!onLongPress) return;
         clear();
@@ -49,7 +52,9 @@ export const Pressable = forwardRef<HTMLButtonElement, Props>(function Pressable
       onPointerUp={clear}
       onPointerLeave={clear}
       onPointerCancel={clear}
-      onClick={() => {
+      onClick={(e) => {
+        if (e.detail !== 0 && !pressedHere.current) return;
+        pressedHere.current = false;
         if (longFired.current) return;
         if (haptic) feedback(haptic, sound || undefined);
         onPress?.();

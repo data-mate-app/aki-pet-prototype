@@ -47,6 +47,12 @@ export function compatibleSlots(slots: Slot[], category: FurnitureCategory): Slo
   return slots.filter((s) => slotAccepts(s, category));
 }
 
+/** 自動で置くときの置き場所。空きを優先し、全部埋まっていれば最初の受け入れ先（家具は placeFurniture が持ち物へ戻す） */
+export function autoSlot(slots: Slot[], placement: Placement, category: FurnitureCategory): Slot | null {
+  const comp = compatibleSlots(slots, category);
+  return comp.find((sl) => !placement[sl.id]) ?? comp[0] ?? null;
+}
+
 export function slotOf(placement: Placement, furniture: FurnitureId): string | null {
   for (const [slotId, f] of Object.entries(placement)) if (f === furniture) return slotId;
   return null;

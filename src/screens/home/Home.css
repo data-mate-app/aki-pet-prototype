@@ -233,6 +233,8 @@
 
 .home-scene {
   position: relative;
+  /* 家具を運ぶ・ペットをなでる間に、ブラウザが指をスクロールとして奪って pointercancel になるのを防ぐ */
+  touch-action: none;
 }
 
 /* 台の影（filter だと家具が動くたびに描き直しになるので、ぼかした楕円を敷く） */
