@@ -39,10 +39,13 @@ export function fromCanvas(x: number, y: number): { gx: number; gy: number } {
   return { gx: (a + b) / 2, gy: (b - a) / 2 };
 }
 
-export function pts(points: [number, number, number][]): string {
+/** マス座標 (gx, gy, gz) を絵の座標へ移す関数。既定は iso（部屋の中の斜めの見え方） */
+export type Proj = (gx: number, gy: number, gz?: number) => { x: number; y: number };
+
+export function pts(points: [number, number, number][], proj: Proj = iso): string {
   return points
     .map(([gx, gy, gz]) => {
-      const p = iso(gx, gy, gz);
+      const p = proj(gx, gy, gz);
       return `${p.x.toFixed(1)},${p.y.toFixed(1)}`;
     })
     .join(' ');
@@ -106,4 +109,24 @@ export const PLANE = {
   leftWall: `matrix(${COS},${-SIN},0,1,0,0)`,
   /** 右の壁: u→gx（手前へ）, v→下向き */
   rightWall: `matrix(${COS},${SIN},0,1,0,0)`,
+};
+
+/**
+ * 面ごとの「平らな絵」の座標（正面から見た形。1 マス = 100）。向きは PLANE と同じ（u 右・v 下）。
+ * 3 つ目の座標（面に垂直な方向）は使わない。
+ *   左の壁 (0, gy, gz) → x = (GRID − gy)·100, y = (WALL_H − gz)·100
+ *   右の壁 (gx, 0, gz) → x = gx·100,          y = (WALL_H − gz)·100
+ *   床     (gx, gy, 0) → x = gx·100,          y = gy·100
+ * 平らな絵を部屋へ戻すには、左の壁は translate(iso(0, GRID, WALL_H)) + PLANE.leftWall、
+ * 右の壁は translate(iso(0, 0, WALL_H)) + PLANE.rightWall、床は PLANE.floor（原点は奥の角）。
+ */
+export const flatLeftWall: Proj = (_gx, gy, gz = 0) => ({ x: (GRID - gy) * U, y: (WALL_H - gz) * U });
+export const flatRightWall: Proj = (gx, _gy, gz = 0) => ({ x: gx * U, y: (WALL_H - gz) * U });
+export const flatFloor: Proj = (gx, gy) => ({ x: gx * U, y: gy * U });
+
+/** 平らな絵を部屋へ戻すときの平行移動（奥の角を (0,0) とする iso 座標） */
+export const FLAT_ORIGIN = {
+  leftWall: iso(0, GRID, WALL_H),
+  rightWall: iso(0, 0, WALL_H),
+  floor: iso(0, 0, 0),
 };

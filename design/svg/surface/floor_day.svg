@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-433 -1 867 501" width="867" height="501">
+  <g id="surface-floor">
+    <polygon id="floor" points="0,0 433,250 0,500 -433,250" fill="#ddb892"/>
+    <g id="planks">
+      <polygon id="plank-1" points="0,0 433,250 389.7,275 -43.3,25" fill="#ddb892"/>
+      <line id="plank-1-seam-1" x1="51.962" y1="30" x2="8.66" y2="55" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-1-seam-2" x1="225.167" y1="130" x2="181.865" y2="155" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-1-edge" x1="0" y1="0" x2="433.013" y2="250" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+      <polygon id="plank-2" points="-43.3,25 389.7,275 346.4,300 -86.6,50" fill="#d3ad86"/>
+      <line id="plank-2-seam-1" x1="105.655" y1="111" x2="62.354" y2="136" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-2-seam-2" x1="266.736" y1="204" x2="223.435" y2="229" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-2-edge" x1="-43.301" y1="25" x2="389.711" y2="275" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+      <polygon id="plank-3" points="-86.6,50 346.4,300 303.1,325 -129.9,75" fill="#ddb892"/>
+      <line id="plank-3-seam-1" x1="20.785" y1="112" x2="-22.517" y2="137" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-3-seam-2" x1="187.061" y1="208" x2="143.76" y2="233" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-3-edge" x1="-86.603" y1="50" x2="346.41" y2="300" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+      <polygon id="plank-4" points="-129.9,75 303.1,325 259.8,350 -173.2,100" fill="#d3ad86"/>
+      <line id="plank-4-seam-1" x1="-64.086" y1="113" x2="-107.387" y2="138" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-4-seam-2" x1="107.387" y1="212" x2="64.086" y2="237" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-4-edge" x1="-129.904" y1="75" x2="303.109" y2="325" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+      <polygon id="plank-5" points="-173.2,100 259.8,350 216.5,375 -216.5,125" fill="#ddb892"/>
+      <line id="plank-5-seam-1" x1="-10.392" y1="194" x2="-53.694" y2="219" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-5-seam-2" x1="148.956" y1="286" x2="105.655" y2="311" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-5-edge" x1="-173.205" y1="100" x2="259.808" y2="350" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+      <polygon id="plank-6" points="-216.5,125 216.5,375 173.2,400 -259.8,150" fill="#d3ad86"/>
+      <line id="plank-6-seam-1" x1="-95.263" y1="195" x2="-138.564" y2="220" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-6-seam-2" x1="69.282" y1="290" x2="25.981" y2="315" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-6-edge" x1="-216.506" y1="125" x2="216.506" y2="375" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+      <polygon id="plank-7" points="-259.8,150 173.2,400 129.9,425 -303.1,175" fill="#ddb892"/>
+      <line id="plank-7-seam-1" x1="-180.133" y1="196" x2="-223.435" y2="221" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-7-seam-2" x1="-10.392" y1="294" x2="-53.694" y2="319" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-7-edge" x1="-259.808" y1="150" x2="173.205" y2="400" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+      <polygon id="plank-8" points="-303.1,175 129.9,425 86.6,450 -346.4,200" fill="#d3ad86"/>
+      <line id="plank-8-seam-1" x1="-126.44" y1="277" x2="-169.741" y2="302" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-8-seam-2" x1="31.177" y1="368" x2="-12.124" y2="393" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-8-edge" x1="-303.109" y1="175" x2="129.904" y2="425" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+      <polygon id="plank-9" points="-346.4,200 86.6,450 43.3,475 -389.7,225" fill="#ddb892"/>
+      <line id="plank-9-seam-1" x1="-211.31" y1="278" x2="-254.611" y2="303" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-9-seam-2" x1="-48.497" y1="372" x2="-91.799" y2="397" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-9-edge" x1="-346.41" y1="200" x2="86.603" y2="450" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+      <polygon id="plank-10" points="-389.7,225 43.3,475 0,500 -433,250" fill="#d3ad86"/>
+      <line id="plank-10-seam-1" x1="-296.181" y1="279" x2="-339.482" y2="304" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-10-seam-2" x1="-128.172" y1="376" x2="-171.473" y2="401" fill="#000000" stroke="#3c1e0a" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="plank-10-edge" x1="-389.711" y1="225" x2="43.301" y2="475" fill="#000000" stroke="#3c1e0a" stroke-width="1.2" stroke-opacity="0.1"/>
+    </g>
+    <polygon id="floor-edge-shade" points="0,0 433,250 417.4,259 0,18 -417.4,259 -433,250" fill="#252340" fill-opacity="0.08"/>
+  </g>
+</svg>

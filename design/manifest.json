@@ -2072,6 +2072,234 @@
       }
     },
     {
+      "path": "surface/wall-left_day",
+      "kind": "surface",
+      "label": "左の壁・斜め（部屋の中）・昼",
+      "svg": "svg/surface/wall-left_day.svg",
+      "png": "png/surface/wall-left_day@2x.png",
+      "viewBox": [
+        -433,
+        -400,
+        433,
+        650
+      ],
+      "width": 433,
+      "height": 650,
+      "anchor": {
+        "x": 433,
+        "y": 400
+      }
+    },
+    {
+      "path": "surface/wall-left_night",
+      "kind": "surface",
+      "label": "左の壁・斜め（部屋の中）・夜",
+      "svg": "svg/surface/wall-left_night.svg",
+      "png": "png/surface/wall-left_night@2x.png",
+      "viewBox": [
+        -433,
+        -400,
+        433,
+        650
+      ],
+      "width": 433,
+      "height": 650,
+      "anchor": {
+        "x": 433,
+        "y": 400
+      }
+    },
+    {
+      "path": "surface/wall-left_flat_day",
+      "kind": "surface",
+      "label": "左の壁・平ら（正面）・昼",
+      "svg": "svg/surface/wall-left_flat_day.svg",
+      "png": "png/surface/wall-left_flat_day@2x.png",
+      "viewBox": [
+        0,
+        0,
+        500,
+        400
+      ],
+      "width": 500,
+      "height": 400,
+      "anchor": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "surface/wall-left_flat_night",
+      "kind": "surface",
+      "label": "左の壁・平ら（正面）・夜",
+      "svg": "svg/surface/wall-left_flat_night.svg",
+      "png": "png/surface/wall-left_flat_night@2x.png",
+      "viewBox": [
+        0,
+        0,
+        500,
+        400
+      ],
+      "width": 500,
+      "height": 400,
+      "anchor": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "surface/wall-right_day",
+      "kind": "surface",
+      "label": "右の壁・斜め（部屋の中）・昼",
+      "svg": "svg/surface/wall-right_day.svg",
+      "png": "png/surface/wall-right_day@2x.png",
+      "viewBox": [
+        0,
+        -400,
+        433,
+        650
+      ],
+      "width": 433,
+      "height": 650,
+      "anchor": {
+        "x": 0,
+        "y": 400
+      }
+    },
+    {
+      "path": "surface/wall-right_night",
+      "kind": "surface",
+      "label": "右の壁・斜め（部屋の中）・夜",
+      "svg": "svg/surface/wall-right_night.svg",
+      "png": "png/surface/wall-right_night@2x.png",
+      "viewBox": [
+        0,
+        -400,
+        433,
+        650
+      ],
+      "width": 433,
+      "height": 650,
+      "anchor": {
+        "x": 0,
+        "y": 400
+      }
+    },
+    {
+      "path": "surface/wall-right_flat_day",
+      "kind": "surface",
+      "label": "右の壁・平ら（正面）・昼",
+      "svg": "svg/surface/wall-right_flat_day.svg",
+      "png": "png/surface/wall-right_flat_day@2x.png",
+      "viewBox": [
+        0,
+        0,
+        500,
+        400
+      ],
+      "width": 500,
+      "height": 400,
+      "anchor": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "surface/wall-right_flat_night",
+      "kind": "surface",
+      "label": "右の壁・平ら（正面）・夜",
+      "svg": "svg/surface/wall-right_flat_night.svg",
+      "png": "png/surface/wall-right_flat_night@2x.png",
+      "viewBox": [
+        0,
+        0,
+        500,
+        400
+      ],
+      "width": 500,
+      "height": 400,
+      "anchor": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "surface/floor_day",
+      "kind": "surface",
+      "label": "床・斜め（部屋の中）・昼",
+      "svg": "svg/surface/floor_day.svg",
+      "png": "png/surface/floor_day@2x.png",
+      "viewBox": [
+        -433,
+        -1,
+        867,
+        501
+      ],
+      "width": 867,
+      "height": 501,
+      "anchor": {
+        "x": 433,
+        "y": 1
+      }
+    },
+    {
+      "path": "surface/floor_night",
+      "kind": "surface",
+      "label": "床・斜め（部屋の中）・夜",
+      "svg": "svg/surface/floor_night.svg",
+      "png": "png/surface/floor_night@2x.png",
+      "viewBox": [
+        -433,
+        -1,
+        867,
+        501
+      ],
+      "width": 867,
+      "height": 501,
+      "anchor": {
+        "x": 433,
+        "y": 1
+      }
+    },
+    {
+      "path": "surface/floor_flat_day",
+      "kind": "surface",
+      "label": "床・平ら（正面）・昼",
+      "svg": "svg/surface/floor_flat_day.svg",
+      "png": "png/surface/floor_flat_day@2x.png",
+      "viewBox": [
+        -1,
+        -2,
+        502,
+        504
+      ],
+      "width": 502,
+      "height": 504,
+      "anchor": {
+        "x": 1,
+        "y": 2
+      }
+    },
+    {
+      "path": "surface/floor_flat_night",
+      "kind": "surface",
+      "label": "床・平ら（正面）・夜",
+      "svg": "svg/surface/floor_flat_night.svg",
+      "png": "png/surface/floor_flat_night@2x.png",
+      "viewBox": [
+        -1,
+        -2,
+        502,
+        504
+      ],
+      "width": 502,
+      "height": 504,
+      "anchor": {
+        "x": 1,
+        "y": 2
+      }
+    },
+    {
       "path": "icon/app-icon",
       "kind": "icon",
       "label": "アプリアイコン",

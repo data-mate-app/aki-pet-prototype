@@ -1,4 +1,4 @@
-import { GRID as G, iso, PLANE, pts, WALL_H as H } from './iso';
+import { GRID as G, iso, PLANE, pts, WALL_H as H, type Proj } from './iso';
 import { WINDOW } from '../data/layout';
 
 /** 部屋の見える範囲（1000×1000 のキャンバスから切り出す） */
@@ -54,22 +54,80 @@ export function SvgDefs() {
 }
 
 /** 床の板。gy 方向に 0.5 マスずつ、継ぎ目をずらす */
-function Planks() {
+function Planks({ proj }: { proj: Proj }) {
   const rows = [];
   for (let i = 0; i < G * 2; i++) {
     const y0 = i * 0.5;
-    rows.push(<polygon key={`p${i}`} data-part={`plank-${i + 1}`} points={pts([[0, y0, 0], [G, y0, 0], [G, y0 + 0.5, 0], [0, y0 + 0.5, 0]])} style={{ fill: i % 2 ? 'var(--floor-b)' : 'var(--floor-a)' }} />);
+    rows.push(<polygon key={`p${i}`} data-part={`plank-${i + 1}`} points={pts([[0, y0, 0], [G, y0, 0], [G, y0 + 0.5, 0], [0, y0 + 0.5, 0]], proj)} style={{ fill: i % 2 ? 'var(--floor-b)' : 'var(--floor-a)' }} />);
     const seam = ((i * 37) % 10) / 10;
     for (const [si, sx] of [0.6 + seam * 1.6, 2.6 + seam * 1.4].entries()) {
-      const a = iso(sx, y0, 0);
-      const b = iso(sx, y0 + 0.5, 0);
+      const a = proj(sx, y0, 0);
+      const b = proj(sx, y0 + 0.5, 0);
       rows.push(<line key={`s${i}-${sx}`} data-part={`plank-${i + 1}-seam-${si + 1}`} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="rgba(60,30,10,0.12)" strokeWidth={1.5} />);
     }
-    const a = iso(0, y0, 0);
-    const b = iso(G, y0, 0);
+    const a = proj(0, y0, 0);
+    const b = proj(G, y0, 0);
     rows.push(<line key={`l${i}`} data-part={`plank-${i + 1}-edge`} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="rgba(60,30,10,0.1)" strokeWidth={1.2} />);
   }
   return <g data-part="planks">{rows}</g>;
+}
+
+const WAINSCOT = 1.1; // 腰壁の高さ
+
+/**
+ * 壁 1 面（壁紙・腰壁・レール・溝・幅木。左の壁には隅の陰も）。窓は物なので入れない。
+ * proj を替えると、部屋の中の斜めの見え方（既定の iso）と、正面から見た平らな形の両方で描ける。
+ */
+export function WallSurface({ side, proj = iso, baseboard = true }: { side: 'left' | 'right'; proj?: Proj; baseboard?: boolean }) {
+  const left = side === 'left';
+  // 面の上の点: 水平方向 g（奥の角から測る）、高さ z
+  const at = (g: number, z: number): [number, number, number] => (left ? [0, g, z] : [g, 0, z]);
+  const quad = (z0: number, z1: number) => pts([at(0, z0), at(G, z0), at(G, z1), at(0, z1)], proj);
+  return (
+    <g data-part={`surface-wall-${side}`}>
+      <g data-part="wallpaper">
+        {left ? <polygon data-part="wall-left" points={quad(0, H)} fill="url(#wall-l)" /> : <polygon data-part="wall-right" points={quad(0, H)} style={{ fill: 'var(--wall-r)' }} />}
+      </g>
+      <g data-part="wainscot">
+        <polygon data-part={`wainscot-${side}`} points={quad(0, WAINSCOT)} fill={left ? 'rgba(160,120,90,0.1)' : 'rgba(160,120,90,0.14)'} />
+        <polygon data-part={`wainscot-rail-${side}`} points={quad(WAINSCOT, WAINSCOT + 0.06)} fill={left ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.4)'} />
+        {Array.from({ length: 9 }).map((_, i) => {
+          const g = 0.5 + i * 0.5;
+          const a = proj(...at(g, 0.14));
+          const b = proj(...at(g, WAINSCOT - 0.02));
+          return <line key={i} data-part={`wainscot-groove-${side}-${i + 1}`} x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="rgba(120,80,50,0.12)" strokeWidth={1.5} />;
+        })}
+      </g>
+      {left && <polygon data-part="corner-shade" points={pts([[0, 0, 0], [0, 0.5, 0], [0, 0.5, H], [0, 0, H]], proj)} fill="rgba(37,35,64,0.05)" />}
+      {baseboard && <Baseboard side={side} proj={proj} />}
+    </g>
+  );
+}
+
+/** 幅木。壁の面の一部だが、部屋では床より後に重ねる（境の線の描き味を変えないため）ので別に出せる */
+export function Baseboard({ side, proj = iso }: { side: 'left' | 'right'; proj?: Proj }) {
+  const left = side === 'left';
+  const pointsOf: [number, number, number][] = left ? [[0, 0, 0], [0, G, 0], [0, G, 0.12], [0, 0, 0.12]] : [[0, 0, 0], [G, 0, 0], [G, 0, 0.12], [0, 0, 0.12]];
+  return (
+    <g data-part="baseboard">
+      <polygon data-part={`baseboard-${side}`} points={pts(pointsOf, proj)} fill={left ? '#efe6da' : '#e2d6c6'} />
+    </g>
+  );
+}
+
+/**
+ * 床 1 面（床・板・壁との境の陰）。日だまりと当たり判定は物・操作なので入れない。
+ * children は板の上・境の陰の下に重ねる（部屋では当たり判定と日だまり）。
+ */
+export function FloorSurface({ proj = iso, children }: { proj?: Proj; children?: React.ReactNode }) {
+  return (
+    <g data-part="surface-floor">
+      <polygon data-part="floor" points={pts([[0, 0, 0], [G, 0, 0], [G, G, 0], [0, G, 0]], proj)} style={{ fill: 'var(--floor-a)' }} />
+      <Planks proj={proj} />
+      {children}
+      <polygon data-part="floor-edge-shade" points={pts([[0, 0, 0], [G, 0, 0], [G, 0.18, 0], [0.18, 0.18, 0], [0.18, G, 0], [0, G, 0]], proj)} fill="rgba(37,35,64,0.08)" />
+    </g>
+  );
 }
 
 function Window({ hour }: { hour: number }) {
@@ -160,7 +218,6 @@ function SunPatch() {
 
 /** 部屋の殻（壁・床・窓）。家具とペットはこの上に別の層で重ねる */
 export function RoomShell({ hour, onFloorTap }: { hour: number; onFloorTap?: (e: React.PointerEvent<SVGPolygonElement>) => void }) {
-  const wainscot = 1.1;
   return (
     <svg className="room-shell" viewBox={VIEWBOX} preserveAspectRatio="xMidYMid meet" aria-hidden>
       <g data-part="room" transform="translate(500 430)">
@@ -170,47 +227,24 @@ export function RoomShell({ hour, onFloorTap }: { hour: number; onFloorTap?: (e:
         <polygon data-part="slab-highlight" points={pts([[-T, G, -0.08], [G, G, -0.08], [G, G, -0.12], [-T, G, -0.12]])} fill="rgba(255,255,255,0.18)" />
 
         {/* 壁 */}
-        <polygon data-part="wall-left" points={pts([[0, 0, 0], [0, G, 0], [0, G, H], [0, 0, H]])} fill="url(#wall-l)" />
-        <polygon data-part="wall-right" points={pts([[0, 0, 0], [G, 0, 0], [G, 0, H], [0, 0, H]])} style={{ fill: 'var(--wall-r)' }} />
-        {/* 腰壁 */}
-        <polygon data-part="wainscot-left" points={pts([[0, 0, 0], [0, G, 0], [0, G, wainscot], [0, 0, wainscot]])} fill="rgba(160,120,90,0.1)" />
-        <polygon data-part="wainscot-right" points={pts([[0, 0, 0], [G, 0, 0], [G, 0, wainscot], [0, 0, wainscot]])} fill="rgba(160,120,90,0.14)" />
-        <polygon data-part="wainscot-rail-left" points={pts([[0, 0, wainscot], [0, G, wainscot], [0, G, wainscot + 0.06], [0, 0, wainscot + 0.06]])} fill="rgba(255,255,255,0.55)" />
-        <polygon data-part="wainscot-rail-right" points={pts([[0, 0, wainscot], [G, 0, wainscot], [G, 0, wainscot + 0.06], [0, 0, wainscot + 0.06]])} fill="rgba(255,255,255,0.4)" />
-        {Array.from({ length: 9 }).map((_, i) => {
-          const g = 0.5 + i * 0.5;
-          const a = iso(0, g, 0.14);
-          const b = iso(0, g, wainscot - 0.02);
-          const c = iso(g, 0, 0.14);
-          const d = iso(g, 0, wainscot - 0.02);
-          return (
-            <g key={i} data-part={`wainscot-groove-${i + 1}`} stroke="rgba(120,80,50,0.12)" strokeWidth={1.5}>
-              <line data-part={`wainscot-groove-left-${i + 1}`} x1={a.x} y1={a.y} x2={b.x} y2={b.y} />
-              <line data-part={`wainscot-groove-right-${i + 1}`} x1={c.x} y1={c.y} x2={d.x} y2={d.y} />
-            </g>
-          );
-        })}
-        {/* 隅の陰 */}
-        <polygon data-part="corner-shade" points={pts([[0, 0, 0], [0, 0.5, 0], [0, 0.5, H], [0, 0, H]])} fill="rgba(37,35,64,0.05)" />
+        <WallSurface side="left" baseboard={false} />
+        <WallSurface side="right" baseboard={false} />
 
         <Window hour={hour} />
 
         {/* 床 */}
-        <polygon data-part="floor" points={pts([[0, 0, 0], [G, 0, 0], [G, G, 0], [0, G, 0]])} style={{ fill: 'var(--floor-a)' }} />
-        <Planks />
-        <polygon
-          data-part="floor-hit"
-          className="room-floor"
-          points={pts([[0, 0, 0], [G, 0, 0], [G, G, 0], [0, G, 0]])}
-          fill="transparent"
-          onPointerUp={onFloorTap}
-        />
-        <SunPatch />
-        {/* 幅木 */}
-        <polygon data-part="baseboard-left" points={pts([[0, 0, 0], [0, G, 0], [0, G, 0.12], [0, 0, 0.12]])} fill="#efe6da" />
-        <polygon data-part="baseboard-right" points={pts([[0, 0, 0], [G, 0, 0], [G, 0, 0.12], [0, 0, 0.12]])} fill="#e2d6c6" />
-        {/* 壁と床の境の陰 */}
-        <polygon data-part="floor-edge-shade" points={pts([[0, 0, 0], [G, 0, 0], [G, 0.18, 0], [0.18, 0.18, 0], [0.18, G, 0], [0, G, 0]])} fill="rgba(37,35,64,0.08)" />
+        <FloorSurface>
+          <polygon
+            data-part="floor-hit"
+            className="room-floor"
+            points={pts([[0, 0, 0], [G, 0, 0], [G, G, 0], [0, G, 0]])}
+            fill="transparent"
+            onPointerUp={onFloorTap}
+          />
+          <SunPatch />
+          <Baseboard side="left" />
+          <Baseboard side="right" />
+        </FloorSurface>
 
         {/* 壁の厚み（切り口） */}
         <polygon data-part="wall-top-left" points={pts([[0, 0, H], [0, G, H], [-T, G, H], [-T, -T, H]])} fill="#fffaf2" />

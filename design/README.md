@@ -1,13 +1,13 @@
 # design/ — Figma 用アセット
 
-アプリの絵（家具・ペット・部屋・アイコン）と色・文字を、Figma で編集できる形で書き出したもの。
+アプリの絵（家具・ペット・部屋・壁と床・アイコン）と色・文字を、Figma で編集できる形で書き出したもの。
 **この中のファイルは `pnpm design:export` が作る。手で直さない**（直すならアプリ側の絵を直して書き出し直す）。
 
 ## 中身
 
 | 場所 | 内容 |
 |---|---|
-| `svg/` | 編集用の SVG（110 件）。部品ごとにグループが分かれ、名前が付いている |
+| `svg/` | 編集用の SVG（122 件）。部品ごとにグループが分かれ、名前が付いている |
 | `png/` | 確認用の PNG（2 倍）。SVG を Chrome で描いたもの |
 | `sheet.svg` / `sheet.png` | 全アセットを並べた一覧シート。PNG は 1 倍 |
 | `palette.svg` / `palette.png` | 色と文字の一覧。色見本の四角はレイヤー名が色の名前 |
@@ -21,12 +21,31 @@
 | 部分 | 値 |
 |---|---|
 | 違い（家具） | なし＝そのまま（壁もの＝正面）、`mirrored`＝左右反転、`wall-left`＝左の壁、`wall-right`＝右の壁 |
-| 時間 | `day`＝昼（12 時の光）、`night`＝夜（21 時の光）。昼夜で絵が変わる家具・部屋だけに付く |
+| 見え方（壁と床） | なし＝部屋の中の斜めの見え方（部屋の絵と同じ形）、`flat`＝正面から見た平らな形（Figma で柄を描き直す用） |
+| 時間 | `day`＝昼（12 時の光）、`night`＝夜（21 時の光）。昼夜で絵が変わる家具・部屋・壁と床だけに付く |
 | 状態（ペット） | `{種族}_{状態}`。種族は komugi / omochi / potato |
 
 ペットの状態（17 種）: stand ふつう / happy よろこぶ / love なでられる / surprised おどろく / sleepy ねむい / tired つかれた / bored たいくつ / focused しゅうちゅう / walk あるく / sit すわる / lie ねそべる / sleep ねむる / jump ジャンプ / celebrate おいわい / eat たべる / study べんきょう / yawn あくび
 
-`kind` は furniture（家具）/ thumb（おみせの絵）/ pet / room / room-tint（夜の色かぶせ）/ icon。
+`kind` は furniture（家具）/ thumb（おみせの絵）/ pet / room / room-tint（夜の色かぶせ）/ surface（壁と床の面）/ icon。
+
+### 壁と床（`surface/`、12 件）
+
+面は `wall-left`（左の壁）・`wall-right`（右の壁）・`floor`（床）の 3 つ。名前は `surface/{面}_{day|night}`（斜め）と `surface/{面}_flat_{day|night}`（平ら）。色は部屋と同じ（昼 12 時・夜 21 時の光）。
+
+- 入っているもの: 壁紙（`wallpaper`）・腰壁（`wainscot`＝腰壁・レール・溝）・幅木（`baseboard`）、左の壁だけ隅の陰（`corner-shade`）。床は `floor`・板（`planks`）・壁との境の陰（`floor-edge-shade`）。
+- **入れていないもの**: 窓（物なので）、日だまり（`sun-patch`）、床の当たり判定、床・壁の厚み（`slab-*` `wall-top-*` `wall-end-*`。部屋の殻なので `room/` に残る）。
+- 斜めの面は部屋と同じ位置関係で描いてある。絵の原点 (0,0) は部屋の奥の角で、`manifest.json` の `anchor` がその viewBox 内の位置（`room/` の絵と、奥の角どうしを合わせれば重なる。`room/` 自体の `anchor` はキャンバスの原点なので、`room/` の絵とは `translate(500 430)` 分ずれている点に注意）。
+- 平らな面は 1 マス = 100 の座標で、左上が (0,0)（`anchor` は viewBox の左上からの位置）。向きは `PLANE`（`src/art/iso.ts`）と同じで、u 右・v 下。左の壁は正面から見て左右が反転しない（奥の角が右）。腰壁は下にある。
+- 平らな素材を部屋へ戻す行列（奥の角を原点とする部屋の座標。`matrix(a,b,c,d,e,f)` は SVG の `transform` と同じ）:
+
+| 面 | transform |
+|---|---|
+| 左の壁 | `translate(-433.013 -150) matrix(0.866025,-0.5,0,1,0,0)` |
+| 右の壁 | `translate(0 -400) matrix(0.866025,0.5,0,1,0,0)` |
+| 床 | `matrix(0.866025,0.5,-0.866025,0.5,0,0)` |
+
+  （左の壁の移動量は `iso(0, 5, 4)`、右の壁は `iso(0, 0, 4)`。`src/art/iso.test.ts` で、3 面とも iso の点に戻ることを確かめている。）
 
 ## レイヤー名の対応（主なもの）
 
