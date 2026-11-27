@@ -3,7 +3,7 @@
 ## 現在の状態（2026-11-28）
 
 - ブランチ: `main`
-- 状態: プロトタイプの全画面が動く。音（効果音・部屋の曲・集中中の雨音）付き。スマホ（タッチ）でも家具を運べるようにした。ラグは 3 か所から選んで敷ける。`pnpm verify` 成功（型チェック・テスト 5 ファイル 82 件・本番ビルド）。
+- 状態: プロトタイプの全画面が動く。音（効果音・部屋の曲・集中中の雨音）付き。スマホ（タッチ）でも家具を運べるようにした。ラグは 3 か所から選んで敷ける。絵を Figma 用の SVG に書き出せる（`design/`、`pnpm design:export`）。公開版に素材ギャラリー `gallery.html` がある。`pnpm verify` 成功（型チェック・テスト 10 ファイル 123 件・本番ビルド）。
 - 公開: https://data-mate-app.github.io/aki-pet-prototype/ （GitHub Pages、`main` へのマージで自動更新。2026-11-27 に Organization `data-mate-app` へ移管し public にした。旧 URL の hasseeee.github.io/aki-pet-prototype/ は、個人のホームページ（リポジトリ `hasseeee/hasseeee.github.io` の `preview` ブランチ）に置いた転送ページで新しい URL へ飛ぶ。localStorage の記録は引き継がれない）
 
 ## 確かめたこと（ブラウザ、スマホ幅 375×812 と PC 幅 1440×900）
@@ -97,6 +97,22 @@ Playwright でスマホ幅 375×812（タッチ）、PC 幅 1440×900（マウ�
 - 集中中（暗い画面）にステータスバーの文字が見えない → 白にする
 - おみせタブの塗りアイコンが王冠に見える → 取っ手も同じ色に
 
+## Figma 用に絵を書き出した（2026-11-28）
+
+本人の依頼「全アセットを Figma で使える形に」。家具・ペット・部屋は React の SVG なので、編集できるベクターとして 1 点 1 SVG に書き出す仕組みを作った。使い方・名前の付け方・注意は [design/README.md](../../design/README.md)。
+
+- `pnpm design:export`（playwright-core＋インストール済みの Google Chrome、自前で Vite を起こす）で `design/` を作り直す。絵を直したら回す。出力は家具 39・おみせの絵 16・ペット 51（3 種×17 状態）・部屋 3・アイコン 1 の SVG と 2 倍 PNG、`manifest.json`、一覧シート `sheet.svg`、色と文字 `palette.svg`、`tokens.json`（Design Tokens 2025.10）。
+- 書き出した SVG はアプリの描画と画素で比べ、閾値（差 24 超の画素が 0.5%）を超えたら exit 1。全件成功したときだけ `design/` の生成物を差し替える。Google Fonts が読めないときも exit 1。
+- 2 回続けて回すと `design/` は 1 バイトも変わらない（Chrome は `--disable-gpu`）。
+- 絵の部品には `data-part` で英語の名前を付け、Figma のレイヤー名になる。`src/art/` は名前付けと `PetArt` の `blink` だけで、描画は変えていない（アプリの部屋と PNG を並べて確認）。
+- 公開版に `gallery.html`（React なしの素の TS、アプリからの入口なし）。絞り込み、SVG のコピー・保存、PNG の保存、一覧シート・色と文字・tokens.json の保存。
+- Codex のレビュー 15 件のうち 9 件を直し、6 件は意図どおりとして残した（理由は design/README.md と PR の本文）。
+
+### 確かめていないこと
+
+- Figma に実際に貼って、ぼかし影（`feGaussianBlur`）と日だまり（`mix-blend-mode: soft-light`）がどう見えるか。
+- ギャラリーの押し込みの手ざわりを実機で。
+
 ## 未実施・残る問題
 
 - **独立レビュー（Fable 5.1）は未実施**。
@@ -112,3 +128,4 @@ Playwright でスマホ幅 375×812（タッチ）、PC 幅 1440×900（マウ�
 1. Fable 5.1 で独立レビュー（対象: `main` の初回コミット全体。観点: 操作感・演出の破綻、状態の食い違い、reduced-motion）
 2. 実機で触り心地と音を確認（公開版の URL をスマホで開く）。家具を運ぶ操作も実機で確かめる。気になる音は docs/sound.md の手順で差し替える
 3. 本番組み込みへ向けて、どの部品・演出を残すかを決める
+4. `design/sheet.svg` を Figma に貼り、ぼかし影・日だまり・文字の見え方を確かめる（崩れたら書き出し側で置き換えを考える）

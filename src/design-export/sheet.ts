@@ -41,7 +41,10 @@ function place(stem: string, asset: SheetAsset, transform: string | null): strin
   return `<g id="${stem}"${transform ? ` transform="${transform}"` : ''}>\n${inner}\n</g>`;
 }
 
-const stemOf = (path: string) => path.split('/').pop()!;
+/** シート上の id の元。種類を前に付ける（furniture/bed-oat と thumb/bed-oat を別にする）。furniture-bed-oat */
+export const stemOf = (path: string) => path.replace(/\//g, '-');
+
+const thumbLabel = (path: string) => path.split('/').pop()!;
 
 function variantLabel(s: FurnitureSpec, hasWall: boolean): string {
   const parts: string[] = [];
@@ -108,7 +111,7 @@ export function buildSheet(specs: AssetSpec[], assets: Map<string, SheetAsset>):
     const y0 = y + row * 180;
     const k = a.size[0] / a.viewBox[2];
     body.push(place(stemOf(s.path), a, matrixToTransform([k, 0, 0, k, x0 - a.viewBox[0] * k, y0 - a.viewBox[1] * k])));
-    body.push(text(LEFT + col * CELL + CELL / 2, y0 + a.size[1] + 28, 16, 500, INK3, stemOf(s.path), 'middle'));
+    body.push(text(LEFT + col * CELL + CELL / 2, y0 + a.size[1] + 28, 16, 500, INK3, thumbLabel(s.path), 'middle'));
     note(LEFT + (col + 1) * CELL);
   });
   y += Math.ceil(thumbs.length / 8) * 180 + 60;

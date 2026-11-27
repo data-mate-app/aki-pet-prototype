@@ -4,7 +4,7 @@ import { shade } from '../art/iso';
 import { FURNITURE } from '../data/furniture';
 import { SPECIES } from '../data/species';
 import { keys } from '../domain/daylight';
-import { fmt, parseColor } from './format';
+import { fmt, formatHour, parseBoxShadow, parseColor, toDtcgColor, type DtcgColor, type DtcgShadow } from './format';
 import { text } from './sheet';
 
 /**
@@ -47,13 +47,6 @@ function parts(value: string): { hex: string; alpha: number } {
   return c;
 }
 
-/** DTCG の色の値。不透明なら #rrggbb、半透明なら #rrggbbaa */
-function tokenColor(value: string): string {
-  const c = parts(value);
-  if (c.alpha >= 1) return c.hex;
-  return c.hex + Math.round(c.alpha * 255).toString(16).padStart(2, '0');
-}
-
 export type Data = {
   app: Swatch[];
   shadows: CssVar[];
@@ -81,7 +74,7 @@ export function collect(css: string = tokensCss): Data {
     .filter((k) => k.h < 24)
     .map((k) => ({
       h: k.h,
-      label: `${Number.isInteger(k.h) ? k.h : k.h.toFixed(1)}:${k.h % 1 ? '30' : '00'}`,
+      label: formatHour(k.h),
       swatches: LIGHT_PROPS.map((p) => ({ id: `room-${hourId(k.h)}-${kebab(p)}`, label: LIGHT_JA[p], value: k.light[p] })),
       lampGlow: k.light.lampGlow,
       sun: k.light.sun,
@@ -240,13 +233,13 @@ const escapeSafe = (s: string) => s;
 
 // ---------- tokens.json（W3C Design Tokens） ----------
 
-type Tok = { $type?: string; $value: unknown; $description?: string };
+type Tok = { $type?: string; $value: DtcgColor | DtcgShadow[] | number | string | string[]; $description?: string };
 
 export function buildTokens(d: Data = collect()): string {
-  const color = (s: Swatch, desc?: string): Tok => ({ $type: 'color', $value: tokenColor(s.value), $description: desc ?? s.label });
+  const color = (s: Swatch, desc?: string): Tok => ({ $type: 'color', $value: toDtcgColor(s.value), $description: desc ?? s.label });
   const app: Record<string, Tok> = {};
   for (const s of d.app) app[s.id] = color(s);
-  for (const s of d.shadows) app[`shadow-${s.name.replace('shadow-', '')}`] = { $value: s.value, $description: '影（CSS の値のまま）' };
+  for (const s of d.shadows) app[`shadow-${s.name.replace('shadow-', '')}`] = { $type: 'shadow', $value: parseBoxShadow(s.value), $description: `影（tokens.css の --${s.name}。重ねる順）` };
 
   const room: Record<string, Record<string, Tok>> = {};
   for (const r of d.roomHours) {

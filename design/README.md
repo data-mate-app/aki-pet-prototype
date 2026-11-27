@@ -11,7 +11,7 @@
 | `png/` | 確認用の PNG（2 倍）。SVG を Chrome で描いたもの |
 | `sheet.svg` / `sheet.png` | 全アセットを並べた一覧シート。PNG は 1 倍 |
 | `palette.svg` / `palette.png` | 色と文字の一覧。色見本の四角はレイヤー名が色の名前 |
-| `tokens.json` | 色・文字の値（W3C Design Tokens 形式。app / room-light / furniture / book / pet / font） |
+| `tokens.json` | 色・文字・影の値（W3C Design Tokens 2025.10 形式。色は `colorSpace` / `components` / `alpha` / `hex` のオブジェクト、影は shadow の配列。app / room-light / furniture / book / pet / font） |
 | `manifest.json` | 全アセットの一覧（パス・種類・viewBox・大きさ・基準点） |
 
 ## 名前の付け方
@@ -44,7 +44,7 @@ SVG の `id` が Figma のレイヤー名になる。元のコードの `data-pa
 | `room` / `wall-left` / `wall-right` / `wainscot-*` | 部屋の壁・腰板 |
 | `d-` で始まるもの | 共有の定義（ぼかし・グラデーション）。`defs` の中 |
 
-`sheet.svg` では、各アセットが `<g id="{ファイル名の stem}">` に入り、中の id は `{stem}__` が頭に付く。
+`sheet.svg` では、各アセットが `<g id="{種類}-{名前}">`（例 `furniture-bed-oat`、`thumb-bed-oat`）に入り、中の id は `{種類}-{名前}__` が頭に付く。全体で id は重ならない。
 
 ## 作り直し方
 
@@ -53,11 +53,16 @@ pnpm design:export
 ```
 
 - **Google Chrome が要る**（playwright-core で `channel: 'chrome'` を起動）。Vite のサーバーは自前で立てる（port 5399 から）。
-- PNG と一覧シートの文字には Google Fonts（Dela Gothic One / Zen Maru Gothic）を使うので、ネットにつながっている必要がある。
+- PNG と一覧シートの文字には Google Fonts（Dela Gothic One / Zen Maru Gothic）を使うので、ネットにつながっている必要がある。読めないときは代替フォントで書かず、終了コード 1 で止まる。
+- 出力は一時ディレクトリに作り、最後まで成功して全件が閾値内のときだけ `design/` の生成物を差し替える。途中で失敗しても `design/` は前回のまま（`README.md` は触らない）。
+- 確認用に `DESIGN_OUT`（出力先）と `DESIGN_ONLY`（対象を絞る正規表現）が使える。`DESIGN_ONLY` は `DESIGN_OUT` と一緒のときだけ（なしだと終了コード 1）。
 - 書き出した SVG だけを描いた絵と、アプリの実物を 2 倍で撮って画素で比べる。差のある画素が 0.5% を超えるアセットがあれば終了コード 1（そのアセットを表示する）。ふだんの最大は 0.002% ほど。
 - 日付などは出力に入れていないので、2 回続けて実行しても全ファイルが同じ内容になる。
 
-方針の違い（作業票の指示から変えたところ）:
+方針の違い（作業票の指示から変えたところ）と、意図してそうしているところ:
+
+- おみせの絵（`thumb/`）の viewBox は、実際の絵の範囲ではなく、お店の枠（`THUMB_VIEW`）に合わせた正方形。お店で見える範囲のとおりに書き出すため（絵のまわりに余白がある）。
+- 部屋は壁の厚みの端まで書き出す。アプリでは左右がわずかに切れるが、デザイン素材としては全体があるほうがよいため。
 
 - ペットの `eat` は表の stand ではなく **sit**。アプリ（Home.tsx）が sit にしてから eat をするため。
 - 変換行列の a〜d は小数 6 桁（3 桁だと比較で崩れる）。

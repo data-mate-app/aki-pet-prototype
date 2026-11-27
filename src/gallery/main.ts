@@ -14,11 +14,14 @@ type Asset = {
   kind: 'furniture' | 'thumb' | 'pet' | 'room' | 'room-tint' | 'icon';
   label: string;
   svg: string;
+  png: string;
   width: number;
   height: number;
 };
 
 const svgSources = import.meta.glob('/design/svg/**/*.svg', { query: '?raw', import: 'default', eager: true }) as Record<string, string>;
+
+const pngUrls = import.meta.glob('/design/png/**/*.png', { query: '?url', import: 'default', eager: true }) as Record<string, string>;
 
 const FILTERS: { id: string; label: string; kinds: Asset['kind'][] }[] = [
   { id: 'all', label: 'すべて', kinds: [] },
@@ -79,39 +82,43 @@ function saveSvg(a: Asset) {
   say('保存しました');
 }
 
-/** SVG を canvas に 2 倍で描いて PNG にする（背景は透明） */
-async function savePng(a: Asset) {
-  const url = URL.createObjectURL(new Blob([sourceOf(a)], { type: 'image/svg+xml' }));
-  try {
-    const img = new Image();
-    img.src = url;
-    await img.decode();
-    const canvas = el('canvas');
-    canvas.width = a.width * 2;
-    canvas.height = a.height * 2;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) throw new Error('canvas');
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-    const blob = await new Promise<Blob | null>((ok) => canvas.toBlob(ok, 'image/png'));
-    if (!blob) throw new Error('png');
-    saveBlob(blob, fileName(a).replace(/\.svg$/, '@2x.png'));
-    say('保存しました');
-  } catch {
-    say('PNG を作れませんでした');
-  } finally {
-    URL.revokeObjectURL(url);
+/**
+ * PNG は書き出し済みの design/png/…@2x.png をそのまま保存する（ブラウザで描き直さない。
+ * 描き直すと端末のフォントなどで字形が変わり、書き出しで確かめた PNG と別物になる）
+ */
+function savePng(a: Asset) {
+  const url = pngUrls[`/design/${a.png}`];
+  if (!url) {
+    say('PNG が見つかりません');
+    return;
   }
+  const link = el('a');
+  link.href = url;
+  link.download = fileName(a).replace(/\.svg$/, '@2x.png');
+  document.body.append(link);
+  link.click();
+  link.remove();
+  say('保存しました');
 }
 
 // ---------- 画面 ----------
-const blobUrls: string[] = [];
+/** カードは 1 度だけ作って使い回す（絞り込みのたびに作り直さない。blob URL もカードごとに 1 つだけ） */
+const cards = new Map<string, HTMLLIElement>();
 
 function card(a: Asset): HTMLLIElement {
+  let li = cards.get(a.path);
+  if (!li) {
+    li = buildCard(a);
+    cards.set(a.path, li);
+  }
+  return li;
+}
+
+function buildCard(a: Asset): HTMLLIElement {
   const li = el('li', 'g-card');
   const view = el('div', a.width / a.height > 1.6 ? 'g-view is-wide' : 'g-view');
   const img = el('img');
   const url = URL.createObjectURL(new Blob([sourceOf(a)], { type: 'image/svg+xml' }));
-  blobUrls.push(url);
   img.src = url;
   img.alt = a.label;
   img.loading = 'lazy';

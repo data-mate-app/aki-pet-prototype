@@ -11,9 +11,28 @@ export function fmt(n: number, digits = 3): string {
   return String(r);
 }
 
-/** 文字列に含まれる数値をすべて fmt で丸める（points・d・transform 用） */
+/**
+ * 文字列に含まれる数値をすべて fmt で丸める（points・d・transform 用）。
+ * SVG のパスでは負号や小数点が区切りを兼ねる（`10-0.0001` は 10 と -0.0001）。
+ * 丸めで負号が消える（-0.0001 → 0）と前の数と繋がるので、元が区切りに頼っていた所には空白を入れる。
+ */
 export function roundNumbers(s: string): string {
-  return s.replace(/-?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?/gi, (m) => fmt(Number(m)));
+  return s.replace(/-?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?/gi, (m, offset: number) => {
+    const out = fmt(Number(m));
+    const prev = offset > 0 ? s[offset - 1] : '';
+    return /[\d.]/.test(prev) && !out.startsWith('-') ? ' ' + out : out;
+  });
+}
+
+/** 時刻（小数の時間）を h:mm にする。16.5 → "16:30"、0 → "0:00"（分は 60 進法。0.5 を "30" と書く） */
+export function formatHour(h: number): string {
+  let hh = Math.floor(h + 1e-9);
+  let mm = Math.round((h - hh) * 60);
+  if (mm === 60) {
+    hh += 1;
+    mm = 0;
+  }
+  return `${hh}:${String(mm).padStart(2, '0')}`;
 }
 
 /** SVG の行列 [a b c d e f]（x' = a x + c y + e, y' = b x + d y + f） */
@@ -92,6 +111,50 @@ export function parseColor(css: string): ParsedColor | null {
     return { hex: '#' + v, alpha: 1 };
   }
   return null;
+}
+
+/** DTCG 2025.10 の色の値。components は 0〜1、alpha は不透明度、hex は参考 */
+export type DtcgColor = { colorSpace: 'srgb'; components: [number, number, number]; alpha: number; hex: string };
+
+export function toDtcgColor(css: string): DtcgColor {
+  const c = parseColor(css);
+  if (!c) throw new Error(`色を読めない: ${css}`);
+  const comp = (i: number) => Number(fmt(parseInt(c.hex.slice(1 + 2 * i, 3 + 2 * i), 16) / 255, 4));
+  return { colorSpace: 'srgb', components: [comp(0), comp(1), comp(2)], alpha: Number(fmt(c.alpha, 4)), hex: c.hex };
+}
+
+export type DtcgDimension = { value: number; unit: 'px' };
+export type DtcgShadow = { color: DtcgColor; offsetX: DtcgDimension; offsetY: DtcgDimension; blur: DtcgDimension; spread: DtcgDimension };
+
+/** `,` のうち括弧の外にあるものだけで分ける */
+function splitTop(s: string, sep: string): string[] {
+  const out: string[] = [];
+  let depth = 0;
+  let cur = '';
+  for (const ch of s) {
+    if (ch === '(') depth++;
+    if (ch === ')') depth--;
+    if (ch === sep && depth === 0) {
+      out.push(cur.trim());
+      cur = '';
+    } else cur += ch;
+  }
+  if (cur.trim()) out.push(cur.trim());
+  return out;
+}
+
+/** CSS の box-shadow（`0 2px 6px rgba(...), 0 18px 40px rgba(...)`）を DTCG の shadow の配列にする。inset や px 以外は未対応（例外） */
+export function parseBoxShadow(css: string): DtcgShadow[] {
+  return splitTop(css, ',').map((one) => {
+    const m = one.match(/^(.*?)(rgba?\([^)]*\)|#[0-9a-fA-F]{3,6})\s*$/) ?? one.match(/^(rgba?\([^)]*\)|#[0-9a-fA-F]{3,6})\s+(.*)$/);
+    if (!m) throw new Error(`影を読めない: ${one}`);
+    const colorFirst = /^rgba?\(|^#/.test(m[1]);
+    const color = colorFirst ? m[1] : m[2];
+    const lengths = (colorFirst ? m[2] : m[1]).trim().split(/\s+/).filter(Boolean);
+    if (lengths.length < 2 || lengths.length > 4 || lengths.some((l) => !/^-?[\d.]+(px)?$/.test(l))) throw new Error(`影の長さを読めない: ${one}`);
+    const px = (i: number): DtcgDimension => ({ value: Number(fmt(i < lengths.length ? parseFloat(lengths[i]) : 0)), unit: 'px' });
+    return { color: toDtcgColor(color), offsetX: px(0), offsetY: px(1), blur: px(2), spread: px(3) };
+  });
 }
 
 export function escapeAttr(s: string): string {

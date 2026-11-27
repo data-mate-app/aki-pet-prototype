@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-48 -207 104 247" width="104" height="247">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-48 -208 104 248" width="104" height="248">
   <defs>
     <filter id="d-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
       <feGaussianBlur stdDeviation="6"/>

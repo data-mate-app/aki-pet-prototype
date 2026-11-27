@@ -62,6 +62,62 @@ function transformRect(m: Mat, x0: number, y0: number, x1: number, y1: number): 
   return [Math.min(...ps.map((p) => p[0])), Math.min(...ps.map((p) => p[1])), Math.max(...ps.map((p) => p[0])), Math.max(...ps.map((p) => p[1]))];
 }
 
+/** 点の集まりの外接矩形 */
+function boundsOfPoints(pts: [number, number][]): Rect {
+  return [Math.min(...pts.map((p) => p[0])), Math.min(...pts.map((p) => p[1])), Math.max(...pts.map((p) => p[0])), Math.max(...pts.map((p) => p[1]))];
+}
+
+/** 楕円（中心 cx,cy、半径 rx,ry）を行列 m で写した外接矩形（解析解）。斜めに写しても楕円のまま */
+export function ellipseBounds(m: Mat, cx: number, cy: number, rx: number, ry: number): Rect {
+  const [x, y] = applyToPoint(m, cx, cy);
+  const hw = Math.hypot(m[0] * rx, m[2] * ry);
+  const hh = Math.hypot(m[1] * rx, m[3] * ry);
+  return [x - hw, y - hh, x + hw, y + hh];
+}
+
+/** path の標本の間隔（ローカル座標の長さ）。曲線の見落としは 1/8 を超えない */
+const PATH_STEP = 0.5;
+
+/**
+ * 要素の形そのものの外接矩形（host 座標、線の太さは含まない）。
+ * ローカルの外接矩形の四隅を写すと、斜めに写した曲線で実際より大きくなる（rug-sun など）ので、図形の上の点を写して測る。
+ */
+function shapeBounds(el: SVGGraphicsElement, tag: string, toHost: Mat): Rect {
+  const num = (k: string) => Number(el.getAttribute(k) ?? 0);
+  switch (tag) {
+    case 'circle':
+      return ellipseBounds(toHost, num('cx'), num('cy'), num('r'), num('r'));
+    case 'ellipse':
+      return ellipseBounds(toHost, num('cx'), num('cy'), num('rx'), num('ry'));
+    case 'line':
+      return boundsOfPoints([applyToPoint(toHost, num('x1'), num('y1')), applyToPoint(toHost, num('x2'), num('y2'))]);
+    case 'polyline':
+    case 'polygon': {
+      const list = (el as SVGPolygonElement).points;
+      const pts: [number, number][] = [];
+      for (let i = 0; i < list.numberOfItems; i++) pts.push(applyToPoint(toHost, list.getItem(i).x, list.getItem(i).y));
+      return boundsOfPoints(pts);
+    }
+    case 'path': {
+      const path = el as unknown as SVGPathElement;
+      const len = path.getTotalLength();
+      const n = Math.min(4000, Math.max(16, Math.ceil(len / PATH_STEP)));
+      const pts: [number, number][] = [];
+      for (let i = 0; i <= n; i++) {
+        const p = path.getPointAtLength((len * i) / n);
+        pts.push(applyToPoint(toHost, p.x, p.y));
+      }
+      // 角が標本の間に落ちても欠けないよう、標本の間隔の半分だけ広げる
+      return expand(boundsOfPoints(pts), (len / n / 2) * scaleOf(toHost));
+    }
+    default: {
+      // rect・text は getBBox の四隅（rect は四隅が図形の頂点。text は字の枠）
+      const b = el.getBBox();
+      return transformRect(toHost, b.x, b.y, b.x + b.width, b.y + b.height);
+    }
+  }
+}
+
 /** 行列の拡大率（長さの伸びの大きいほう） */
 function scaleOf(m: Mat): number {
   return Math.max(Math.hypot(m[0], m[1]), Math.hypot(m[2], m[3]));
@@ -276,8 +332,7 @@ function walk(el: Element, parentCtm: Mat, cx: Context): Node[] {
     if (clip) attrs.set('clip-path', cx.ref(clip));
 
     // 範囲
-    const b = (el as SVGGraphicsElement).getBBox();
-    let bounds: Rect | null = transformRect(toHost, b.x, b.y, b.x + b.width, b.y + b.height);
+    let bounds: Rect | null = shapeBounds(el, tag, toHost);
     if (strokeVisible) {
       const factor = cs.strokeLinejoin === 'miter' || cs.strokeLinecap === 'square' ? 1.5 : 1;
       bounds = expand(bounds, (strokeWidth / 2) * factor * scaleOf(toHost));

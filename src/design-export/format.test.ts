@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { fmt, inverse, matrixToTransform, mul, parseColor, roundNumbers, type Mat } from './format';
+import { fmt, formatHour, inverse, matrixToTransform, mul, parseBoxShadow, parseColor, roundNumbers, toDtcgColor, type Mat } from './format';
 
 describe('fmt / roundNumbers', () => {
   it('小数 3 桁までに丸め、末尾の 0 と -0 を落とす', () => {
@@ -12,6 +12,49 @@ describe('fmt / roundNumbers', () => {
   it('points や d の中の数値をまとめて丸める', () => {
     expect(roundNumbers('M 0.123456 -4.5 L 10,20.0004')).toBe('M 0.123 -4.5 L 10,20');
     expect(roundNumbers('12.34567,-0.00001')).toBe('12.346,0');
+  });
+});
+
+describe('roundNumbers は区切りを保つ', () => {
+  it('負号が丸めで消えても前の数と繋がらない', () => {
+    expect(roundNumbers('M10-0.0001L20 30')).toBe('M10 0L20 30');
+    expect(roundNumbers('M10-0.0001-5')).toBe('M10 0-5');
+    expect(roundNumbers('M1.5.0004L2 2')).toBe('M1.5 0L2 2');
+  });
+  it('元から区切りがあるところは増やさない', () => {
+    expect(roundNumbers('M10 -0.0001L20,-0.0002')).toBe('M10 0L20,0');
+    expect(roundNumbers('M10-5L2-3')).toBe('M10-5L2-3');
+    expect(roundNumbers('M.5.5')).toBe('M0.5 0.5');
+  });
+  it('丸めた結果を数え直すと、数の個数が変わらない', () => {
+    const d = 'M10-0.0001L20 30-0.00004.00001-7';
+    const count = (s: string) => (s.match(/-?(?:\d+\.?\d*|\.\d+)/g) ?? []).length;
+    expect(count(roundNumbers(d))).toBe(count(d));
+  });
+});
+
+describe('formatHour', () => {
+  it('分は 60 進法で書く', () => {
+    expect(formatHour(16.5)).toBe('16:30');
+    expect(formatHour(18.5)).toBe('18:30');
+    expect(formatHour(0)).toBe('0:00');
+    expect(formatHour(5)).toBe('5:00');
+    expect(formatHour(10 + 10 / 60)).toBe('10:10');
+    expect(formatHour(7.9999999)).toBe('8:00');
+  });
+});
+
+describe('DTCG の値', () => {
+  it('色は colorSpace / components / alpha / hex', () => {
+    expect(toDtcgColor('#252340')).toEqual({ colorSpace: 'srgb', components: [0.1451, 0.1373, 0.251], alpha: 1, hex: '#252340' });
+    expect(toDtcgColor('rgba(37, 35, 64, 0.5)').alpha).toBe(0.5);
+  });
+  it('影は box-shadow の層ごとのオブジェクトの配列', () => {
+    const s = parseBoxShadow('0 1px 2px rgba(37, 35, 64, 0.06), 0 4px 14px rgba(37, 35, 64, 0.06)');
+    expect(s).toHaveLength(2);
+    expect(s[1]).toMatchObject({ offsetX: { value: 0, unit: 'px' }, offsetY: { value: 4, unit: 'px' }, blur: { value: 14, unit: 'px' }, spread: { value: 0, unit: 'px' } });
+    expect(s[1].color.alpha).toBe(0.06);
+    expect(() => parseBoxShadow('inset 0 1px red')).toThrow();
   });
 });
 

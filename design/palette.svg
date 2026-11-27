@@ -145,7 +145,7 @@
   <rect id="room-12-tint" x="1330" y="1196" width="48" height="48" rx="12" fill="#ffffff" fill-opacity="0" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
   <text x="1388" y="1216" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">rgba(255,255,255,0)</text>
   <text x="1520" y="1226" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">0 / 1</text>
-  <text x="80" y="1302" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">16.5:30</text>
+  <text x="80" y="1302" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">16:30</text>
   <rect id="room-16_5-sky-top" x="190" y="1268" width="48" height="48" rx="12" fill="#86a6ee" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
   <text x="248" y="1288" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#86a6ee</text>
   <rect id="room-16_5-sky-bottom" x="380" y="1268" width="48" height="48" rx="12" fill="#ffd6a8" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
@@ -161,7 +161,7 @@
   <rect id="room-16_5-tint" x="1330" y="1268" width="48" height="48" rx="12" fill="#ffbe78" fill-opacity="0.08" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
   <text x="1388" y="1288" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">rgba(255,190,120,0.08)</text>
   <text x="1520" y="1298" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">0 / 0.85</text>
-  <text x="80" y="1374" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">18.5:30</text>
+  <text x="80" y="1374" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">18:30</text>
   <rect id="room-18_5-sky-top" x="190" y="1340" width="48" height="48" rx="12" fill="#5a5fae" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
   <text x="248" y="1360" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#5a5fae</text>
   <rect id="room-18_5-sky-bottom" x="380" y="1340" width="48" height="48" rx="12" fill="#ff9f7a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
