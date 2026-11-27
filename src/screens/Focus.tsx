@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PetFigure } from '../art/Pet';
 import { speciesById } from '../data/species';
-import { dayKey, summarize } from '../domain/life';
+import { dayKey, FOCUS_MIN_FOR_REWARD, summarize } from '../domain/life';
 import type { Action, PetSave } from '../domain/pet';
 import { celebrate } from '../flows/reward';
 import { useApp, now } from '../store';
@@ -161,7 +161,7 @@ export function FocusScreen({ onImmersive }: { onImmersive: (on: boolean) => voi
         <div className="focus-ruler">
           <Ruler min={5} max={90} step={5} value={minutes} onChange={setMinutes} major={2} format={(v) => String(v)} />
         </div>
-        <p className="focus-note">20分以上で報酬がもらえる</p>
+        <p className="focus-note">{FOCUS_MIN_FOR_REWARD}分以上で報酬がもらえる</p>
         <Pressable className="btn focus-start" data-tone="lamp" onPress={start} sound="pop" haptic="medium">
           はじめる
         </Pressable>
@@ -285,7 +285,7 @@ export function FocusScreen({ onImmersive }: { onImmersive: (on: boolean) => voi
               transition={{ ...spring.bouncy, delay: 0.25 }}
             >
               <p className="focus-result-msg">
-                {result.min >= 20 ? 'すごい、さいごまで すわれたね' : 'すわった時間も、ちゃんと記録したよ'}
+                {result.min >= FOCUS_MIN_FOR_REWARD ? 'すごい、さいごまで すわれたね' : 'すわった時間も、ちゃんと記録したよ'}
               </p>
               <div className="focus-result-row">
                 <div>

@@ -41,15 +41,25 @@ export function dayKey(ms: number): string {
   return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
 }
 
-export function rewardFor(event: Omit<LifeEvent, 'rewardGranted'>, log: LifeEvent[]): Reward | null {
-  if (log.some((e) => e.eventId === event.eventId)) return null;
+/** 報酬が付かない理由。'none' はルール自体が報酬を出さない（睡眠など） */
+export type NoRewardReason = 'duplicate' | 'too-short' | 'daily-cap' | 'none';
+
+export function judgeReward(
+  event: Omit<LifeEvent, 'rewardGranted'>,
+  log: LifeEvent[],
+): { reward: Reward; reason: null } | { reward: null; reason: NoRewardReason } {
+  if (log.some((e) => e.eventId === event.eventId)) return { reward: null, reason: 'duplicate' };
   const rule = REWARD_RULES[event.type];
-  if (event.type === 'focus' && (typeof event.value !== 'number' || event.value < FOCUS_MIN_FOR_REWARD)) return null;
+  if (event.type === 'focus' && (typeof event.value !== 'number' || event.value < FOCUS_MIN_FOR_REWARD)) return { reward: null, reason: 'too-short' };
   const today = dayKey(event.timestamp);
   const granted = log.filter((e) => e.type === event.type && e.rewardGranted && dayKey(e.timestamp) === today).length;
-  if (granted >= rule.dailyCap) return null;
+  if (granted >= rule.dailyCap) return { reward: null, reason: 'daily-cap' };
   const r = rule.reward;
-  return r.xp || r.coins || r.bond ? r : null;
+  return r.xp || r.coins || r.bond ? { reward: r, reason: null } : { reward: null, reason: 'none' };
+}
+
+export function rewardFor(event: Omit<LifeEvent, 'rewardGranted'>, log: LifeEvent[]): Reward | null {
+  return judgeReward(event, log).reward;
 }
 
 /** 睡眠時間（分）から起きたときの元気 */
@@ -79,12 +89,13 @@ export type ApplyResult = {
   pet: PetSave;
   event: LifeEvent;
   reward: Reward | null;
+  noReward: NoRewardReason | null;
   leveledUp: number[];
 };
 
 /** 記録を反映する。報酬・状態の変化・レベルアップをまとめて返す */
 export function applyEvent(pet: PetSave, input: Omit<LifeEvent, 'rewardGranted'>, log: LifeEvent[]): ApplyResult {
-  const reward = rewardFor(input, log);
+  const { reward, reason } = judgeReward(input, log);
   const event: LifeEvent = { ...input, rewardGranted: reward !== null };
   let next: PetSave = { ...pet, vitals: { ...pet.vitals }, growth: { ...pet.growth } };
 
@@ -124,7 +135,7 @@ export function applyEvent(pet: PetSave, input: Omit<LifeEvent, 'rewardGranted'>
     next = { ...next, level: r.level, xp: r.xp, bond: Math.min(100, next.bond + reward.bond) };
     leveledUp = r.leveledUp;
   }
-  return { pet: next, event, reward, leveledUp };
+  return { pet: next, event, reward, noReward: reason, leveledUp };
 }
 
 /** その日の要約。記録がない項目は null（不明）で返す */
