@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-84 -148 144 162" width="144" height="162">
+  <ellipse id="shadow" rx="44" ry="11" cx="2" cy="3" fill="#2a2140" opacity="0.2"/>
+  <g id="turn">
+    <g id="act" transform="matrix(0.931473 0 0 1.1085 0 0)">
+      <g id="hop">
+        <g id="posture">
+          <g transform="translate(-48 -14)">
+            <g id="tail" transform="matrix(0.999848 0.017452 -0.017452 0.999848 0 0)">
+              <path id="tail-base" d="M 0 0 C -34 2 -40 -40 -24 -58 C -16 -66 -6 -58 -12 -50" fill="none" stroke="#aab3cf" stroke-width="10" stroke-linecap="round"/>
+              <path id="tail-stripe" d="M 0 0 C -34 2 -40 -40 -24 -58 C -16 -66 -6 -58 -12 -50" fill="none" stroke="#7c86a8" stroke-width="10" stroke-linecap="round" stroke-dasharray="7, 9"/>
+            </g>
+          </g>
+          <g id="feet">
+            <ellipse id="foot-left" rx="14" ry="7.5" cx="-24" cy="-1" fill="#969eb6"/>
+            <ellipse id="foot-right" rx="14" ry="7.5" cx="26" cy="-1" fill="#969eb6"/>
+          </g>
+          <g id="breath">
+            <path id="body" d="M -52 0 C -63 -2 -62 -34 -57 -54 C -50 -88 -27 -106 2 -106 C 31 -106 53 -88 59 -54 C 63 -34 64 -2 52 0 Q 0 7 -52 0 Z" fill="#aab3cf" stroke="#858ca1" stroke-width="2.4"/>
+            <path id="body-shine" d="M -34 -86 C -24 -96 -6 -100 8 -99" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+            <ellipse id="belly" rx="31" ry="20" cx="6" cy="-24" fill="#f1f3fb" opacity="0.9"/>
+            <g id="paws">
+              <g transform="translate(-50 -36)">
+                <ellipse id="paw-left" rx="9" ry="11" cx="0" cy="0" fill="#a0a8c3"/>
+              </g>
+              <g transform="translate(54 -36)">
+                <ellipse id="paw-right" rx="9" ry="11" cx="0" cy="0" fill="#a0a8c3"/>
+              </g>
+            </g>
+            <g id="ears">
+              <g transform="translate(-30 -96)">
+                <g id="ear-left" transform="matrix(0.97437 -0.224951 0.224951 0.97437 0 0)">
+                  <path d="M -16 10 L -12 -30 Q -10 -34 -6 -31 L 18 -4 Z" fill="#aab3cf" stroke="#858ca1" stroke-width="2.4" stroke-linejoin="round"/>
+                  <path id="ear-left-inner" d="M -10 2 L -8 -20 L 8 -4 Z" fill="#ffa0b4" opacity="0.7"/>
+                </g>
+              </g>
+              <g transform="translate(36 -96)">
+                <g id="ear-right" transform="matrix(0.97437 0.224951 -0.224951 0.97437 0 0)">
+                  <path d="M 16 10 L 12 -30 Q 10 -34 6 -31 L -18 -4 Z" fill="#aab3cf" stroke="#858ca1" stroke-width="2.4" stroke-linejoin="round"/>
+                  <path id="ear-right-inner" d="M 10 2 L 8 -20 L -8 -4 Z" fill="#ffa0b4" opacity="0.7"/>
+                </g>
+              </g>
+            </g>
+            <g id="face">
+              <g id="markings">
+                <path id="stripe-1" d="M -6 -100 L -4 -88" fill="#000000" stroke="#7c86a8" stroke-width="4" stroke-linecap="round"/>
+                <path id="stripe-2" d="M 6 -101 L 6 -89" fill="#000000" stroke="#7c86a8" stroke-width="4" stroke-linecap="round"/>
+                <path id="stripe-3" d="M 18 -99 L 15 -88" fill="#000000" stroke="#7c86a8" stroke-width="4" stroke-linecap="round"/>
+                <g id="whiskers" opacity="0.5">
+                  <path id="whisker-left-1" d="M -36 -52 L -50 -54" fill="#000000" stroke="#2f3150" stroke-width="1.6" stroke-linecap="round"/>
+                  <path id="whisker-left-2" d="M -36 -47 L -50 -45" fill="#000000" stroke="#2f3150" stroke-width="1.6" stroke-linecap="round"/>
+                  <path id="whisker-right-1" d="M 44 -52 L 58 -54" fill="#000000" stroke="#2f3150" stroke-width="1.6" stroke-linecap="round"/>
+                  <path id="whisker-right-2" d="M 44 -47 L 58 -45" fill="#000000" stroke="#2f3150" stroke-width="1.6" stroke-linecap="round"/>
+                </g>
+              </g>
+              <g id="eyes">
+                <path id="eye-left" d="M -19 -60 Q -13 -55 -7 -60" fill="none" stroke="#2f3150" stroke-width="3.2" stroke-linecap="round"/>
+                <path id="eye-right" d="M 15 -60 Q 21 -55 27 -60" fill="none" stroke="#2f3150" stroke-width="3.2" stroke-linecap="round"/>
+              </g>
+              <path id="nose" d="M 1 -54 L 7 -54 L 4 -50.5 Z" fill="#ff8fa6" stroke="#2f3150" stroke-width="1.2" stroke-linejoin="round"/>
+              <g id="mouth" transform="translate(4 -42)">
+                <ellipse transform="matrix(1.3 0 0 1.4 0 0)" rx="6" ry="8" cx="0" cy="0" fill="#8a3a4a"/>
+              </g>
+              <ellipse id="cheek-left" rx="8.5" ry="5" cx="-29" cy="-46" fill="#ffa0b4" opacity="0.55"/>
+              <ellipse id="cheek-right" rx="8" ry="5" cx="35" cy="-46" fill="#ffa0b4" opacity="0.55"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

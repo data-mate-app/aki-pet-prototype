@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-107 -236 221 311" width="221" height="311">
+  <defs>
+    <filter id="d-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <g transform="matrix(-1 0 0 1 0 0)">
+    <polygon id="shadow" points="-38.1,-49 88.3,24 31.2,57 -95.3,-16" fill="#2a2140" opacity="0.22" filter="url(#d-soft-shadow)"/>
+    <g id="case">
+      <polygon id="case-left" points="77.9,20 34.6,45 34.6,-145 77.9,-170" fill="#936646" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="case-right" points="-77.9,-20 34.6,45 34.6,-145 -77.9,-210" fill="#81593d" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="case-top" points="-34.6,-235 77.9,-170 34.6,-145 -77.9,-210" fill="#a57a5c" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+    <polygon id="inner-1" points="-71.9,-29.5 28.6,28.5 28.6,-21.5 -71.9,-79.5" fill="#553b29"/>
+    <polygon id="inner-2" points="-71.9,-89.5 28.6,-31.5 28.6,-81.5 -71.9,-139.5" fill="#553b29"/>
+    <polygon id="inner-3" points="-71.9,-149.5 28.6,-91.5 28.6,-141.5 -71.9,-199.5" fill="#553b29"/>
+    <polygon id="book-1" points="-69.3,-29 -63.2,-25.5 -63.2,-61.5 -69.3,-65" fill="#ff8a8a" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-2" points="-62.2,-24.9 -54,-20.2 -54,-60.2 -62.2,-64.9" fill="#7c9cff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-3" points="-53,-19.6 -42.8,-13.7 -42.8,-57.7 -53,-63.6" fill="#ffd36b" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-4" points="-41.7,-13.1 -34.6,-9 -34.6,-57 -41.7,-61.1" fill="#4cc49d" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-5" points="-33.6,-8.4 -24.4,-3.1 -24.4,-39.1 -33.6,-44.4" fill="#c7a3ff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-6" points="-23.4,-2.5 -17.3,1 -17.3,-39 -23.4,-42.5" fill="#ffb648" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-7" points="-16.3,1.6 -8.1,6.3 -8.1,-37.7 -16.3,-42.4" fill="#8fd3ff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-8" points="-7.1,6.9 3.1,12.8 3.1,-35.2 -7.1,-41.1" fill="#ff8a8a" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-9" points="4.2,13.4 11.3,17.5 11.3,-18.5 4.2,-22.6" fill="#7c9cff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-10" points="12.3,18.1 21.5,23.4 21.5,-16.6 12.3,-21.9" fill="#ffd36b" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-11" points="-69.3,-89 -62.2,-84.9 -62.2,-132.9 -69.3,-137" fill="#4cc49d" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-12" points="-61.1,-84.3 -52,-79 -52,-115 -61.1,-120.3" fill="#c7a3ff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-13" points="-50.9,-78.4 -44.9,-74.9 -44.9,-114.9 -50.9,-118.4" fill="#ffb648" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-14" points="-43.8,-74.3 -35.7,-69.6 -35.7,-113.6 -43.8,-118.3" fill="#8fd3ff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-15" points="-34.6,-69 -24.4,-63.1 -24.4,-111.1 -34.6,-117" fill="#ff8a8a" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-16" points="-23.4,-62.5 -16.3,-58.4 -16.3,-94.4 -23.4,-98.5" fill="#7c9cff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-17" points="-15.2,-57.8 -6.1,-52.5 2.6,-87.5 -6.6,-92.8" fill="#ffd36b" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-18" points="-5,-51.9 1,-48.4 1,-92.4 -5,-95.9" fill="#4cc49d" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-19" points="2.1,-47.8 10.2,-43.1 10.2,-91.1 2.1,-95.8" fill="#c7a3ff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-20" points="11.3,-42.5 21.5,-36.6 21.5,-72.6 11.3,-78.5" fill="#ffb648" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-21" points="-69.3,-149 -61.1,-144.3 -61.1,-188.3 -69.3,-193" fill="#8fd3ff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-22" points="-60.1,-143.7 -49.9,-137.8 -49.9,-185.8 -60.1,-191.7" fill="#ff8a8a" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-23" points="-48.8,-137.2 -41.7,-133.1 -41.7,-169.1 -48.8,-173.2" fill="#7c9cff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-24" points="-40.7,-132.5 -31.5,-127.2 -31.5,-167.2 -40.7,-172.5" fill="#ffd36b" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-25" points="-30.5,-126.6 -24.4,-123.1 -24.4,-167.1 -30.5,-170.6" fill="#4cc49d" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <polygon id="book-26" points="-23.4,-122.5 -15.2,-117.8 -15.2,-165.8 -23.4,-170.5" fill="#c7a3ff" stroke="#252340" stroke-width="1" stroke-opacity="0.18"/>
+    <g id="ornament">
+      <polygon id="ornament-left" points="45.9,-174.5 26.8,-163.5 26.8,-183.5 45.9,-194.5" fill="#f68585" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="ornament-right" points="7.8,-174.5 26.8,-163.5 26.8,-183.5 7.8,-194.5" fill="#e17a7a" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="ornament-top" points="26.8,-205.5 45.9,-194.5 26.8,-183.5 7.8,-194.5" fill="#ff9292" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

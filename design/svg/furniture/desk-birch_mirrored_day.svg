@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-137 -145 281 238" width="281" height="238">
+  <defs>
+    <filter id="d-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <g transform="matrix(-1 0 0 1 0 0)">
+    <polygon id="shadow" points="-42.4,-66.5 118.6,26.5 35.5,74.5 -125.6,-18.5" fill="#2a2140" opacity="0.16" filter="url(#d-soft-shadow)"/>
+    <g id="leg-1">
+      <polygon id="leg-1-left" points="-32,-53.5 -39,-49.5 -39,-119.5 -32,-123.5" fill="#9a8063" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="leg-1-right" points="-45.9,-53.5 -39,-49.5 -39,-119.5 -45.9,-123.5" fill="#867056" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="leg-1-top" points="-39,-127.5 -32,-123.5 -39,-119.5 -45.9,-123.5" fill="#ab9377" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+    <g id="leg-2">
+      <polygon id="leg-2-left" points="99.6,22.5 92.7,26.5 92.7,-43.5 99.6,-47.5" fill="#9a8063" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="leg-2-right" points="85.7,22.5 92.7,26.5 92.7,-43.5 85.7,-47.5" fill="#867056" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="leg-2-top" points="92.7,-51.5 99.6,-47.5 92.7,-43.5 85.7,-47.5" fill="#ab9377" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+    <g id="leg-3">
+      <polygon id="leg-3-left" points="-85.7,-22.5 -92.7,-18.5 -92.7,-88.5 -85.7,-92.5" fill="#9a8063" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="leg-3-right" points="-99.6,-22.5 -92.7,-18.5 -92.7,-88.5 -99.6,-92.5" fill="#867056" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="leg-3-top" points="-92.7,-96.5 -85.7,-92.5 -92.7,-88.5 -99.6,-92.5" fill="#ab9377" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+    <g id="leg-4">
+      <polygon id="leg-4-left" points="45.9,53.5 39,57.5 39,-12.5 45.9,-16.5" fill="#9a8063" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="leg-4-right" points="32,53.5 39,57.5 39,-12.5 32,-16.5" fill="#867056" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="leg-4-top" points="39,-20.5 45.9,-16.5 39,-12.5 32,-16.5" fill="#ab9377" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+    <g id="drawers">
+      <polygon id="drawers-left" points="99.6,-9.5 39,25.5 39,-10.5 99.6,-45.5" fill="#bd9e79" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="drawers-right" points="-4.3,0.5 39,25.5 39,-10.5 -4.3,-35.5" fill="#a58a69" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="drawers-top" points="56.3,-70.5 99.6,-45.5 39,-10.5 -4.3,-35.5" fill="#cdaf8c" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+    <g id="desktop">
+      <polygon id="desktop-left" points="108.3,-47.5 39,-7.5 39,-14.5 108.3,-54.5" fill="#cdab83" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="desktop-right" points="-108.3,-92.5 39,-7.5 39,-14.5 -108.3,-99.5" fill="#b39573" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="desktop-top" points="-39,-139.5 108.3,-54.5 39,-14.5 -108.3,-99.5" fill="#dcbc96" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+    <g id="laptop-base">
+      <polygon id="laptop-base-left" points="21.7,-74.5 -9.5,-56.5 -9.5,-59 21.7,-77" fill="#c9cddf" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="laptop-base-right" points="-57.2,-84 -9.5,-56.5 -9.5,-59 -57.2,-86.5" fill="#babdcf" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="laptop-base-top" points="-26,-104.5 21.7,-77 -9.5,-59 -57.2,-86.5" fill="#d2d6e8" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+    <g id="laptop-lid">
+      <polygon id="laptop-lid-left" points="26.8,-80 23.4,-78 23.4,-114 26.8,-116" fill="#393b53" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="laptop-lid-right" points="-24.2,-105.5 23.4,-78 23.4,-114 -24.2,-141.5" fill="#35384e" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="laptop-lid-top" points="-20.8,-143.5 26.8,-116 23.4,-114 -24.2,-141.5" fill="#44475e" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+    <polygon id="laptop-screen" points="-21.7,-107.5 20.8,-83 20.8,-112 -21.7,-136.5" fill="#59607f" opacity="0.95"/>
+    <g id="mug">
+      <polygon id="mug-left" points="37.2,-53.5 26.8,-47.5 26.8,-61.5 37.2,-67.5" fill="#5868f6" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="mug-right" points="16.5,-53.5 26.8,-47.5 26.8,-61.5 16.5,-67.5" fill="#505fe1" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+      <polygon id="mug-top" points="26.8,-73.5 37.2,-67.5 26.8,-61.5 16.5,-67.5" fill="#6676ff" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

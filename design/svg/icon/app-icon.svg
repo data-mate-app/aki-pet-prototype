@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect id="background" width="64" height="64" rx="14" fill="#252340"/>
+  <ellipse id="ear-left" cx="14" cy="30" rx="8" ry="13" fill="#c98a4b" transform="rotate(18 14 30)"/>
+  <ellipse id="ear-right" cx="50" cy="30" rx="8" ry="13" fill="#c98a4b" transform="rotate(-18 50 30)"/>
+  <rect id="face" x="14" y="18" width="36" height="34" rx="14" fill="#f2c98a"/>
+  <ellipse id="muzzle" cx="32" cy="43" rx="10" ry="7" fill="#fff3df"/>
+  <circle id="eye-left" cx="25" cy="33" r="2.6" fill="#252340"/>
+  <circle id="eye-right" cx="39" cy="33" r="2.6" fill="#252340"/>
+  <ellipse id="nose" cx="32" cy="38.5" rx="2.4" ry="1.7" fill="#252340"/>
+</svg>

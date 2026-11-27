@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-84 -58 160 114" width="160" height="114">
+  <defs>
+    <filter id="d-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <g transform="matrix(-1 0 0 1 0 0)">
+    <ellipse id="shadow" rx="62" ry="32" cx="4" cy="6" fill="#2a2140" opacity="0.18" filter="url(#d-soft-shadow)"/>
+    <g transform="matrix(0.866025 0.5 -0.866025 0.5 0 0)">
+      <rect id="base" x="-42" y="-42" width="84" height="84" rx="22" fill="#63a590"/>
+    </g>
+    <g id="pad" transform="matrix(0.866025 0.5 -0.866025 0.5 0 -14)">
+      <rect id="pad-surface" x="-42" y="-42" width="84" height="84" rx="22" fill="#7fd3b8" stroke="#252340" stroke-width="1.4" stroke-opacity="0.12"/>
+      <rect id="pad-inner" x="-30" y="-30" width="60" height="60" rx="16" fill="#96dbc5"/>
+      <circle id="pad-button" cx="0" cy="0" r="5" fill="#599481"/>
+    </g>
+  </g>
+</svg>

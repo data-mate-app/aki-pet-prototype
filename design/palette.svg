@@ -1,0 +1,555 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1760 4230" width="1760" height="4230">
+  <rect id="palette-background" x="0" y="0" width="1760" height="4230" fill="#eef1fa"/>
+  <text id="title" x="80" y="136" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="56" font-weight="700">DataMate 色と文字</text>
+  <text id="section-app" x="80" y="256" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="38" font-weight="700">アプリの色</text>
+  <text x="500" y="256" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">src/styles/tokens.css</text>
+  <rect id="ink" x="80" y="300" width="64" height="64" rx="12" fill="#252340" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="160" y="326" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">夜インク  ink</text>
+  <text x="160" y="352" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#252340</text>
+  <rect id="ink-2" x="420" y="300" width="64" height="64" rx="12" fill="#4a4766" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="500" y="326" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">ink-2</text>
+  <text x="500" y="352" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#4a4766</text>
+  <rect id="ink-3" x="760" y="300" width="64" height="64" rx="12" fill="#8a87a6" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="840" y="326" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">ink-3</text>
+  <text x="840" y="352" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#8a87a6</text>
+  <rect id="haze" x="1100" y="300" width="64" height="64" rx="12" fill="#eef1fa" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1180" y="326" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">朝もや  haze</text>
+  <text x="1180" y="352" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#eef1fa</text>
+  <rect id="haze-2" x="1440" y="300" width="64" height="64" rx="12" fill="#e2e6f4" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1520" y="326" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">haze-2</text>
+  <text x="1520" y="352" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#e2e6f4</text>
+  <rect id="card" x="80" y="392" width="64" height="64" rx="12" fill="#ffffff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="160" y="418" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">card</text>
+  <text x="160" y="444" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#ffffff</text>
+  <rect id="lamp" x="420" y="392" width="64" height="64" rx="12" fill="#ffb648" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="500" y="418" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">ランプ  lamp</text>
+  <text x="500" y="444" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#ffb648</text>
+  <rect id="lamp-deep" x="760" y="392" width="64" height="64" rx="12" fill="#f08a1c" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="840" y="418" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">lamp-deep</text>
+  <text x="840" y="444" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#f08a1c</text>
+  <rect id="sprout" x="1100" y="392" width="64" height="64" rx="12" fill="#4cc49d" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1180" y="418" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">若葉  sprout</text>
+  <text x="1180" y="444" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#4cc49d</text>
+  <rect id="peach" x="1440" y="392" width="64" height="64" rx="12" fill="#ff8a8a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1520" y="418" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">もも  peach</text>
+  <text x="1520" y="444" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#ff8a8a</text>
+  <rect id="sky" x="80" y="484" width="64" height="64" rx="12" fill="#7c9cff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="160" y="510" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">そら  sky</text>
+  <text x="160" y="536" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#7c9cff</text>
+  <rect id="berry" x="420" y="484" width="64" height="64" rx="12" fill="#ff6f9c" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="500" y="510" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">berry</text>
+  <text x="500" y="536" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#ff6f9c</text>
+  <rect id="line" x="760" y="484" width="64" height="64" rx="12" fill="#252340" fill-opacity="0.08" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="840" y="510" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">line</text>
+  <text x="840" y="536" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">rgba(37,35,64,0.08)</text>
+  <rect id="glass" x="1100" y="484" width="64" height="64" rx="12" fill="#ffffff" fill-opacity="0.62" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1180" y="510" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">glass</text>
+  <text x="1180" y="536" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">rgba(255,255,255,0.62)</text>
+  <rect id="glass-edge" x="1440" y="484" width="64" height="64" rx="12" fill="#ffffff" fill-opacity="0.8" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1520" y="510" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">glass-edge</text>
+  <text x="1520" y="536" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">rgba(255,255,255,0.8)</text>
+  <rect id="sky-top" x="80" y="576" width="64" height="64" rx="12" fill="#8fb6ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="160" y="602" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">sky-top</text>
+  <text x="160" y="628" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#8fb6ff</text>
+  <rect id="sky-bottom" x="420" y="576" width="64" height="64" rx="12" fill="#d9e6ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="500" y="602" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">sky-bottom</text>
+  <text x="500" y="628" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#d9e6ff</text>
+  <rect id="wall-l" x="760" y="576" width="64" height="64" rx="12" fill="#f4efe7" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="840" y="602" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">wall-l</text>
+  <text x="840" y="628" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#f4efe7</text>
+  <rect id="wall-r" x="1100" y="576" width="64" height="64" rx="12" fill="#e9e2d6" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1180" y="602" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">wall-r</text>
+  <text x="1180" y="628" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#e9e2d6</text>
+  <rect id="floor-a" x="1440" y="576" width="64" height="64" rx="12" fill="#d9b48f" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1520" y="602" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">floor-a</text>
+  <text x="1520" y="628" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#d9b48f</text>
+  <rect id="floor-b" x="80" y="668" width="64" height="64" rx="12" fill="#cfa880" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="160" y="694" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">floor-b</text>
+  <text x="160" y="720" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">#cfa880</text>
+  <rect id="room-tint" x="420" y="668" width="64" height="64" rx="12" fill="#ffffff" fill-opacity="0" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="500" y="694" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="700">room-tint</text>
+  <text x="500" y="720" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">rgba(255,255,255,0)</text>
+  <text x="80" y="788" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">--shadow-1: 0 1px 2px rgba(37, 35, 64, 0.06), 0 4px 14px rgba(37, 35, 64, 0.06)</text>
+  <text x="80" y="816" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">--shadow-2: 0 2px 6px rgba(37, 35, 64, 0.08), 0 18px 40px rgba(37, 35, 64, 0.14)</text>
+  <text id="section-room-light" x="80" y="912" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="38" font-weight="700">部屋の光</text>
+  <text x="500" y="912" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">src/domain/daylight.ts のキー時刻</text>
+  <text x="190" y="960" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="700">空 上</text>
+  <text x="380" y="960" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="700">空 下</text>
+  <text x="570" y="960" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="700">壁 左</text>
+  <text x="760" y="960" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="700">壁 右</text>
+  <text x="950" y="960" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="700">床 A</text>
+  <text x="1140" y="960" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="700">床 B</text>
+  <text x="1330" y="960" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="700">色かぶせ</text>
+  <text x="1520" y="960" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="700">灯り / 日ざし</text>
+  <text x="80" y="1014" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">0:00</text>
+  <rect id="room-0-sky-top" x="190" y="980" width="48" height="48" rx="12" fill="#141a3a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="248" y="1000" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#141a3a</text>
+  <rect id="room-0-sky-bottom" x="380" y="980" width="48" height="48" rx="12" fill="#2b2f5e" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="438" y="1000" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#2b2f5e</text>
+  <rect id="room-0-wall-l" x="570" y="980" width="48" height="48" rx="12" fill="#6d6a8e" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="628" y="1000" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#6d6a8e</text>
+  <rect id="room-0-wall-r" x="760" y="980" width="48" height="48" rx="12" fill="#5d5a7e" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="818" y="1000" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#5d5a7e</text>
+  <rect id="room-0-floor-a" x="950" y="980" width="48" height="48" rx="12" fill="#6f5f74" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1008" y="1000" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#6f5f74</text>
+  <rect id="room-0-floor-b" x="1140" y="980" width="48" height="48" rx="12" fill="#655568" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1198" y="1000" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#655568</text>
+  <rect id="room-0-tint" x="1330" y="980" width="48" height="48" rx="12" fill="#1e1c50" fill-opacity="0.28" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1388" y="1000" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">rgba(30,28,80,0.28)</text>
+  <text x="1520" y="1010" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">1 / 0</text>
+  <text x="80" y="1086" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">5:00</text>
+  <rect id="room-5-sky-top" x="190" y="1052" width="48" height="48" rx="12" fill="#2c3570" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="248" y="1072" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#2c3570</text>
+  <rect id="room-5-sky-bottom" x="380" y="1052" width="48" height="48" rx="12" fill="#c99ab8" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="438" y="1072" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#c99ab8</text>
+  <rect id="room-5-wall-l" x="570" y="1052" width="48" height="48" rx="12" fill="#a59cb2" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="628" y="1072" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#a59cb2</text>
+  <rect id="room-5-wall-r" x="760" y="1052" width="48" height="48" rx="12" fill="#938aa3" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="818" y="1072" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#938aa3</text>
+  <rect id="room-5-floor-a" x="950" y="1052" width="48" height="48" rx="12" fill="#a48a88" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1008" y="1072" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#a48a88</text>
+  <rect id="room-5-floor-b" x="1140" y="1052" width="48" height="48" rx="12" fill="#977e7d" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1198" y="1072" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#977e7d</text>
+  <rect id="room-5-tint" x="1330" y="1052" width="48" height="48" rx="12" fill="#3c326e" fill-opacity="0.16" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1388" y="1072" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">rgba(60,50,110,0.16)</text>
+  <text x="1520" y="1082" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">0.6 / 0.1</text>
+  <text x="80" y="1158" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">7:00</text>
+  <rect id="room-7-sky-top" x="190" y="1124" width="48" height="48" rx="12" fill="#9cc0ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="248" y="1144" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#9cc0ff</text>
+  <rect id="room-7-sky-bottom" x="380" y="1124" width="48" height="48" rx="12" fill="#ffd9c2" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="438" y="1144" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#ffd9c2</text>
+  <rect id="room-7-wall-l" x="570" y="1124" width="48" height="48" rx="12" fill="#f6eee6" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="628" y="1144" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#f6eee6</text>
+  <rect id="room-7-wall-r" x="760" y="1124" width="48" height="48" rx="12" fill="#ebe0d4" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="818" y="1144" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#ebe0d4</text>
+  <rect id="room-7-floor-a" x="950" y="1124" width="48" height="48" rx="12" fill="#e0b994" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1008" y="1144" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#e0b994</text>
+  <rect id="room-7-floor-b" x="1140" y="1124" width="48" height="48" rx="12" fill="#d6ad87" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1198" y="1144" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#d6ad87</text>
+  <rect id="room-7-tint" x="1330" y="1124" width="48" height="48" rx="12" fill="#ffc896" fill-opacity="0.08" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1388" y="1144" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">rgba(255,200,150,0.08)</text>
+  <text x="1520" y="1154" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">0 / 0.7</text>
+  <text x="80" y="1230" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">12:00</text>
+  <rect id="room-12-sky-top" x="190" y="1196" width="48" height="48" rx="12" fill="#7fb0ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="248" y="1216" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#7fb0ff</text>
+  <rect id="room-12-sky-bottom" x="380" y="1196" width="48" height="48" rx="12" fill="#d6e8ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="438" y="1216" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#d6e8ff</text>
+  <rect id="room-12-wall-l" x="570" y="1196" width="48" height="48" rx="12" fill="#f6f2ea" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="628" y="1216" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#f6f2ea</text>
+  <rect id="room-12-wall-r" x="760" y="1196" width="48" height="48" rx="12" fill="#ebe5da" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="818" y="1216" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#ebe5da</text>
+  <rect id="room-12-floor-a" x="950" y="1196" width="48" height="48" rx="12" fill="#ddb892" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1008" y="1216" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#ddb892</text>
+  <rect id="room-12-floor-b" x="1140" y="1196" width="48" height="48" rx="12" fill="#d3ad86" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1198" y="1216" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#d3ad86</text>
+  <rect id="room-12-tint" x="1330" y="1196" width="48" height="48" rx="12" fill="#ffffff" fill-opacity="0" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1388" y="1216" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">rgba(255,255,255,0)</text>
+  <text x="1520" y="1226" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">0 / 1</text>
+  <text x="80" y="1302" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">16.5:30</text>
+  <rect id="room-16_5-sky-top" x="190" y="1268" width="48" height="48" rx="12" fill="#86a6ee" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="248" y="1288" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#86a6ee</text>
+  <rect id="room-16_5-sky-bottom" x="380" y="1268" width="48" height="48" rx="12" fill="#ffd6a8" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="438" y="1288" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#ffd6a8</text>
+  <rect id="room-16_5-wall-l" x="570" y="1268" width="48" height="48" rx="12" fill="#f7ebdc" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="628" y="1288" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#f7ebdc</text>
+  <rect id="room-16_5-wall-r" x="760" y="1268" width="48" height="48" rx="12" fill="#ecdccb" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="818" y="1288" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#ecdccb</text>
+  <rect id="room-16_5-floor-a" x="950" y="1268" width="48" height="48" rx="12" fill="#deb48a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1008" y="1288" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#deb48a</text>
+  <rect id="room-16_5-floor-b" x="1140" y="1268" width="48" height="48" rx="12" fill="#d4a97e" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1198" y="1288" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#d4a97e</text>
+  <rect id="room-16_5-tint" x="1330" y="1268" width="48" height="48" rx="12" fill="#ffbe78" fill-opacity="0.08" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1388" y="1288" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">rgba(255,190,120,0.08)</text>
+  <text x="1520" y="1298" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">0 / 0.85</text>
+  <text x="80" y="1374" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">18.5:30</text>
+  <rect id="room-18_5-sky-top" x="190" y="1340" width="48" height="48" rx="12" fill="#5a5fae" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="248" y="1360" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#5a5fae</text>
+  <rect id="room-18_5-sky-bottom" x="380" y="1340" width="48" height="48" rx="12" fill="#ff9f7a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="438" y="1360" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#ff9f7a</text>
+  <rect id="room-18_5-wall-l" x="570" y="1340" width="48" height="48" rx="12" fill="#e5cdbd" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="628" y="1360" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#e5cdbd</text>
+  <rect id="room-18_5-wall-r" x="760" y="1340" width="48" height="48" rx="12" fill="#d4b9aa" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="818" y="1360" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#d4b9aa</text>
+  <rect id="room-18_5-floor-a" x="950" y="1340" width="48" height="48" rx="12" fill="#c99b7c" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1008" y="1360" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#c99b7c</text>
+  <rect id="room-18_5-floor-b" x="1140" y="1340" width="48" height="48" rx="12" fill="#bd8f71" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1198" y="1360" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#bd8f71</text>
+  <rect id="room-18_5-tint" x="1330" y="1340" width="48" height="48" rx="12" fill="#ff785a" fill-opacity="0.12" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1388" y="1360" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">rgba(255,120,90,0.12)</text>
+  <text x="1520" y="1370" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">0.5 / 0.35</text>
+  <text x="80" y="1446" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">20:00</text>
+  <rect id="room-20-sky-top" x="190" y="1412" width="48" height="48" rx="12" fill="#232a5c" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="248" y="1432" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#232a5c</text>
+  <rect id="room-20-sky-bottom" x="380" y="1412" width="48" height="48" rx="12" fill="#4b4a86" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="438" y="1432" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#4b4a86</text>
+  <rect id="room-20-wall-l" x="570" y="1412" width="48" height="48" rx="12" fill="#a59bb4" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="628" y="1432" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#a59bb4</text>
+  <rect id="room-20-wall-r" x="760" y="1412" width="48" height="48" rx="12" fill="#9086a2" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="818" y="1432" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#9086a2</text>
+  <rect id="room-20-floor-a" x="950" y="1412" width="48" height="48" rx="12" fill="#9a7f80" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1008" y="1432" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#9a7f80</text>
+  <rect id="room-20-floor-b" x="1140" y="1412" width="48" height="48" rx="12" fill="#8e7476" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1198" y="1432" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">#8e7476</text>
+  <rect id="room-20-tint" x="1330" y="1412" width="48" height="48" rx="12" fill="#282464" fill-opacity="0.18" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1388" y="1432" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="14" font-weight="500">rgba(40,36,100,0.18)</text>
+  <text x="1520" y="1442" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">0.9 / 0</text>
+  <text id="section-furniture" x="80" y="1560" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="38" font-weight="700">家具の色</text>
+  <text x="500" y="1560" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">主色と、直方体の面の明暗（iso.ts の shade()）</text>
+  <text x="80" y="1628" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">ふかふかベッド</text>
+  <text x="80" y="1654" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">bed-oat</text>
+  <rect id="furniture-bed-oat-color" x="380" y="1604" width="56" height="56" rx="12" fill="#c99a6b" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="1626" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="1648" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#c99a6b</text>
+  <rect id="furniture-bed-oat-accent" x="610" y="1604" width="56" height="56" rx="12" fill="#8fb3e8" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="1626" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="1648" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#8fb3e8</text>
+  <rect id="furniture-bed-oat-top" x="840" y="1604" width="56" height="56" rx="12" fill="#cea47a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="1626" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="1648" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#cea47a</text>
+  <rect id="furniture-bed-oat-left" x="1070" y="1604" width="56" height="56" rx="12" fill="#bf9266" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="1626" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="1648" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#bf9266</text>
+  <rect id="furniture-bed-oat-right" x="1300" y="1604" width="56" height="56" rx="12" fill="#a78059" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="1626" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="1648" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#a78059</text>
+  <text x="80" y="1712" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">まどべの机</text>
+  <text x="80" y="1738" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">desk-birch</text>
+  <rect id="furniture-desk-birch-color" x="380" y="1688" width="56" height="56" rx="12" fill="#d8b48a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="1710" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="1732" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#d8b48a</text>
+  <rect id="furniture-desk-birch-accent" x="610" y="1688" width="56" height="56" rx="12" fill="#5b6cff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="1710" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="1732" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#5b6cff</text>
+  <rect id="furniture-desk-birch-top" x="840" y="1688" width="56" height="56" rx="12" fill="#dcbc96" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="1710" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="1732" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#dcbc96</text>
+  <rect id="furniture-desk-birch-left" x="1070" y="1688" width="56" height="56" rx="12" fill="#cdab83" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="1710" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="1732" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#cdab83</text>
+  <rect id="furniture-desk-birch-right" x="1300" y="1688" width="56" height="56" rx="12" fill="#b39573" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="1710" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="1732" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#b39573</text>
+  <text x="80" y="1796" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">きろくの本棚</text>
+  <text x="80" y="1822" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">shelf-walnut</text>
+  <rect id="furniture-shelf-walnut-color" x="380" y="1772" width="56" height="56" rx="12" fill="#9b6b4a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="1794" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="1816" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#9b6b4a</text>
+  <rect id="furniture-shelf-walnut-accent" x="610" y="1772" width="56" height="56" rx="12" fill="#ff8a8a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="1794" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="1816" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ff8a8a</text>
+  <rect id="furniture-shelf-walnut-top" x="840" y="1772" width="56" height="56" rx="12" fill="#a57a5c" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="1794" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="1816" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#a57a5c</text>
+  <rect id="furniture-shelf-walnut-left" x="1070" y="1772" width="56" height="56" rx="12" fill="#936646" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="1794" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="1816" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#936646</text>
+  <rect id="furniture-shelf-walnut-right" x="1300" y="1772" width="56" height="56" rx="12" fill="#81593d" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="1794" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="1816" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#81593d</text>
+  <text x="80" y="1880" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">まるいちゃぶ台</text>
+  <text x="80" y="1906" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">table-round</text>
+  <rect id="furniture-table-round-color" x="380" y="1856" width="56" height="56" rx="12" fill="#c08a5b" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="1878" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="1900" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#c08a5b</text>
+  <rect id="furniture-table-round-accent" x="610" y="1856" width="56" height="56" rx="12" fill="#ffffff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="1878" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="1900" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffffff</text>
+  <rect id="furniture-table-round-top" x="840" y="1856" width="56" height="56" rx="12" fill="#c6966b" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="1878" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="1900" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#c6966b</text>
+  <rect id="furniture-table-round-left" x="1070" y="1856" width="56" height="56" rx="12" fill="#b68356" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="1878" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="1900" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#b68356</text>
+  <rect id="furniture-table-round-right" x="1300" y="1856" width="56" height="56" rx="12" fill="#9f734c" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="1878" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="1900" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#9f734c</text>
+  <text x="80" y="1964" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">ざぶとん</text>
+  <text x="80" y="1990" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">cushion-mint</text>
+  <rect id="furniture-cushion-mint-color" x="380" y="1940" width="56" height="56" rx="12" fill="#7fd3b8" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="1962" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="1984" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#7fd3b8</text>
+  <rect id="furniture-cushion-mint-accent" x="610" y="1940" width="56" height="56" rx="12" fill="#ffffff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="1962" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="1984" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffffff</text>
+  <rect id="furniture-cushion-mint-top" x="840" y="1940" width="56" height="56" rx="12" fill="#8cd7bf" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="1962" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="1984" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#8cd7bf</text>
+  <rect id="furniture-cushion-mint-left" x="1070" y="1940" width="56" height="56" rx="12" fill="#79c8af" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="1962" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="1984" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#79c8af</text>
+  <rect id="furniture-cushion-mint-right" x="1300" y="1940" width="56" height="56" rx="12" fill="#69af99" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="1962" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="1984" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#69af99</text>
+  <text x="80" y="2048" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">モンステラ</text>
+  <text x="80" y="2074" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">plant-monstera</text>
+  <rect id="furniture-plant-monstera-color" x="380" y="2024" width="56" height="56" rx="12" fill="#4fae7b" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2046" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2068" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#4fae7b</text>
+  <rect id="furniture-plant-monstera-accent" x="610" y="2024" width="56" height="56" rx="12" fill="#e9d8c4" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2046" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2068" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#e9d8c4</text>
+  <rect id="furniture-plant-monstera-top" x="840" y="2024" width="56" height="56" rx="12" fill="#61b688" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2046" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2068" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#61b688</text>
+  <rect id="furniture-plant-monstera-left" x="1070" y="2024" width="56" height="56" rx="12" fill="#4ba575" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2046" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2068" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#4ba575</text>
+  <rect id="furniture-plant-monstera-right" x="1300" y="2024" width="56" height="56" rx="12" fill="#429066" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2046" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2068" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#429066</text>
+  <text x="80" y="2132" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">なみのラグ</text>
+  <text x="80" y="2158" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">rug-wave</text>
+  <rect id="furniture-rug-wave-color" x="380" y="2108" width="56" height="56" rx="12" fill="#9fb0ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2130" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2152" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#9fb0ff</text>
+  <rect id="furniture-rug-wave-accent" x="610" y="2108" width="56" height="56" rx="12" fill="#eef1ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2130" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2152" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#eef1ff</text>
+  <rect id="furniture-rug-wave-top" x="840" y="2108" width="56" height="56" rx="12" fill="#a9b8ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2130" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2152" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#a9b8ff</text>
+  <rect id="furniture-rug-wave-left" x="1070" y="2108" width="56" height="56" rx="12" fill="#97a7f2" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2130" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2152" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#97a7f2</text>
+  <rect id="furniture-rug-wave-right" x="1300" y="2108" width="56" height="56" rx="12" fill="#8492d4" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2130" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2152" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#8492d4</text>
+  <text x="80" y="2216" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">かべどけい</text>
+  <text x="80" y="2242" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">clock-round</text>
+  <rect id="furniture-clock-round-color" x="380" y="2192" width="56" height="56" rx="12" fill="#ffffff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2214" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2236" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffffff</text>
+  <rect id="furniture-clock-round-accent" x="610" y="2192" width="56" height="56" rx="12" fill="#252340" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2214" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2236" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#252340</text>
+  <rect id="furniture-clock-round-top" x="840" y="2192" width="56" height="56" rx="12" fill="#ffffff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2214" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2236" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffffff</text>
+  <rect id="furniture-clock-round-left" x="1070" y="2192" width="56" height="56" rx="12" fill="#f2f2f2" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2214" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2236" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#f2f2f2</text>
+  <rect id="furniture-clock-round-right" x="1300" y="2192" width="56" height="56" rx="12" fill="#d4d4d4" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2214" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2236" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#d4d4d4</text>
+  <text x="80" y="2300" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">あかりスタンド</text>
+  <text x="80" y="2326" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">lamp-amber</text>
+  <rect id="furniture-lamp-amber-color" x="380" y="2276" width="56" height="56" rx="12" fill="#ffcf7a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2298" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2320" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffcf7a</text>
+  <rect id="furniture-lamp-amber-accent" x="610" y="2276" width="56" height="56" rx="12" fill="#5a4a3a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2298" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2320" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#5a4a3a</text>
+  <rect id="furniture-lamp-amber-top" x="840" y="2276" width="56" height="56" rx="12" fill="#ffd487" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2298" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2320" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffd487</text>
+  <rect id="furniture-lamp-amber-left" x="1070" y="2276" width="56" height="56" rx="12" fill="#f2c574" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2298" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2320" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#f2c574</text>
+  <rect id="furniture-lamp-amber-right" x="1300" y="2276" width="56" height="56" rx="12" fill="#d4ac65" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2298" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2320" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#d4ac65</text>
+  <text x="80" y="2384" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">おかのポスター</text>
+  <text x="80" y="2410" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">poster-hill</text>
+  <rect id="furniture-poster-hill-color" x="380" y="2360" width="56" height="56" rx="12" fill="#ffd8a8" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2382" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2404" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffd8a8</text>
+  <rect id="furniture-poster-hill-accent" x="610" y="2360" width="56" height="56" rx="12" fill="#4cc49d" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2382" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2404" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#4cc49d</text>
+  <rect id="furniture-poster-hill-top" x="840" y="2360" width="56" height="56" rx="12" fill="#ffdcb1" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2382" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2404" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffdcb1</text>
+  <rect id="furniture-poster-hill-left" x="1070" y="2360" width="56" height="56" rx="12" fill="#f2cda0" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2382" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2404" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#f2cda0</text>
+  <rect id="furniture-poster-hill-right" x="1300" y="2360" width="56" height="56" rx="12" fill="#d4b38b" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2382" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2404" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#d4b38b</text>
+  <text x="80" y="2468" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">ビーズクッション</text>
+  <text x="80" y="2494" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">beanbag-berry</text>
+  <rect id="furniture-beanbag-berry-color" x="380" y="2444" width="56" height="56" rx="12" fill="#ff8fb0" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2466" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2488" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ff8fb0</text>
+  <rect id="furniture-beanbag-berry-accent" x="610" y="2444" width="56" height="56" rx="12" fill="#ffffff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2466" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2488" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffffff</text>
+  <rect id="furniture-beanbag-berry-top" x="840" y="2444" width="56" height="56" rx="12" fill="#ff9ab8" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2466" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2488" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ff9ab8</text>
+  <rect id="furniture-beanbag-berry-left" x="1070" y="2444" width="56" height="56" rx="12" fill="#f288a7" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2466" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2488" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#f288a7</text>
+  <rect id="furniture-beanbag-berry-right" x="1300" y="2444" width="56" height="56" rx="12" fill="#d47792" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2466" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2488" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#d47792</text>
+  <text x="80" y="2552" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">サボテン三兄弟</text>
+  <text x="80" y="2578" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">cactus-trio</text>
+  <rect id="furniture-cactus-trio-color" x="380" y="2528" width="56" height="56" rx="12" fill="#6cc08b" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2550" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2572" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#6cc08b</text>
+  <rect id="furniture-cactus-trio-accent" x="610" y="2528" width="56" height="56" rx="12" fill="#f2c9a0" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2550" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2572" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#f2c9a0</text>
+  <rect id="furniture-cactus-trio-top" x="840" y="2528" width="56" height="56" rx="12" fill="#7bc697" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2550" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2572" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#7bc697</text>
+  <rect id="furniture-cactus-trio-left" x="1070" y="2528" width="56" height="56" rx="12" fill="#67b684" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2550" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2572" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#67b684</text>
+  <rect id="furniture-cactus-trio-right" x="1300" y="2528" width="56" height="56" rx="12" fill="#5a9f73" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2550" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2572" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#5a9f73</text>
+  <text x="80" y="2636" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">おひさまラグ</text>
+  <text x="80" y="2662" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">rug-sun</text>
+  <rect id="furniture-rug-sun-color" x="380" y="2612" width="56" height="56" rx="12" fill="#ffc867" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2634" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2656" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffc867</text>
+  <rect id="furniture-rug-sun-accent" x="610" y="2612" width="56" height="56" rx="12" fill="#fff3d6" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2634" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2656" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#fff3d6</text>
+  <rect id="furniture-rug-sun-top" x="840" y="2612" width="56" height="56" rx="12" fill="#ffce76" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2634" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2656" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffce76</text>
+  <rect id="furniture-rug-sun-left" x="1070" y="2612" width="56" height="56" rx="12" fill="#f2be62" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2634" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2656" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#f2be62</text>
+  <rect id="furniture-rug-sun-right" x="1300" y="2612" width="56" height="56" rx="12" fill="#d4a655" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2634" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2656" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#d4a655</text>
+  <text x="80" y="2720" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">ミントのベッド</text>
+  <text x="80" y="2746" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">bed-mint</text>
+  <rect id="furniture-bed-mint-color" x="380" y="2696" width="56" height="56" rx="12" fill="#e9e4f5" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2718" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2740" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#e9e4f5</text>
+  <rect id="furniture-bed-mint-accent" x="610" y="2696" width="56" height="56" rx="12" fill="#6fd0b2" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2718" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2740" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#6fd0b2</text>
+  <rect id="furniture-bed-mint-top" x="840" y="2696" width="56" height="56" rx="12" fill="#ebe7f6" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2718" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2740" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ebe7f6</text>
+  <rect id="furniture-bed-mint-left" x="1070" y="2696" width="56" height="56" rx="12" fill="#ddd9e9" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2718" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2740" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ddd9e9</text>
+  <rect id="furniture-bed-mint-right" x="1300" y="2696" width="56" height="56" rx="12" fill="#c1bdcb" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2718" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2740" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#c1bdcb</text>
+  <text x="80" y="2804" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">よぞらのポスター</text>
+  <text x="80" y="2830" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">poster-night</text>
+  <rect id="furniture-poster-night-color" x="380" y="2780" width="56" height="56" rx="12" fill="#2c3570" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2802" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2824" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#2c3570</text>
+  <rect id="furniture-poster-night-accent" x="610" y="2780" width="56" height="56" rx="12" fill="#ffd36b" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2802" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2824" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffd36b</text>
+  <rect id="furniture-poster-night-top" x="840" y="2780" width="56" height="56" rx="12" fill="#41497e" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2802" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2824" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#41497e</text>
+  <rect id="furniture-poster-night-left" x="1070" y="2780" width="56" height="56" rx="12" fill="#2a326a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2802" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2824" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#2a326a</text>
+  <rect id="furniture-poster-night-right" x="1300" y="2780" width="56" height="56" rx="12" fill="#252c5d" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2802" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2824" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#252c5d</text>
+  <text x="80" y="2888" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">ポトス</text>
+  <text x="80" y="2914" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">plant-pothos</text>
+  <rect id="furniture-plant-pothos-color" x="380" y="2864" width="56" height="56" rx="12" fill="#7ccf6a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="2886" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">主色</text>
+  <text x="448" y="2908" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#7ccf6a</text>
+  <rect id="furniture-plant-pothos-accent" x="610" y="2864" width="56" height="56" rx="12" fill="#c7b8f2" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="2886" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">差し色</text>
+  <text x="678" y="2908" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#c7b8f2</text>
+  <rect id="furniture-plant-pothos-top" x="840" y="2864" width="56" height="56" rx="12" fill="#89d479" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="2886" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">上 +10%</text>
+  <text x="908" y="2908" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#89d479</text>
+  <rect id="furniture-plant-pothos-left" x="1070" y="2864" width="56" height="56" rx="12" fill="#76c565" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="2886" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">左手前 -5%</text>
+  <text x="1138" y="2908" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#76c565</text>
+  <rect id="furniture-plant-pothos-right" x="1300" y="2864" width="56" height="56" rx="12" fill="#67ac58" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="2886" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">右手前 -17%</text>
+  <text x="1368" y="2908" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#67ac58</text>
+  <text id="section-book" x="80" y="3024" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="38" font-weight="700">本の色</text>
+  <text x="500" y="3024" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">BOOK_COLORS（Furniture.tsx）</text>
+  <rect id="book-1" x="80" y="3068" width="56" height="56" rx="12" fill="#ff8a8a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="148" y="3090" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">本 1</text>
+  <text x="148" y="3112" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ff8a8a</text>
+  <rect id="book-2" x="300" y="3068" width="56" height="56" rx="12" fill="#7c9cff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="368" y="3090" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">本 2</text>
+  <text x="368" y="3112" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#7c9cff</text>
+  <rect id="book-3" x="520" y="3068" width="56" height="56" rx="12" fill="#ffd36b" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="588" y="3090" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">本 3</text>
+  <text x="588" y="3112" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffd36b</text>
+  <rect id="book-4" x="740" y="3068" width="56" height="56" rx="12" fill="#4cc49d" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="808" y="3090" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">本 4</text>
+  <text x="808" y="3112" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#4cc49d</text>
+  <rect id="book-5" x="960" y="3068" width="56" height="56" rx="12" fill="#c7a3ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1028" y="3090" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">本 5</text>
+  <text x="1028" y="3112" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#c7a3ff</text>
+  <rect id="book-6" x="1180" y="3068" width="56" height="56" rx="12" fill="#ffb648" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1248" y="3090" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">本 6</text>
+  <text x="1248" y="3112" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffb648</text>
+  <rect id="book-7" x="1400" y="3068" width="56" height="56" rx="12" fill="#8fd3ff" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1468" y="3090" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">本 7</text>
+  <text x="1468" y="3112" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#8fd3ff</text>
+  <text id="section-pet" x="80" y="3224" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="38" font-weight="700">ペットの色</text>
+  <text x="500" y="3224" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">src/data/species.ts の palette</text>
+  <text x="80" y="3302" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">こむぎ（いぬ）</text>
+  <rect id="pet-komugi-body" x="380" y="3268" width="56" height="56" rx="12" fill="#f4c98a" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="3290" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">body</text>
+  <text x="448" y="3312" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#f4c98a</text>
+  <rect id="pet-komugi-belly" x="610" y="3268" width="56" height="56" rx="12" fill="#fff3dc" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="3290" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">belly</text>
+  <text x="678" y="3312" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#fff3dc</text>
+  <rect id="pet-komugi-accent" x="840" y="3268" width="56" height="56" rx="12" fill="#c98a52" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="3290" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">accent</text>
+  <text x="908" y="3312" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#c98a52</text>
+  <rect id="pet-komugi-cheek" x="1070" y="3268" width="56" height="56" rx="12" fill="#ff9c86" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="3290" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">cheek</text>
+  <text x="1138" y="3312" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ff9c86</text>
+  <rect id="pet-komugi-line" x="1300" y="3268" width="56" height="56" rx="12" fill="#4b3324" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="3290" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">line</text>
+  <text x="1368" y="3312" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#4b3324</text>
+  <text x="80" y="3386" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">おもち（くま）</text>
+  <rect id="pet-omochi-body" x="380" y="3352" width="56" height="56" rx="12" fill="#ffd7df" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="3374" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">body</text>
+  <text x="448" y="3396" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffd7df</text>
+  <rect id="pet-omochi-belly" x="610" y="3352" width="56" height="56" rx="12" fill="#fff6f7" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="3374" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">belly</text>
+  <text x="678" y="3396" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#fff6f7</text>
+  <rect id="pet-omochi-accent" x="840" y="3352" width="56" height="56" rx="12" fill="#e99aae" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="3374" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">accent</text>
+  <text x="908" y="3396" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#e99aae</text>
+  <rect id="pet-omochi-cheek" x="1070" y="3352" width="56" height="56" rx="12" fill="#ff8fa6" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="3374" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">cheek</text>
+  <text x="1138" y="3396" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ff8fa6</text>
+  <rect id="pet-omochi-line" x="1300" y="3352" width="56" height="56" rx="12" fill="#4a3342" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="3374" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">line</text>
+  <text x="1368" y="3396" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#4a3342</text>
+  <text x="80" y="3470" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="22" font-weight="700">ぽてと（ねこ）</text>
+  <rect id="pet-potato-body" x="380" y="3436" width="56" height="56" rx="12" fill="#aab3cf" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="448" y="3458" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">body</text>
+  <text x="448" y="3480" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#aab3cf</text>
+  <rect id="pet-potato-belly" x="610" y="3436" width="56" height="56" rx="12" fill="#f1f3fb" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="678" y="3458" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">belly</text>
+  <text x="678" y="3480" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#f1f3fb</text>
+  <rect id="pet-potato-accent" x="840" y="3436" width="56" height="56" rx="12" fill="#7c86a8" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="908" y="3458" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">accent</text>
+  <text x="908" y="3480" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#7c86a8</text>
+  <rect id="pet-potato-cheek" x="1070" y="3436" width="56" height="56" rx="12" fill="#ffa0b4" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1138" y="3458" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">cheek</text>
+  <text x="1138" y="3480" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#ffa0b4</text>
+  <rect id="pet-potato-line" x="1300" y="3436" width="56" height="56" rx="12" fill="#2f3150" stroke="#252340" stroke-opacity="0.12" stroke-width="1"/>
+  <text x="1368" y="3458" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="700">line</text>
+  <text x="1368" y="3480" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="15" font-weight="500">#2f3150</text>
+  <text id="section-font" x="80" y="3596" fill="#252340" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="38" font-weight="700">文字</text>
+  <text id="font-display" x="80" y="3690" fill="#252340" font-family="'Dela Gothic One', 'Zen Maru Gothic', system-ui, sans-serif" font-size="56" font-weight="400">DataMate 0123456789 ごほうび</text>
+  <text x="80" y="3724" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">Dela Gothic One 400（--font-display）見出し・数字</text>
+  <text id="font-body-500" x="80" y="3816" fill="#252340" font-family="'Zen Maru Gothic', sans-serif" font-size="34" font-weight="500">生活の記録で、ペットと部屋が育つ。</text>
+  <text x="80" y="3848" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">Zen Maru Gothic 500（--font-body）本文</text>
+  <text id="font-body-700" x="80" y="3926" fill="#252340" font-family="'Zen Maru Gothic', sans-serif" font-size="34" font-weight="700">生活の記録で、ペットと部屋が育つ。</text>
+  <text x="80" y="3958" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">Zen Maru Gothic 700（--font-body）本文</text>
+  <text id="font-body-900" x="80" y="4036" fill="#252340" font-family="'Zen Maru Gothic', sans-serif" font-size="34" font-weight="900">生活の記録で、ペットと部屋が育つ。</text>
+  <text x="80" y="4068" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="18" font-weight="500">Zen Maru Gothic 900（--font-body）本文</text>
+  <text x="80" y="4120" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">--font-display: 'Dela Gothic One', 'Zen Maru Gothic', system-ui, sans-serif</text>
+  <text x="80" y="4148" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">--font-body: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', system-ui, sans-serif</text>
+  <text x="80" y="4176" fill="#8a87a6" font-family="'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif" font-size="16" font-weight="500">https://fonts.googleapis.com/css2?family=Dela+Gothic+One&amp;family=Zen+Maru+Gothic:wght@500;700;900&amp;display=swap</text>
+</svg>

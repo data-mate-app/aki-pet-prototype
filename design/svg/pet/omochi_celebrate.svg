@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 -193 129 207" width="129" height="207">
+  <ellipse id="shadow" rx="44" ry="11" cx="2" cy="3" fill="#2a2140" opacity="0.2"/>
+  <g id="turn">
+    <g id="act" transform="matrix(0.91496 -0.114981 0.096166 1.09397 0 -56)">
+      <g id="hop">
+        <g id="posture">
+          <g transform="translate(-54 -18)">
+            <g id="tail">
+              <circle cx="-4" cy="0" r="12" fill="#fff6f7" stroke="#ccacb2" stroke-width="2"/>
+            </g>
+          </g>
+          <g id="feet">
+            <ellipse id="foot-left" rx="14" ry="7.5" cx="-24" cy="-1" fill="#e0bdc4"/>
+            <ellipse id="foot-right" rx="14" ry="7.5" cx="26" cy="-1" fill="#e0bdc4"/>
+          </g>
+          <g id="breath">
+            <path id="body" d="M -52 0 C -63 -2 -62 -34 -57 -54 C -50 -88 -27 -106 2 -106 C 31 -106 53 -88 59 -54 C 63 -34 64 -2 52 0 Q 0 7 -52 0 Z" fill="#ffd7df" stroke="#c7a8ae" stroke-width="2.4"/>
+            <path id="body-shine" d="M -34 -86 C -24 -96 -6 -100 8 -99" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+            <ellipse id="belly" rx="31" ry="20" cx="6" cy="-24" fill="#fff6f7" opacity="0.9"/>
+            <g id="paws">
+              <g transform="translate(-50 -36)">
+                <ellipse id="paw-left" transform="matrix(0.939693 -0.34202 0.34202 0.939693 -6 -34)" rx="9" ry="11" cx="0" cy="0" fill="#f0cad2"/>
+              </g>
+              <g transform="translate(54 -36)">
+                <ellipse id="paw-right" transform="matrix(0.939693 0.34202 -0.34202 0.939693 6 -34)" rx="9" ry="11" cx="0" cy="0" fill="#f0cad2"/>
+              </g>
+            </g>
+            <g id="ears">
+              <g transform="translate(-36 -94)">
+                <g id="ear-left">
+                  <circle cx="-2" cy="-6" r="17" fill="#ffd7df" stroke="#c7a8ae" stroke-width="2.4"/>
+                  <circle id="ear-left-inner" cx="-2" cy="-5" r="9" fill="#e99aae"/>
+                </g>
+              </g>
+              <g transform="translate(40 -94)">
+                <g id="ear-right">
+                  <circle cx="2" cy="-6" r="17" fill="#ffd7df" stroke="#c7a8ae" stroke-width="2.4"/>
+                  <circle id="ear-right-inner" cx="2" cy="-5" r="9" fill="#e99aae"/>
+                </g>
+              </g>
+            </g>
+            <g id="face">
+              <ellipse id="markings" rx="15" ry="10.5" cx="4" cy="-47" fill="#fff6f7"/>
+              <g id="eyes">
+                <path id="eye-left" d="M -19 -58 Q -13 -67 -7 -58" fill="none" stroke="#4a3342" stroke-width="3.6" stroke-linecap="round"/>
+                <path id="eye-right" d="M 15 -58 Q 21 -67 27 -58" fill="none" stroke="#4a3342" stroke-width="3.6" stroke-linecap="round"/>
+              </g>
+              <ellipse id="nose" rx="4.6" ry="3.3" cx="4" cy="-53" fill="#4a3342"/>
+              <g id="mouth">
+                <path d="M -4 -48 Q 4 -34 12 -48 Z" fill="#8a3a4a" stroke="#4a3342" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M 0 -41 Q 4 -37 8 -41" fill="#ff8fa6"/>
+              </g>
+              <ellipse id="cheek-left" rx="8.5" ry="5" cx="-29" cy="-46" fill="#ff8fa6" opacity="0.55"/>
+              <ellipse id="cheek-right" rx="8" ry="5" cx="35" cy="-46" fill="#ff8fa6" opacity="0.55"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="hearts">
+    <g transform="translate(-40 -96)">
+      <path id="heart-1" transform="matrix(1.15 0 0 1.15 0 0)" d="M 0 -10 L 3 -3 L 10 0 L 3 3 L 0 10 L -3 3 L -10 0 L -3 -3 Z" fill="#ffd36b"/>
+    </g>
+    <g transform="translate(44 -96)">
+      <path id="heart-2" transform="matrix(1.15 0 0 1.15 0 0)" d="M 0 -10 L 3 -3 L 10 0 L 3 3 L 0 10 L -3 3 L -10 0 L -3 -3 Z" fill="#ffd36b"/>
+    </g>
+    <g transform="translate(4 -96)">
+      <path id="heart-3" transform="matrix(1.15 0 0 1.15 0 0)" d="M 0 -10 L 3 -3 L 10 0 L 3 3 L 0 10 L -3 3 L -10 0 L -3 -3 Z" fill="#ffd36b"/>
+    </g>
+  </g>
+</svg>

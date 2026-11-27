@@ -104,7 +104,7 @@ export type Modulation = {
 
 export const VITAL_FLOOR = { energy: 15, fullness: 10, smarts: 0 } as const;
 
-const MODS: Record<Mood, Modulation> = {
+export const MODS: Record<Mood, Modulation> = {
   happy: { speed: 1.15, bounce: 1.3, earDroop: 0, eyeOpen: 1, idleExpression: 'happy' },
   calm: { speed: 1, bounce: 1, earDroop: 0.1, eyeOpen: 1, idleExpression: 'neutral' },
   sleepy: { speed: 0.7, bounce: 0.5, earDroop: 0.5, eyeOpen: 0.55, idleExpression: 'sleepy' },

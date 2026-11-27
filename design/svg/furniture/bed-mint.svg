@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-172 -175 337 284" width="337" height="284">
+  <defs>
+    <filter id="d-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <polygon id="shadow" points="-40.3,-82.8 146.8,25.3 33.3,90.8 -153.7,-17.3" fill="#2a2140" opacity="0.22" filter="url(#d-soft-shadow)"/>
+  <g id="headboard">
+    <polygon id="headboard-right" points="-26.4,-72.8 -126,-15.3 -126,-110.3 -26.4,-167.8" fill="#b7b4c1" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="headboard-left" points="-136.4,-21.3 -126,-15.3 -126,-110.3 -136.4,-116.3" fill="#d2cedd" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="headboard-top" points="-36.8,-173.8 -26.4,-167.8 -126,-110.3 -136.4,-116.3" fill="#e0ddeb" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+  </g>
+  <g id="frame">
+    <polygon id="frame-right" points="136.4,21.2 36.8,78.7 36.8,48.7 136.4,-8.8" fill="#c1bdcb" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="frame-left" points="-126,-15.3 36.8,78.7 36.8,48.7 -126,-45.3" fill="#ddd9e9" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="frame-top" points="-26.4,-102.8 136.4,-8.8 36.8,48.7 -126,-45.3" fill="#ebe7f6" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+  </g>
+  <g id="mattress">
+    <polygon id="mattress-right" points="129.5,-8.7 36.8,44.8 36.8,28.8 129.5,-24.7" fill="#e1dfda" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="mattress-left" points="-119.1,-45.3 36.8,44.8 36.8,28.8 -119.1,-61.3" fill="#f3f1ec" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="mattress-top" points="-26.4,-114.8 129.5,-24.7 36.8,28.8 -119.1,-61.3" fill="#fbf8f4" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+  </g>
+  <g id="pillow">
+    <polygon id="pillow-right" points="3,-81.8 -61.9,-44.3 -61.9,-55.3 3,-92.8" fill="#e9e9e9" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="pillow-left" points="-98.3,-65.3 -61.9,-44.3 -61.9,-55.3 -98.3,-76.3" fill="#f9f9f9" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="pillow-top" points="-33.3,-113.8 3,-92.8 -61.9,-55.3 -98.3,-76.3" fill="#ffffff" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+  </g>
+  <g id="blanket">
+    <polygon id="blanket-right" points="130.3,-21.2 32.5,35.3 32.5,25.3 130.3,-31.2" fill="#60b49a" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="blanket-left" points="-68,-22.8 32.5,35.3 32.5,25.3 -68,-32.8" fill="#6bc8ab" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="blanket-top" points="29.9,-89.3 130.3,-31.2 32.5,25.3 -68,-32.8" fill="#7bd4b8" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+  </g>
+  <g id="blanket-fold">
+    <polygon id="blanket-fold-right" points="43.7,-81.3 -54.1,-24.8 -54.1,-26.8 43.7,-83.3" fill="#9bd0bf" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="blanket-fold-left" points="-68,-32.8 -54.1,-24.8 -54.1,-26.8 -68,-34.8" fill="#a5ddcc" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="blanket-fold-top" points="29.9,-91.3 43.7,-83.3 -54.1,-26.8 -68,-34.8" fill="#ade4d3" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+  </g>
+</svg>

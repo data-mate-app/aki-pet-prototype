@@ -1,0 +1,6 @@
+design/svg/** linguist-generated=true
+design/png/** linguist-generated=true
+design/sheet.* linguist-generated=true
+design/palette.* linguist-generated=true
+design/tokens.json linguist-generated=true
+design/manifest.json linguist-generated=true

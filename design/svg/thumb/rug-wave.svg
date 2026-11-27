@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-260 -260 520 520" width="96" height="96">
+  <g id="rug" transform="matrix(0.866025 0.5 -0.866025 0.5 0 0)">
+    <rect id="border" x="-150" y="-115" width="300" height="230" rx="40" fill="#8c9be0"/>
+    <rect id="field" x="-144" y="-109" width="288" height="218" rx="36" fill="#9fb0ff"/>
+    <path id="wave-1" d="M -120 -60 q 20 -18 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0" fill="none" stroke="#eef1ff" stroke-width="9" stroke-linecap="round" opacity="0.85"/>
+    <path id="wave-2" d="M -120 -10 q 20 -18 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0" fill="none" stroke="#eef1ff" stroke-width="9" stroke-linecap="round" opacity="0.85"/>
+    <path id="wave-3" d="M -120 40 q 20 -18 40 0 t 40 0 t 40 0 t 40 0 t 40 0 t 40 0" fill="none" stroke="#eef1ff" stroke-width="9" stroke-linecap="round" opacity="0.85"/>
+  </g>
+</svg>

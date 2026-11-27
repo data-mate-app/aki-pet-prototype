@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-44 -88 88 176" width="88" height="176">
+  <g transform="matrix(0.866025 -0.5 0 1 0 0)">
+    <rect id="frame" x="-48" y="-62" width="96" height="124" rx="4" fill="#ffffff" stroke="#252340" stroke-width="2" stroke-opacity="0.18"/>
+    <rect id="paper" x="-40" y="-54" width="80" height="108" fill="#2c3570"/>
+    <circle id="moon" cx="14" cy="-22" r="14" fill="#ffd36b"/>
+    <circle id="moon-cut" cx="20" cy="-26" r="12" fill="#2c3570"/>
+    <circle id="star-1" cx="-24" cy="-34" r="2.4" fill="#ffffff"/>
+    <circle id="star-2" cx="-10" cy="-10" r="2.4" fill="#ffffff"/>
+    <circle id="star-3" cx="24" cy="8" r="2.4" fill="#ffffff"/>
+    <circle id="star-4" cx="-28" cy="18" r="2.4" fill="#ffffff"/>
+    <circle id="star-5" cx="6" cy="30" r="2.4" fill="#ffffff"/>
+  </g>
+</svg>

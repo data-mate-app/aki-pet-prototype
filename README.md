@@ -52,6 +52,7 @@ src/
 - ユーザーフロー（画面のつながり・記録とごほうび）: [docs/user-flow.md](docs/user-flow.md)
 - キャラデータの設計: [docs/character-model.md](docs/character-model.md)
 - 音（素材の一覧・作り方・差し替え方）: [docs/sound.md](docs/sound.md)
+- Figma 用の絵・色・文字の書き出し（`pnpm design:export` で作り直す）: [design/README.md](design/README.md)
 - 案件の目的・範囲: [docs/ai/project.md](docs/ai/project.md)
 - 引き継ぎ: [docs/ai/handoff.md](docs/ai/handoff.md)
 

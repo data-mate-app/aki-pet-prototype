@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-222 -128 444 256" width="444" height="256">
+  <g id="rug" transform="matrix(0.866025 0.5 -0.866025 0.5 0 0)">
+    <circle id="border" r="128" fill="#ebb85f"/>
+    <circle id="field" r="122" fill="#ffc867"/>
+    <path id="ray-1" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-2" transform="matrix(0.92388 0.382683 -0.382683 0.92388 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-3" transform="matrix(0.707107 0.707107 -0.707107 0.707107 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-4" transform="matrix(0.382683 0.92388 -0.92388 0.382683 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-5" transform="matrix(0 1 -1 0 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-6" transform="matrix(-0.382683 0.92388 -0.92388 -0.382683 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-7" transform="matrix(-0.707107 0.707107 -0.707107 -0.707107 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-8" transform="matrix(-0.92388 0.382683 -0.382683 -0.92388 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-9" transform="matrix(-1 0 0 -1 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-10" transform="matrix(-0.92388 -0.382683 0.382683 -0.92388 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-11" transform="matrix(-0.707107 -0.707107 0.707107 -0.707107 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-12" transform="matrix(-0.382683 -0.92388 0.92388 -0.382683 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-13" transform="matrix(0 -1 1 0 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-14" transform="matrix(0.382683 -0.92388 0.92388 0.382683 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-15" transform="matrix(0.707107 -0.707107 0.707107 0.707107 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <path id="ray-16" transform="matrix(0.92388 -0.382683 0.382683 0.92388 0 0)" d="M 0 -116 L 7 -96 L -7 -96 Z" fill="#fff3d6" opacity="0.8"/>
+    <circle id="center-ring" r="70" fill="#fff3d6" opacity="0.7"/>
+    <circle id="center" r="52" fill="#ffc867"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-39 -66 78 132" width="78" height="132">
+  <g transform="matrix(0.866025 -0.5 0 1 0 0)">
+    <circle id="case" r="44" fill="#e6e6e6"/>
+    <circle id="face" r="40" fill="#ffffff" stroke="#252340" stroke-width="4"/>
+    <rect id="tick-1" x="-1.5" y="-34" width="3" height="8" fill="#252340" opacity="0.7"/>
+    <rect id="tick-2" transform="matrix(0.866025 0.5 -0.5 0.866025 0 0)" x="-1.5" y="-34" width="3" height="4" fill="#252340" opacity="0.7"/>
+    <rect id="tick-3" transform="matrix(0.5 0.866025 -0.866025 0.5 0 0)" x="-1.5" y="-34" width="3" height="4" fill="#252340" opacity="0.7"/>
+    <rect id="tick-4" transform="matrix(0 1 -1 0 0 0)" x="-1.5" y="-34" width="3" height="8" fill="#252340" opacity="0.7"/>
+    <rect id="tick-5" transform="matrix(-0.5 0.866025 -0.866025 -0.5 0 0)" x="-1.5" y="-34" width="3" height="4" fill="#252340" opacity="0.7"/>
+    <rect id="tick-6" transform="matrix(-0.866025 0.5 -0.5 -0.866025 0 0)" x="-1.5" y="-34" width="3" height="4" fill="#252340" opacity="0.7"/>
+    <rect id="tick-7" transform="matrix(-1 0 0 -1 0 0)" x="-1.5" y="-34" width="3" height="8" fill="#252340" opacity="0.7"/>
+    <rect id="tick-8" transform="matrix(-0.866025 -0.5 0.5 -0.866025 0 0)" x="-1.5" y="-34" width="3" height="4" fill="#252340" opacity="0.7"/>
+    <rect id="tick-9" transform="matrix(-0.5 -0.866025 0.866025 -0.5 0 0)" x="-1.5" y="-34" width="3" height="4" fill="#252340" opacity="0.7"/>
+    <rect id="tick-10" transform="matrix(0 -1 1 0 0 0)" x="-1.5" y="-34" width="3" height="8" fill="#252340" opacity="0.7"/>
+    <rect id="tick-11" transform="matrix(0.5 -0.866025 0.866025 0.5 0 0)" x="-1.5" y="-34" width="3" height="4" fill="#252340" opacity="0.7"/>
+    <rect id="tick-12" transform="matrix(0.866025 -0.5 0.5 0.866025 0 0)" x="-1.5" y="-34" width="3" height="4" fill="#252340" opacity="0.7"/>
+    <rect id="hour-hand" transform="matrix(0.642788 -0.766044 0.766044 0.642788 0 0)" x="-2.5" y="-22" width="5" height="24" rx="2.5" fill="#252340"/>
+    <rect id="minute-hand" transform="matrix(0.5 0.866025 -0.866025 0.5 0 0)" x="-1.5" y="-31" width="3" height="33" rx="1.5" fill="#ff6f9c"/>
+    <circle id="center" r="4" fill="#252340"/>
+  </g>
+</svg>
