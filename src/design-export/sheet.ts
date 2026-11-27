@@ -1,7 +1,7 @@
 import { FURNITURE } from '../data/furniture';
 import { SPECIES } from '../data/species';
 import { escapeText, fmt, matrixToTransform } from './format';
-import { PET_STATES, type AssetSpec, type FurnitureSpec } from './plan';
+import { PET_STATES, SURFACES, type AssetSpec, type FurnitureSpec, type SurfaceSpec } from './plan';
 
 /**
  * 一覧シート（design/sheet.svg）。第 1 段の各 SVG の中身を作り直さずに並べる。
@@ -153,6 +153,25 @@ export function buildSheet(specs: AssetSpec[], assets: Map<string, SheetAsset>):
     note(x);
     y += up + down + 110;
   }
+  // ---- 壁と床 ----
+  heading('section-surface', '壁と床');
+  for (const sf of SURFACES) {
+    const ss = specs.filter((s): s is SurfaceSpec => s.kind === 'surface' && s.surface === sf.id);
+    const rowH = Math.max(...ss.map((s) => get(s.path).viewBox[3]));
+    body.push(text(LEFT, y + 30, 30, 700, INK, sf.label));
+    body.push(text(LEFT, y + 64, 20, 500, INK3, sf.id));
+    let x = LEFT + LABEL_W;
+    // 左上をそろえて並べる（斜めは奥の角が原点、平らは左上が原点。シートでは viewBox の左上を置く）
+    for (const s of ss) {
+      const a = get(s.path);
+      body.push(place(stemOf(s.path), a, matrixToTransform([1, 0, 0, 1, x - a.viewBox[0], y - a.viewBox[1]])));
+      body.push(text(x + a.viewBox[2] / 2, y + rowH + 30, 18, 500, INK3, `${s.flat ? '平ら（正面）' : '斜め（部屋の中）'}・${s.time === 'day' ? '昼' : '夜'}`, 'middle'));
+      x += a.viewBox[2] + 40;
+    }
+    note(x);
+    y += rowH + 90;
+  }
+  y += 20;
   heading('section-icon', 'アイコン');
   {
     const s = specs.find((q) => q.kind === 'icon')!;

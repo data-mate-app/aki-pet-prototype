@@ -3,7 +3,8 @@ import { flushSync } from 'react-dom';
 import '../styles/tokens.css';
 import { FurnitureArt } from '../art/Furniture';
 import { PetArt } from '../art/Pet';
-import { RoomShell, RoomTint, SvgDefs, VIEW } from '../art/Room';
+import { FloorSurface, RoomShell, RoomTint, SvgDefs, VIEW, WallSurface } from '../art/Room';
+import { flatFloor, flatLeftWall, flatRightWall, iso } from '../art/iso';
 import { furnitureById } from '../data/furniture';
 import { speciesById } from '../data/species';
 import { applyLight, lightAt } from '../domain/daylight';
@@ -128,6 +129,16 @@ function scene(spec: AssetSpec): React.ReactNode {
       return holder(<RoomShell hour={spec.hour} />, ORIGIN + VIEW.x, ORIGIN + VIEW.y, [VIEW.w, VIEW.h]);
     case 'room-tint':
       return holder(<RoomTint />, ORIGIN + VIEW.x, ORIGIN + VIEW.y, [VIEW.w, VIEW.h]);
+    case 'surface': {
+      // 斜め: 部屋と同じ位置関係（奥の角 = 絵の原点）。平ら: 正面から見た形（左上 = 絵の原点）
+      const flat = spec.flat;
+      const wall = (side: 'left' | 'right') => <WallSurface side={side} proj={flat ? (side === 'left' ? flatLeftWall : flatRightWall) : iso} />;
+      return holder(
+        <svg width={10} height={10} viewBox="0 0 10 10" style={{ position: 'absolute', overflow: 'visible' }}>
+          {spec.surface === 'floor' ? <FloorSurface proj={flat ? flatFloor : iso} /> : wall(spec.surface === 'wall-left' ? 'left' : 'right')}
+        </svg>,
+      );
+    }
     case 'icon':
       return holder(<img id="icon" src="/icon.svg" width={64} height={64} alt="" />);
   }

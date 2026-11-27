@@ -22,8 +22,11 @@ export type ThumbSpec = Base & { kind: 'thumb'; furnitureId: string };
 export type PetSpec = Base & { kind: 'pet'; speciesId: SpeciesId; state: PetStateId };
 export type RoomSpec = Base & { kind: 'room'; time: TimeOfDay; hour: number };
 export type RoomTintSpec = Base & { kind: 'room-tint'; time: TimeOfDay; hour: number };
+export type SurfaceId = 'wall-left' | 'wall-right' | 'floor';
+/** 壁と床の面の素材。flat=正面から見た平らな形、そうでなければ部屋の中の斜めの見え方 */
+export type SurfaceSpec = Base & { kind: 'surface'; surface: SurfaceId; flat: boolean; time: TimeOfDay; hour: number };
 export type IconSpec = Base & { kind: 'icon' };
-export type AssetSpec = FurnitureSpec | ThumbSpec | PetSpec | RoomSpec | RoomTintSpec | IconSpec;
+export type AssetSpec = FurnitureSpec | ThumbSpec | PetSpec | RoomSpec | RoomTintSpec | SurfaceSpec | IconSpec;
 
 /** 昼 12:00・夜 21:00。時計だけ昼 10:10 */
 export const HOUR = { day: 12, night: 21, clockDay: 10 + 10 / 60 } as const;
@@ -126,6 +129,28 @@ export const PET_STATE_OVERRIDES: { id: PetStateId; field: 'pose'; ticket: Pose;
   { id: 'eat', field: 'pose', ticket: 'stand', app: 'sit', why: 'Home.tsx: p.pose(\'sit\') のあと p.act(\'eat\', \'happy\')' },
 ];
 
+// ---------- 壁と床 ----------
+
+export const SURFACES: { id: SurfaceId; label: string }[] = [
+  { id: 'wall-left', label: '左の壁' },
+  { id: 'wall-right', label: '右の壁' },
+  { id: 'floor', label: '床' },
+];
+
+function surfaceSpecs(): SurfaceSpec[] {
+  const out: SurfaceSpec[] = [];
+  for (const sf of SURFACES) {
+    for (const flat of [false, true]) {
+      for (const time of ['day', 'night'] as const) {
+        const path = `surface/${sf.id}${flat ? '_flat' : ''}_${time}`;
+        const label = [sf.label, flat ? '平ら（正面）' : '斜め（部屋の中）', TIME_LABEL[time]].join('・');
+        out.push({ kind: 'surface', path, label, surface: sf.id, flat, time, hour: HOUR[time] });
+      }
+    }
+  }
+  return out;
+}
+
 // ---------- 一覧 ----------
 
 export function planAssets(): AssetSpec[] {
@@ -140,6 +165,7 @@ export function planAssets(): AssetSpec[] {
   out.push({ kind: 'room', path: 'room/room_day', label: '部屋（昼）', time: 'day', hour: HOUR.day });
   out.push({ kind: 'room', path: 'room/room_night', label: '部屋（夜）', time: 'night', hour: HOUR.night });
   out.push({ kind: 'room-tint', path: 'room/room-tint_night', label: '部屋の夜の色かぶせ（家具の上に重ねる）', time: 'night', hour: HOUR.night });
+  out.push(...surfaceSpecs());
   out.push({ kind: 'icon', path: 'icon/app-icon', label: 'アプリアイコン' });
   return out;
 }

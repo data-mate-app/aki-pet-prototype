@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { FURNITURE, furnitureById } from '../data/furniture';
 import { SPECIES } from '../data/species';
 import { MODS } from '../domain/pet';
-import { HOUR, PET_STATES, PET_STATE_OVERRIDES, furnitureVariants, modulationOf, planAssets, type FurnitureSpec } from './plan';
+import { HOUR, PET_STATES, PET_STATE_OVERRIDES, furnitureVariants, modulationOf, planAssets, type FurnitureSpec, type SurfaceSpec } from './plan';
 
 const plan = planAssets();
 const count = (kind: string) => plan.filter((a) => a.kind === kind).length;
@@ -45,15 +45,16 @@ describe('家具の変種', () => {
 });
 
 describe('一覧の数と名前', () => {
-  it('ペット 51・おみせ 16・部屋 3・アイコン 1', () => {
+  it('ペット 51・おみせ 16・部屋 3・壁と床 12・アイコン 1', () => {
     expect(PET_STATES).toHaveLength(17);
     expect(count('pet')).toBe(SPECIES.length * 17);
     expect(count('pet')).toBe(51);
     expect(count('thumb')).toBe(FURNITURE.length);
     expect(count('thumb')).toBe(16);
     expect(count('room') + count('room-tint')).toBe(3);
+    expect(count('surface')).toBe(12);
     expect(count('icon')).toBe(1);
-    expect(plan).toHaveLength(39 + 16 + 51 + 3 + 1);
+    expect(plan).toHaveLength(39 + 16 + 51 + 3 + 12 + 1);
   });
 
   it('パスが重ならない。大文字小文字だけが違う名前もない', () => {
@@ -67,6 +68,21 @@ describe('一覧の数と名前', () => {
       expect(a.label.length).toBeGreaterThan(0);
       expect(a.path).toMatch(/^[a-z0-9_\-/]+$/);
     }
+  });
+});
+
+describe('壁と床の面', () => {
+  const surfaces = plan.filter((a): a is SurfaceSpec => a.kind === 'surface');
+  it('3 面 × 斜め・平ら × 昼夜 = 12。パスの例', () => {
+    const paths = surfaces.map((a) => a.path);
+    expect(paths).toContain('surface/wall-left_day');
+    expect(paths).toContain('surface/wall-left_flat_day');
+    expect(paths).toContain('surface/floor_flat_night');
+    expect(paths).toContain('surface/wall-right_night');
+    expect(surfaces.filter((a) => a.flat)).toHaveLength(6);
+  });
+  it('時刻は部屋と同じ（昼 12:00・夜 21:00）', () => {
+    for (const a of surfaces) expect(a.hour).toBe(a.time === 'day' ? HOUR.day : HOUR.night);
   });
 });
 

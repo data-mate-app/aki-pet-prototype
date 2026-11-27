@@ -11,7 +11,7 @@ import tokensUrl from '../../design/tokens.json?url';
 
 type Asset = {
   path: string;
-  kind: 'furniture' | 'thumb' | 'pet' | 'room' | 'room-tint' | 'icon';
+  kind: 'furniture' | 'thumb' | 'pet' | 'room' | 'room-tint' | 'surface' | 'icon';
   label: string;
   svg: string;
   png: string;
@@ -29,6 +29,7 @@ const FILTERS: { id: string; label: string; kinds: Asset['kind'][] }[] = [
   { id: 'thumb', label: 'おみせの絵', kinds: ['thumb'] },
   { id: 'pet', label: 'ペット', kinds: ['pet'] },
   { id: 'room', label: '部屋', kinds: ['room', 'room-tint'] },
+  { id: 'surface', label: '壁と床', kinds: ['surface'] },
   { id: 'icon', label: 'アイコン', kinds: ['icon'] },
 ];
 
@@ -158,7 +159,7 @@ function build() {
   const wrap = el('div', 'g-wrap');
 
   const head = el('header', 'g-head');
-  head.append(el('h1', undefined, 'DataMate アセットギャラリー'), el('p', undefined, '家具・ペット・部屋を、Figma で編集できるベクター（SVG）にしたものです。'));
+  head.append(el('h1', undefined, 'DataMate アセットギャラリー'), el('p', undefined, '家具・ペット・部屋・壁と床を、Figma で編集できるベクター（SVG）にしたものです。'));
   const how = el('ul', 'g-how');
   for (const [k, v] of [
     ['コピーして使う', '「SVG をコピー」→ Figma のキャンバスで貼り付け'],
