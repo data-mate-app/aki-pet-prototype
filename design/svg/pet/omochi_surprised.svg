@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-72 -119 136 133" width="136" height="133">
+  <ellipse id="shadow" rx="44" ry="11" cx="2" cy="3" fill="#2a2140" opacity="0.2"/>
+  <g id="turn">
+    <g id="act">
+      <g id="hop">
+        <g id="posture">
+          <g transform="translate(-54 -18)">
+            <g id="tail">
+              <circle cx="-4" cy="0" r="12" fill="#fff6f7" stroke="#ccacb2" stroke-width="2"/>
+            </g>
+          </g>
+          <g id="feet">
+            <ellipse id="foot-left" rx="14" ry="7.5" cx="-24" cy="-1" fill="#e0bdc4"/>
+            <ellipse id="foot-right" rx="14" ry="7.5" cx="26" cy="-1" fill="#e0bdc4"/>
+          </g>
+          <g id="breath">
+            <path id="body" d="M -52 0 C -63 -2 -62 -34 -57 -54 C -50 -88 -27 -106 2 -106 C 31 -106 53 -88 59 -54 C 63 -34 64 -2 52 0 Q 0 7 -52 0 Z" fill="#ffd7df" stroke="#c7a8ae" stroke-width="2.4"/>
+            <path id="body-shine" d="M -34 -86 C -24 -96 -6 -100 8 -99" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.45"/>
+            <ellipse id="belly" rx="31" ry="20" cx="6" cy="-24" fill="#fff6f7" opacity="0.9"/>
+            <g id="paws">
+              <g transform="translate(-50 -36)">
+                <ellipse id="paw-left" rx="9" ry="11" cx="0" cy="0" fill="#f0cad2"/>
+              </g>
+              <g transform="translate(54 -36)">
+                <ellipse id="paw-right" rx="9" ry="11" cx="0" cy="0" fill="#f0cad2"/>
+              </g>
+            </g>
+            <g id="ears">
+              <g transform="translate(-36 -94)">
+                <g id="ear-left" transform="matrix(0.998971 -0.045363 0.045363 0.998971 0 0)">
+                  <circle cx="-2" cy="-6" r="17" fill="#ffd7df" stroke="#c7a8ae" stroke-width="2.4"/>
+                  <circle id="ear-left-inner" cx="-2" cy="-5" r="9" fill="#e99aae"/>
+                </g>
+              </g>
+              <g transform="translate(40 -94)">
+                <g id="ear-right" transform="matrix(0.998971 0.045363 -0.045363 0.998971 0 0)">
+                  <circle cx="2" cy="-6" r="17" fill="#ffd7df" stroke="#c7a8ae" stroke-width="2.4"/>
+                  <circle id="ear-right-inner" cx="2" cy="-5" r="9" fill="#e99aae"/>
+                </g>
+              </g>
+            </g>
+            <g id="face">
+              <ellipse id="markings" rx="15" ry="10.5" cx="4" cy="-47" fill="#fff6f7"/>
+              <g id="eyes">
+                <g id="eye-left" transform="translate(-13 -60)">
+                  <ellipse id="eye-left-pupil" rx="6.6" ry="8.6" cx="0" cy="0" fill="#4a3342"/>
+                  <circle id="eye-left-shine" cx="1.8" cy="-2.8" r="2.4" fill="#ffffff"/>
+                </g>
+                <g id="eye-right" transform="translate(21 -60)">
+                  <ellipse id="eye-right-pupil" rx="6.6" ry="8.6" cx="0" cy="0" fill="#4a3342"/>
+                  <circle id="eye-right-shine" cx="1.8" cy="-2.8" r="2.4" fill="#ffffff"/>
+                </g>
+              </g>
+              <ellipse id="nose" rx="4.6" ry="3.3" cx="4" cy="-53" fill="#4a3342"/>
+              <ellipse id="mouth" rx="3.6" ry="4.4" cx="4" cy="-43" fill="#8a3a4a"/>
+              <ellipse id="cheek-left" rx="8.5" ry="5" cx="-29" cy="-46" fill="#ff8fa6" opacity="0.55"/>
+              <ellipse id="cheek-right" rx="8" ry="5" cx="35" cy="-46" fill="#ff8fa6" opacity="0.55"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

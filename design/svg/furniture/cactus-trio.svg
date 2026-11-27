@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-72 -90 156 142" width="156" height="142">
+  <defs>
+    <filter id="d-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <ellipse id="shadow" rx="60" ry="24" cx="6" cy="10" fill="#2a2140" opacity="0.18" filter="url(#d-soft-shadow)"/>
+  <g id="cactus-1" transform="translate(-30 0)">
+    <rect id="cactus-1-body" x="-11" y="-80" width="22" height="52" rx="11" fill="#6cc08b"/>
+    <path id="cactus-1-ridge" d="M 0 -76 L 0 -30" fill="#000000" stroke="#91d0a8" stroke-width="2" opacity="0.6"/>
+    <path id="cactus-1-pot" d="M -16 -30 L 16 -30 L 12 0 Q 0 4 -12 0 Z" fill="#f2c9a0" stroke="#252340" stroke-width="1" stroke-opacity="0.14"/>
+    <circle id="cactus-1-flower" cx="0" cy="-82" r="5" fill="#ff8fb0"/>
+  </g>
+  <g id="cactus-2" transform="translate(8 10)">
+    <rect id="cactus-2-body" x="-11" y="-100" width="22" height="72" rx="11" fill="#61ad7d"/>
+    <rect id="cactus-2-arm" x="6" y="-71.2" width="16" height="22" rx="8" fill="#6cc08b"/>
+    <path id="cactus-2-ridge" d="M 0 -96 L 0 -30" fill="#000000" stroke="#91d0a8" stroke-width="2" opacity="0.6"/>
+    <path id="cactus-2-pot" d="M -16 -30 L 16 -30 L 12 0 Q 0 4 -12 0 Z" fill="#f2c9a0" stroke="#252340" stroke-width="1" stroke-opacity="0.14"/>
+  </g>
+  <g id="cactus-3" transform="translate(36 -10)">
+    <rect id="cactus-3-body" x="-11" y="-68" width="22" height="40" rx="11" fill="#6cc08b"/>
+    <path id="cactus-3-ridge" d="M 0 -64 L 0 -30" fill="#000000" stroke="#91d0a8" stroke-width="2" opacity="0.6"/>
+    <path id="cactus-3-pot" d="M -16 -30 L 16 -30 L 12 0 Q 0 4 -12 0 Z" fill="#f2c9a0" stroke="#252340" stroke-width="1" stroke-opacity="0.14"/>
+  </g>
+</svg>

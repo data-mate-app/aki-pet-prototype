@@ -25,6 +25,8 @@ export type PetArtProps = {
   facing?: 1 | -1;
   /** 小物（ごはん・本）を出すか */
   props?: boolean;
+  /** まばたきを固定する（書き出し用）。指定すると乱数のまばたきは使わない。省略時は従来どおり */
+  blink?: boolean;
 };
 
 export function PetArt({
@@ -36,9 +38,11 @@ export function PetArt({
   modulation,
   facing = 1,
   props = true,
+  blink: blinkFixed,
 }: PetArtProps) {
   const p = species.palette;
-  const blink = useBlink(species.motion.blinkEvery, pose === 'sleep');
+  const blinkRandom = useBlink(species.motion.blinkEvery, pose === 'sleep');
+  const blink = blinkFixed ?? blinkRandom;
   const sleeping = pose === 'sleep';
   const face: Expression | 'closed' =
     sleeping || action === 'yawn' ? 'closed' : action === 'eat' || action === 'celebrate' ? 'happy' : expression;
@@ -52,23 +56,23 @@ export function PetArt({
 
   return (
     <g className="pet" data-pose={pose} data-action={action} style={vars}>
-      <ellipse className="pet-shadow" cx={2} cy={3} rx={44} ry={11} />
-      <g className="pet-turn" style={{ transform: `scaleX(${facing})` }}>
-        <g className="pet-act" key={actionKey} data-action={action}>
-          <g className="pet-hop">
-            <g className="pet-posture">
+      <ellipse data-part="shadow" className="pet-shadow" cx={2} cy={3} rx={44} ry={11} />
+      <g className="pet-turn" data-part="turn" style={{ transform: `scaleX(${facing})` }}>
+        <g className="pet-act" key={actionKey} data-action={action} data-part="act">
+          <g className="pet-hop" data-part="hop">
+            <g className="pet-posture" data-part="posture">
               <Tail species={species} />
               <Feet color={adjust(p.body, -0.12)} />
-              <g className="pet-breath">
+              <g className="pet-breath" data-part="breath">
                 <Body species={species} />
                 <Paws color={adjust(p.body, -0.06)} up={action === 'celebrate'} />
                 <Ears species={species} />
-                <g className="pet-face">
+                <g className="pet-face" data-part="face">
                   <Markings species={species} />
                   <Eyes kind={face} open={modulation.eyeOpen} blink={blink} line={p.line} />
                   <Mouth species={species} expression={face} action={action} />
-                  <ellipse cx={-29} cy={-46} rx={8.5} ry={5} fill={p.cheek} opacity={0.55} />
-                  <ellipse cx={35} cy={-46} rx={8} ry={5} fill={p.cheek} opacity={0.55} />
+                  <ellipse data-part="cheek-left" cx={-29} cy={-46} rx={8.5} ry={5} fill={p.cheek} opacity={0.55} />
+                  <ellipse data-part="cheek-right" cx={35} cy={-46} rx={8} ry={5} fill={p.cheek} opacity={0.55} />
                 </g>
               </g>
               {props && action === 'eat' && <Bowl />}
@@ -132,31 +136,31 @@ function Body({ species }: { species: SpeciesDef }) {
   const p = species.palette;
   return (
     <g>
-      <path d={BODY} fill={p.body} stroke={adjust(p.body, -0.22)} strokeWidth={2.4} />
+      <path data-part="body" d={BODY} fill={p.body} stroke={adjust(p.body, -0.22)} strokeWidth={2.4} />
       {/* つや */}
-      <path d="M -34 -86 C -24 -96 -6 -100 8 -99" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" fill="none" opacity={0.45} />
-      <ellipse cx={6} cy={-24} rx={31} ry={20} fill={p.belly} opacity={0.9} />
+      <path data-part="body-shine" d="M -34 -86 C -24 -96 -6 -100 8 -99" stroke="#ffffff" strokeWidth={5} strokeLinecap="round" fill="none" opacity={0.45} />
+      <ellipse data-part="belly" cx={6} cy={-24} rx={31} ry={20} fill={p.belly} opacity={0.9} />
     </g>
   );
 }
 
 function Feet({ color }: { color: string }) {
   return (
-    <g>
-      <ellipse className="pet-foot pet-foot-a" cx={-24} cy={-1} rx={14} ry={7.5} fill={color} />
-      <ellipse className="pet-foot pet-foot-b" cx={26} cy={-1} rx={14} ry={7.5} fill={color} />
+    <g data-part="feet">
+      <ellipse data-part="foot-left" className="pet-foot pet-foot-a" cx={-24} cy={-1} rx={14} ry={7.5} fill={color} />
+      <ellipse data-part="foot-right" className="pet-foot pet-foot-b" cx={26} cy={-1} rx={14} ry={7.5} fill={color} />
     </g>
   );
 }
 
 function Paws({ color, up }: { color: string; up: boolean }) {
   return (
-    <g className="pet-paws" data-up={up}>
+    <g className="pet-paws" data-up={up} data-part="paws">
       <g transform="translate(-50 -36)">
-        <ellipse className="pet-paw pet-paw-l" cx={0} cy={0} rx={9} ry={11} fill={color} />
+        <ellipse data-part="paw-left" className="pet-paw pet-paw-l" cx={0} cy={0} rx={9} ry={11} fill={color} />
       </g>
       <g transform="translate(54 -36)">
-        <ellipse className="pet-paw pet-paw-r" cx={0} cy={0} rx={9} ry={11} fill={color} />
+        <ellipse data-part="paw-right" className="pet-paw pet-paw-r" cx={0} cy={0} rx={9} ry={11} fill={color} />
       </g>
     </g>
   );
@@ -167,14 +171,14 @@ function Ears({ species }: { species: SpeciesDef }) {
   const edge = adjust(p.body, -0.22);
   if (species.ears === 'floppy') {
     return (
-      <g>
+      <g data-part="ears">
         <g transform="translate(-36 -92)">
-          <g className="pet-ear pet-ear-l">
+          <g className="pet-ear pet-ear-l" data-part="ear-left">
             <path d="M 4 -6 C -22 -12 -34 22 -26 42 C -20 54 -6 44 -2 26 Z" fill={p.accent} stroke={adjust(p.accent, -0.2)} strokeWidth={2} />
           </g>
         </g>
         <g transform="translate(40 -92)">
-          <g className="pet-ear pet-ear-r">
+          <g className="pet-ear pet-ear-r" data-part="ear-right">
             <path d="M -4 -6 C 22 -12 34 22 26 42 C 20 54 6 44 2 26 Z" fill={p.accent} stroke={adjust(p.accent, -0.2)} strokeWidth={2} />
           </g>
         </g>
@@ -183,34 +187,34 @@ function Ears({ species }: { species: SpeciesDef }) {
   }
   if (species.ears === 'round') {
     return (
-      <g>
+      <g data-part="ears">
         <g transform="translate(-36 -94)">
-          <g className="pet-ear pet-ear-l">
+          <g className="pet-ear pet-ear-l" data-part="ear-left">
             <circle cx={-2} cy={-6} r={17} fill={p.body} stroke={edge} strokeWidth={2.4} />
-            <circle cx={-2} cy={-5} r={9} fill={p.accent} />
+            <circle data-part="ear-left-inner" cx={-2} cy={-5} r={9} fill={p.accent} />
           </g>
         </g>
         <g transform="translate(40 -94)">
-          <g className="pet-ear pet-ear-r">
+          <g className="pet-ear pet-ear-r" data-part="ear-right">
             <circle cx={2} cy={-6} r={17} fill={p.body} stroke={edge} strokeWidth={2.4} />
-            <circle cx={2} cy={-5} r={9} fill={p.accent} />
+            <circle data-part="ear-right-inner" cx={2} cy={-5} r={9} fill={p.accent} />
           </g>
         </g>
       </g>
     );
   }
   return (
-    <g>
+    <g data-part="ears">
       <g transform="translate(-30 -96)">
-        <g className="pet-ear pet-ear-l">
+        <g className="pet-ear pet-ear-l" data-part="ear-left">
           <path d="M -16 10 L -12 -30 Q -10 -34 -6 -31 L 18 -4 Z" fill={p.body} stroke={edge} strokeWidth={2.4} strokeLinejoin="round" />
-          <path d="M -10 2 L -8 -20 L 8 -4 Z" fill={p.cheek} opacity={0.7} />
+          <path data-part="ear-left-inner" d="M -10 2 L -8 -20 L 8 -4 Z" fill={p.cheek} opacity={0.7} />
         </g>
       </g>
       <g transform="translate(36 -96)">
-        <g className="pet-ear pet-ear-r">
+        <g className="pet-ear pet-ear-r" data-part="ear-right">
           <path d="M 16 10 L 12 -30 Q 10 -34 6 -31 L -18 -4 Z" fill={p.body} stroke={edge} strokeWidth={2.4} strokeLinejoin="round" />
-          <path d="M 10 2 L 8 -20 L -8 -4 Z" fill={p.cheek} opacity={0.7} />
+          <path data-part="ear-right-inner" d="M 10 2 L 8 -20 L -8 -4 Z" fill={p.cheek} opacity={0.7} />
         </g>
       </g>
     </g>
@@ -222,7 +226,7 @@ function Tail({ species }: { species: SpeciesDef }) {
   if (species.tail === 'wag') {
     return (
       <g transform="translate(-48 -24)">
-        <g className="pet-tail" data-kind="wag">
+        <g className="pet-tail" data-kind="wag" data-part="tail">
           <path d="M 0 0 C -20 -4 -28 -26 -20 -38" stroke={p.accent} strokeWidth={13} strokeLinecap="round" fill="none" />
         </g>
       </g>
@@ -231,7 +235,7 @@ function Tail({ species }: { species: SpeciesDef }) {
   if (species.tail === 'puff') {
     return (
       <g transform="translate(-54 -18)">
-        <g className="pet-tail" data-kind="puff">
+        <g className="pet-tail" data-kind="puff" data-part="tail">
           <circle cx={-4} cy={0} r={12} fill={p.belly} stroke={adjust(p.body, -0.2)} strokeWidth={2} />
         </g>
       </g>
@@ -239,9 +243,9 @@ function Tail({ species }: { species: SpeciesDef }) {
   }
   return (
     <g transform="translate(-48 -14)">
-      <g className="pet-tail" data-kind="curl">
-        <path d="M 0 0 C -34 2 -40 -40 -24 -58 C -16 -66 -6 -58 -12 -50" stroke={p.body} strokeWidth={10} strokeLinecap="round" fill="none" />
-        <path d="M 0 0 C -34 2 -40 -40 -24 -58 C -16 -66 -6 -58 -12 -50" stroke={p.accent} strokeWidth={10} strokeLinecap="round" fill="none" strokeDasharray="7 9" />
+      <g className="pet-tail" data-kind="curl" data-part="tail">
+        <path data-part="tail-base" d="M 0 0 C -34 2 -40 -40 -24 -58 C -16 -66 -6 -58 -12 -50" stroke={p.body} strokeWidth={10} strokeLinecap="round" fill="none" />
+        <path data-part="tail-stripe" d="M 0 0 C -34 2 -40 -40 -24 -58 C -16 -66 -6 -58 -12 -50" stroke={p.accent} strokeWidth={10} strokeLinecap="round" fill="none" strokeDasharray="7 9" />
       </g>
     </g>
   );
@@ -251,23 +255,23 @@ function Markings({ species }: { species: SpeciesDef }) {
   const p = species.palette;
   if (species.id === 'potato') {
     return (
-      <g stroke={p.accent} strokeWidth={4} strokeLinecap="round">
-        <path d="M -6 -100 L -4 -88" />
-        <path d="M 6 -101 L 6 -89" />
-        <path d="M 18 -99 L 15 -88" />
-        <g strokeWidth={1.6} stroke={p.line} opacity={0.5}>
-          <path d="M -36 -52 L -50 -54" />
-          <path d="M -36 -47 L -50 -45" />
-          <path d="M 44 -52 L 58 -54" />
-          <path d="M 44 -47 L 58 -45" />
+      <g data-part="markings" stroke={p.accent} strokeWidth={4} strokeLinecap="round">
+        <path data-part="stripe-1" d="M -6 -100 L -4 -88" />
+        <path data-part="stripe-2" d="M 6 -101 L 6 -89" />
+        <path data-part="stripe-3" d="M 18 -99 L 15 -88" />
+        <g data-part="whiskers" strokeWidth={1.6} stroke={p.line} opacity={0.5}>
+          <path data-part="whisker-left-1" d="M -36 -52 L -50 -54" />
+          <path data-part="whisker-left-2" d="M -36 -47 L -50 -45" />
+          <path data-part="whisker-right-1" d="M 44 -52 L 58 -54" />
+          <path data-part="whisker-right-2" d="M 44 -47 L 58 -45" />
         </g>
       </g>
     );
   }
   if (species.id === 'omochi') {
-    return <ellipse cx={4} cy={-47} rx={15} ry={10.5} fill={p.belly} />;
+    return <ellipse data-part="markings" cx={4} cy={-47} rx={15} ry={10.5} fill={p.belly} />;
   }
-  return <ellipse cx={22} cy={-62} rx={13} ry={12} fill={adjust(p.body, 0.25)} opacity={0.8} />;
+  return <ellipse data-part="markings" cx={22} cy={-62} rx={13} ry={12} fill={adjust(p.body, 0.25)} opacity={0.8} />;
 }
 
 function Eyes({ kind, open, blink, line }: { kind: Expression | 'closed'; open: number; blink: boolean; line: string }) {
@@ -275,29 +279,30 @@ function Eyes({ kind, open, blink, line }: { kind: Expression | 'closed'; open: 
     [-13, -60],
     [21, -60],
   ];
+  const side = (i: number) => (i === 0 ? 'left' : 'right');
   if (kind === 'happy') {
     return (
-      <g stroke={line} strokeWidth={3.6} strokeLinecap="round" fill="none">
-        {at.map(([x, y]) => (
-          <path key={x} d={`M ${x - 6} ${y + 2} Q ${x} ${y - 7} ${x + 6} ${y + 2}`} />
+      <g data-part="eyes" stroke={line} strokeWidth={3.6} strokeLinecap="round" fill="none">
+        {at.map(([x, y], i) => (
+          <path key={x} data-part={`eye-${side(i)}`} d={`M ${x - 6} ${y + 2} Q ${x} ${y - 7} ${x + 6} ${y + 2}`} />
         ))}
       </g>
     );
   }
   if (kind === 'closed') {
     return (
-      <g stroke={line} strokeWidth={3.2} strokeLinecap="round" fill="none">
-        {at.map(([x, y]) => (
-          <path key={x} d={`M ${x - 6} ${y} Q ${x} ${y + 5} ${x + 6} ${y}`} />
+      <g data-part="eyes" stroke={line} strokeWidth={3.2} strokeLinecap="round" fill="none">
+        {at.map(([x, y], i) => (
+          <path key={x} data-part={`eye-${side(i)}`} d={`M ${x - 6} ${y} Q ${x} ${y + 5} ${x + 6} ${y}`} />
         ))}
       </g>
     );
   }
   if (kind === 'love') {
     return (
-      <g fill="#ff5c8a">
-        {at.map(([x, y]) => (
-          <path key={x} d={`M ${x} ${y + 6} C ${x - 10} ${y - 1} ${x - 6} ${y - 9} ${x} ${y - 4} C ${x + 6} ${y - 9} ${x + 10} ${y - 1} ${x} ${y + 6} Z`} />
+      <g data-part="eyes" fill="#ff5c8a">
+        {at.map(([x, y], i) => (
+          <path key={x} data-part={`eye-${side(i)}`} d={`M ${x} ${y + 6} C ${x - 10} ${y - 1} ${x - 6} ${y - 9} ${x} ${y - 4} C ${x + 6} ${y - 9} ${x + 10} ${y - 1} ${x} ${y + 6} Z`} />
         ))}
       </g>
     );
@@ -306,15 +311,15 @@ function Eyes({ kind, open, blink, line }: { kind: Expression | 'closed'; open: 
   const lid = kind === 'bored' ? 0.55 : kind === 'tired' ? 0.4 : kind === 'sleepy' ? 0.32 : 1;
   const scale = blink ? 0.08 : Math.max(0.08, Math.min(1, open) * lid);
   return (
-    <g>
-      {at.map(([x, y]) => (
-        <g key={x} transform={`translate(${x} ${y})`}>
+    <g data-part="eyes">
+      {at.map(([x, y], i) => (
+        <g key={x} data-part={`eye-${side(i)}`} transform={`translate(${x} ${y})`}>
           <g className="pet-eye" style={{ transform: `scaleY(${scale})` }}>
-            <ellipse cx={0} cy={0} rx={big ? 6.6 : 5.6} ry={big ? 8.6 : 7.2} fill={line} />
-            <circle cx={1.8} cy={-2.8} r={big ? 2.4 : 2} fill="#ffffff" />
+            <ellipse data-part={`eye-${side(i)}-pupil`} cx={0} cy={0} rx={big ? 6.6 : 5.6} ry={big ? 8.6 : 7.2} fill={line} />
+            <circle data-part={`eye-${side(i)}-shine`} cx={1.8} cy={-2.8} r={big ? 2.4 : 2} fill="#ffffff" />
           </g>
-          {lid < 1 && !blink && <path d="M -7 -2 Q 0 -4 7 -2" stroke={line} strokeWidth={2.4} strokeLinecap="round" fill="none" opacity={0.8} />}
-          {kind === 'focused' && <path d={x < 0 ? 'M -7 -13 L 6 -10' : 'M -6 -10 L 7 -13'} stroke={line} strokeWidth={2.8} strokeLinecap="round" />}
+          {lid < 1 && !blink && <path data-part={`eye-${side(i)}-lid`} d="M -7 -2 Q 0 -4 7 -2" stroke={line} strokeWidth={2.4} strokeLinecap="round" fill="none" opacity={0.8} />}
+          {kind === 'focused' && <path data-part={`eye-${side(i)}-brow`} d={x < 0 ? 'M -7 -13 L 6 -10' : 'M -6 -10 L 7 -13'} stroke={line} strokeWidth={2.8} strokeLinecap="round" />}
         </g>
       ))}
     </g>
@@ -325,38 +330,38 @@ function Mouth({ species, expression, action }: { species: SpeciesDef; expressio
   const line = species.palette.line;
   const nose =
     species.id === 'potato' ? (
-      <path d="M 1 -54 L 7 -54 L 4 -50.5 Z" fill="#ff8fa6" stroke={line} strokeWidth={1.2} strokeLinejoin="round" />
+      <path data-part="nose" d="M 1 -54 L 7 -54 L 4 -50.5 Z" fill="#ff8fa6" stroke={line} strokeWidth={1.2} strokeLinejoin="round" />
     ) : (
-      <ellipse cx={4} cy={-53} rx={4.6} ry={3.3} fill={line} />
+      <ellipse data-part="nose" cx={4} cy={-53} rx={4.6} ry={3.3} fill={line} />
     );
   let mouth;
   if (action === 'yawn') {
     mouth = (
-      <g transform="translate(4 -42)">
+      <g data-part="mouth" transform="translate(4 -42)">
         <ellipse className="pet-yawn" cx={0} cy={0} rx={6} ry={8} fill="#8a3a4a" />
       </g>
     );
   } else if (action === 'eat') {
     mouth = (
-      <g transform="translate(4 -44)">
+      <g data-part="mouth" transform="translate(4 -44)">
         <ellipse className="pet-chew" cx={0} cy={0} rx={5} ry={4} fill="#8a3a4a" />
       </g>
     );
   } else if (expression === 'happy' || expression === 'love') {
     mouth = (
-      <g>
+      <g data-part="mouth">
         <path d="M -4 -48 Q 4 -34 12 -48 Z" fill="#8a3a4a" stroke={line} strokeWidth={1.6} strokeLinejoin="round" />
         <path d="M 0 -41 Q 4 -37 8 -41" fill="#ff8fa6" />
       </g>
     );
   } else if (expression === 'surprised') {
-    mouth = <ellipse cx={4} cy={-43} rx={3.6} ry={4.4} fill="#8a3a4a" />;
+    mouth = <ellipse data-part="mouth" cx={4} cy={-43} rx={3.6} ry={4.4} fill="#8a3a4a" />;
   } else if (expression === 'tired' || expression === 'bored' || expression === 'sleepy') {
-    mouth = <path d="M -1 -45 Q 4 -47 9 -45" stroke={line} strokeWidth={2.4} strokeLinecap="round" fill="none" />;
+    mouth = <path data-part="mouth" d="M -1 -45 Q 4 -47 9 -45" stroke={line} strokeWidth={2.4} strokeLinecap="round" fill="none" />;
   } else if (species.id === 'potato') {
-    mouth = <path d="M -3 -47 Q 0.5 -43 4 -47 Q 7.5 -43 11 -47" stroke={line} strokeWidth={2.2} strokeLinecap="round" fill="none" />;
+    mouth = <path data-part="mouth" d="M -3 -47 Q 0.5 -43 4 -47 Q 7.5 -43 11 -47" stroke={line} strokeWidth={2.2} strokeLinecap="round" fill="none" />;
   } else {
-    mouth = <path d="M -1 -47 Q 4 -42.5 9 -47" stroke={line} strokeWidth={2.4} strokeLinecap="round" fill="none" />;
+    mouth = <path data-part="mouth" d="M -1 -47 Q 4 -42.5 9 -47" stroke={line} strokeWidth={2.4} strokeLinecap="round" fill="none" />;
   }
   return (
     <g>
@@ -368,24 +373,24 @@ function Mouth({ species, expression, action }: { species: SpeciesDef; expressio
 
 function Bowl() {
   return (
-    <g className="pet-prop" transform="translate(44 -4)">
-      <ellipse cx={0} cy={0} rx={20} ry={7} fill="#2a2140" opacity={0.15} />
-      <path d="M -19 -14 L 19 -14 Q 16 2 0 2 Q -16 2 -19 -14 Z" fill="#ffffff" stroke="rgba(37,35,64,0.25)" strokeWidth={1.6} />
-      <ellipse cx={0} cy={-14} rx={19} ry={5} fill="#ffe7bf" stroke="rgba(37,35,64,0.2)" strokeWidth={1.2} />
-      <path className="pet-steam" d="M -4 -24 q -5 -6 0 -12 t 0 -12" stroke="#ffffff" strokeWidth={3} strokeLinecap="round" fill="none" opacity={0.8} />
+    <g className="pet-prop" data-part="bowl" transform="translate(44 -4)">
+      <ellipse data-part="bowl-shadow" cx={0} cy={0} rx={20} ry={7} fill="#2a2140" opacity={0.15} />
+      <path data-part="bowl-body" d="M -19 -14 L 19 -14 Q 16 2 0 2 Q -16 2 -19 -14 Z" fill="#ffffff" stroke="rgba(37,35,64,0.25)" strokeWidth={1.6} />
+      <ellipse data-part="bowl-food" cx={0} cy={-14} rx={19} ry={5} fill="#ffe7bf" stroke="rgba(37,35,64,0.2)" strokeWidth={1.2} />
+      <path data-part="steam" className="pet-steam" d="M -4 -24 q -5 -6 0 -12 t 0 -12" stroke="#ffffff" strokeWidth={3} strokeLinecap="round" fill="none" opacity={0.8} />
     </g>
   );
 }
 
 function Book() {
   return (
-    <g className="pet-prop" transform="translate(40 -30)">
+    <g className="pet-prop" data-part="book" transform="translate(40 -30)">
       <g className="pet-book">
-      <path d="M 0 0 L -22 -8 L -22 14 L 0 22 Z" fill="#7c9cff" />
-      <path d="M 0 0 L 22 -8 L 22 14 L 0 22 Z" fill="#5d7df0" />
-      <path d="M 0 2 L -18 -4 L -18 12 L 0 18 Z" fill="#ffffff" />
-      <path d="M 0 2 L 18 -4 L 18 12 L 0 18 Z" fill="#f2f4ff" />
-      <path d="M -14 2 L -4 6 M -14 7 L -4 11" stroke="#b8c4ee" strokeWidth={1.5} />
+      <path data-part="book-cover-left" d="M 0 0 L -22 -8 L -22 14 L 0 22 Z" fill="#7c9cff" />
+      <path data-part="book-cover-right" d="M 0 0 L 22 -8 L 22 14 L 0 22 Z" fill="#5d7df0" />
+      <path data-part="book-pages-left" d="M 0 2 L -18 -4 L -18 12 L 0 18 Z" fill="#ffffff" />
+      <path data-part="book-pages-right" d="M 0 2 L 18 -4 L 18 12 L 0 18 Z" fill="#f2f4ff" />
+      <path data-part="book-lines" d="M -14 2 L -4 6 M -14 7 L -4 11" stroke="#b8c4ee" strokeWidth={1.5} />
       </g>
     </g>
   );
@@ -393,14 +398,14 @@ function Book() {
 
 function Zzz() {
   return (
-    <g className="pet-zzz" fontFamily="var(--font-display)" fill="#ffffff" stroke="#3b3a6a" strokeWidth={1.2} paintOrder="stroke">
-      <text x={30} y={-90} fontSize={20}>
+    <g className="pet-zzz" data-part="zzz" fontFamily="var(--font-display)" fill="#ffffff" stroke="#3b3a6a" strokeWidth={1.2} paintOrder="stroke">
+      <text data-part="z-1" x={30} y={-90} fontSize={20}>
         z
       </text>
-      <text x={30} y={-90} fontSize={26}>
+      <text data-part="z-2" x={30} y={-90} fontSize={26}>
         z
       </text>
-      <text x={30} y={-90} fontSize={32}>
+      <text data-part="z-3" x={30} y={-90} fontSize={32}>
         Z
       </text>
     </g>
@@ -410,7 +415,7 @@ function Zzz() {
 function Hearts({ sparkle }: { sparkle: boolean }) {
   const heart = 'M 0 6 C -10 -1 -6 -9 0 -4 C 6 -9 10 -1 0 6 Z';
   return (
-    <g className="pet-hearts">
+    <g className="pet-hearts" data-part="hearts">
       {[
         { x: -40, d: 0 },
         { x: 44, d: 0.35 },
@@ -418,6 +423,7 @@ function Hearts({ sparkle }: { sparkle: boolean }) {
       ].map((h, i) => (
         <g key={i} transform={`translate(${h.x} -96)`}>
           <path
+            data-part={`heart-${i + 1}`}
             className="pet-heart"
             style={{ animationDelay: `${h.d}s` }}
             d={sparkle ? 'M 0 -10 L 3 -3 L 10 0 L 3 3 L 0 10 L -3 3 L -10 0 L -3 -3 Z' : heart}

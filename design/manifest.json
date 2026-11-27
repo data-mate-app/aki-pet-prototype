@@ -1,0 +1,2094 @@
+{
+  "assets": [
+    {
+      "path": "furniture/bed-oat",
+      "kind": "furniture",
+      "label": "ふかふかベッド",
+      "svg": "svg/furniture/bed-oat.svg",
+      "png": "png/furniture/bed-oat@2x.png",
+      "viewBox": [
+        -172,
+        -175,
+        337,
+        284
+      ],
+      "width": 337,
+      "height": 284,
+      "anchor": {
+        "x": 172,
+        "y": 175
+      }
+    },
+    {
+      "path": "furniture/bed-oat_mirrored",
+      "kind": "furniture",
+      "label": "ふかふかベッド・左右反転",
+      "svg": "svg/furniture/bed-oat_mirrored.svg",
+      "png": "png/furniture/bed-oat_mirrored@2x.png",
+      "viewBox": [
+        -165,
+        -175,
+        337,
+        284
+      ],
+      "width": 337,
+      "height": 284,
+      "anchor": {
+        "x": 165,
+        "y": 175
+      }
+    },
+    {
+      "path": "furniture/desk-birch_day",
+      "kind": "furniture",
+      "label": "まどべの机・昼",
+      "svg": "svg/furniture/desk-birch_day.svg",
+      "png": "png/furniture/desk-birch_day@2x.png",
+      "viewBox": [
+        -144,
+        -145,
+        281,
+        238
+      ],
+      "width": 281,
+      "height": 238,
+      "anchor": {
+        "x": 144,
+        "y": 145
+      }
+    },
+    {
+      "path": "furniture/desk-birch_night",
+      "kind": "furniture",
+      "label": "まどべの机・夜",
+      "svg": "svg/furniture/desk-birch_night.svg",
+      "png": "png/furniture/desk-birch_night@2x.png",
+      "viewBox": [
+        -144,
+        -145,
+        281,
+        238
+      ],
+      "width": 281,
+      "height": 238,
+      "anchor": {
+        "x": 144,
+        "y": 145
+      }
+    },
+    {
+      "path": "furniture/desk-birch_mirrored_day",
+      "kind": "furniture",
+      "label": "まどべの机・左右反転・昼",
+      "svg": "svg/furniture/desk-birch_mirrored_day.svg",
+      "png": "png/furniture/desk-birch_mirrored_day@2x.png",
+      "viewBox": [
+        -137,
+        -145,
+        281,
+        238
+      ],
+      "width": 281,
+      "height": 238,
+      "anchor": {
+        "x": 137,
+        "y": 145
+      }
+    },
+    {
+      "path": "furniture/desk-birch_mirrored_night",
+      "kind": "furniture",
+      "label": "まどべの机・左右反転・夜",
+      "svg": "svg/furniture/desk-birch_mirrored_night.svg",
+      "png": "png/furniture/desk-birch_mirrored_night@2x.png",
+      "viewBox": [
+        -137,
+        -145,
+        281,
+        238
+      ],
+      "width": 281,
+      "height": 238,
+      "anchor": {
+        "x": 137,
+        "y": 145
+      }
+    },
+    {
+      "path": "furniture/shelf-walnut",
+      "kind": "furniture",
+      "label": "きろくの本棚",
+      "svg": "svg/furniture/shelf-walnut.svg",
+      "png": "png/furniture/shelf-walnut@2x.png",
+      "viewBox": [
+        -114,
+        -236,
+        221,
+        311
+      ],
+      "width": 221,
+      "height": 311,
+      "anchor": {
+        "x": 114,
+        "y": 236
+      }
+    },
+    {
+      "path": "furniture/shelf-walnut_mirrored",
+      "kind": "furniture",
+      "label": "きろくの本棚・左右反転",
+      "svg": "svg/furniture/shelf-walnut_mirrored.svg",
+      "png": "png/furniture/shelf-walnut_mirrored@2x.png",
+      "viewBox": [
+        -107,
+        -236,
+        221,
+        311
+      ],
+      "width": 221,
+      "height": 311,
+      "anchor": {
+        "x": 107,
+        "y": 236
+      }
+    },
+    {
+      "path": "furniture/table-round",
+      "kind": "furniture",
+      "label": "まるいちゃぶ台",
+      "svg": "svg/furniture/table-round.svg",
+      "png": "png/furniture/table-round@2x.png",
+      "viewBox": [
+        -92,
+        -87,
+        192,
+        156
+      ],
+      "width": 192,
+      "height": 156,
+      "anchor": {
+        "x": 92,
+        "y": 87
+      }
+    },
+    {
+      "path": "furniture/cushion-mint",
+      "kind": "furniture",
+      "label": "ざぶとん",
+      "svg": "svg/furniture/cushion-mint.svg",
+      "png": "png/furniture/cushion-mint@2x.png",
+      "viewBox": [
+        -76,
+        -58,
+        160,
+        114
+      ],
+      "width": 160,
+      "height": 114,
+      "anchor": {
+        "x": 76,
+        "y": 58
+      }
+    },
+    {
+      "path": "furniture/cushion-mint_mirrored",
+      "kind": "furniture",
+      "label": "ざぶとん・左右反転",
+      "svg": "svg/furniture/cushion-mint_mirrored.svg",
+      "png": "png/furniture/cushion-mint_mirrored@2x.png",
+      "viewBox": [
+        -84,
+        -58,
+        160,
+        114
+      ],
+      "width": 160,
+      "height": 114,
+      "anchor": {
+        "x": 84,
+        "y": 58
+      }
+    },
+    {
+      "path": "furniture/plant-monstera",
+      "kind": "furniture",
+      "label": "モンステラ",
+      "svg": "svg/furniture/plant-monstera.svg",
+      "png": "png/furniture/plant-monstera@2x.png",
+      "viewBox": [
+        -54,
+        -166,
+        116,
+        210
+      ],
+      "width": 116,
+      "height": 210,
+      "anchor": {
+        "x": 54,
+        "y": 166
+      }
+    },
+    {
+      "path": "furniture/plant-monstera_mirrored",
+      "kind": "furniture",
+      "label": "モンステラ・左右反転",
+      "svg": "svg/furniture/plant-monstera_mirrored.svg",
+      "png": "png/furniture/plant-monstera_mirrored@2x.png",
+      "viewBox": [
+        -62,
+        -166,
+        116,
+        210
+      ],
+      "width": 116,
+      "height": 210,
+      "anchor": {
+        "x": 62,
+        "y": 166
+      }
+    },
+    {
+      "path": "furniture/rug-wave",
+      "kind": "furniture",
+      "label": "なみのラグ",
+      "svg": "svg/furniture/rug-wave.svg",
+      "png": "png/furniture/rug-wave@2x.png",
+      "viewBox": [
+        -230,
+        -133,
+        460,
+        266
+      ],
+      "width": 460,
+      "height": 266,
+      "anchor": {
+        "x": 230,
+        "y": 133
+      }
+    },
+    {
+      "path": "furniture/clock-round_day",
+      "kind": "furniture",
+      "label": "かべどけい・昼",
+      "svg": "svg/furniture/clock-round_day.svg",
+      "png": "png/furniture/clock-round_day@2x.png",
+      "viewBox": [
+        -44,
+        -44,
+        88,
+        88
+      ],
+      "width": 88,
+      "height": 88,
+      "anchor": {
+        "x": 44,
+        "y": 44
+      }
+    },
+    {
+      "path": "furniture/clock-round_night",
+      "kind": "furniture",
+      "label": "かべどけい・夜",
+      "svg": "svg/furniture/clock-round_night.svg",
+      "png": "png/furniture/clock-round_night@2x.png",
+      "viewBox": [
+        -44,
+        -44,
+        88,
+        88
+      ],
+      "width": 88,
+      "height": 88,
+      "anchor": {
+        "x": 44,
+        "y": 44
+      }
+    },
+    {
+      "path": "furniture/clock-round_wall-left_day",
+      "kind": "furniture",
+      "label": "かべどけい・左の壁・昼",
+      "svg": "svg/furniture/clock-round_wall-left_day.svg",
+      "png": "png/furniture/clock-round_wall-left_day@2x.png",
+      "viewBox": [
+        -39,
+        -50,
+        78,
+        100
+      ],
+      "width": 78,
+      "height": 100,
+      "anchor": {
+        "x": 39,
+        "y": 50
+      }
+    },
+    {
+      "path": "furniture/clock-round_wall-left_night",
+      "kind": "furniture",
+      "label": "かべどけい・左の壁・夜",
+      "svg": "svg/furniture/clock-round_wall-left_night.svg",
+      "png": "png/furniture/clock-round_wall-left_night@2x.png",
+      "viewBox": [
+        -39,
+        -50,
+        78,
+        100
+      ],
+      "width": 78,
+      "height": 100,
+      "anchor": {
+        "x": 39,
+        "y": 50
+      }
+    },
+    {
+      "path": "furniture/clock-round_wall-right_day",
+      "kind": "furniture",
+      "label": "かべどけい・右の壁・昼",
+      "svg": "svg/furniture/clock-round_wall-right_day.svg",
+      "png": "png/furniture/clock-round_wall-right_day@2x.png",
+      "viewBox": [
+        -39,
+        -50,
+        78,
+        100
+      ],
+      "width": 78,
+      "height": 100,
+      "anchor": {
+        "x": 39,
+        "y": 50
+      }
+    },
+    {
+      "path": "furniture/clock-round_wall-right_night",
+      "kind": "furniture",
+      "label": "かべどけい・右の壁・夜",
+      "svg": "svg/furniture/clock-round_wall-right_night.svg",
+      "png": "png/furniture/clock-round_wall-right_night@2x.png",
+      "viewBox": [
+        -39,
+        -50,
+        78,
+        100
+      ],
+      "width": 78,
+      "height": 100,
+      "anchor": {
+        "x": 39,
+        "y": 50
+      }
+    },
+    {
+      "path": "furniture/lamp-amber_day",
+      "kind": "furniture",
+      "label": "あかりスタンド・昼",
+      "svg": "svg/furniture/lamp-amber_day.svg",
+      "png": "png/furniture/lamp-amber_day@2x.png",
+      "viewBox": [
+        -48,
+        -208,
+        104,
+        248
+      ],
+      "width": 104,
+      "height": 248,
+      "anchor": {
+        "x": 48,
+        "y": 208
+      }
+    },
+    {
+      "path": "furniture/lamp-amber_night",
+      "kind": "furniture",
+      "label": "あかりスタンド・夜",
+      "svg": "svg/furniture/lamp-amber_night.svg",
+      "png": "png/furniture/lamp-amber_night@2x.png",
+      "viewBox": [
+        -150,
+        -300,
+        300,
+        340
+      ],
+      "width": 300,
+      "height": 340,
+      "anchor": {
+        "x": 150,
+        "y": 300
+      }
+    },
+    {
+      "path": "furniture/lamp-amber_mirrored_day",
+      "kind": "furniture",
+      "label": "あかりスタンド・左右反転・昼",
+      "svg": "svg/furniture/lamp-amber_mirrored_day.svg",
+      "png": "png/furniture/lamp-amber_mirrored_day@2x.png",
+      "viewBox": [
+        -56,
+        -208,
+        104,
+        248
+      ],
+      "width": 104,
+      "height": 248,
+      "anchor": {
+        "x": 56,
+        "y": 208
+      }
+    },
+    {
+      "path": "furniture/lamp-amber_mirrored_night",
+      "kind": "furniture",
+      "label": "あかりスタンド・左右反転・夜",
+      "svg": "svg/furniture/lamp-amber_mirrored_night.svg",
+      "png": "png/furniture/lamp-amber_mirrored_night@2x.png",
+      "viewBox": [
+        -150,
+        -300,
+        300,
+        340
+      ],
+      "width": 300,
+      "height": 340,
+      "anchor": {
+        "x": 150,
+        "y": 300
+      }
+    },
+    {
+      "path": "furniture/poster-hill",
+      "kind": "furniture",
+      "label": "おかのポスター",
+      "svg": "svg/furniture/poster-hill.svg",
+      "png": "png/furniture/poster-hill@2x.png",
+      "viewBox": [
+        -50,
+        -64,
+        100,
+        128
+      ],
+      "width": 100,
+      "height": 128,
+      "anchor": {
+        "x": 50,
+        "y": 64
+      }
+    },
+    {
+      "path": "furniture/poster-hill_wall-left",
+      "kind": "furniture",
+      "label": "おかのポスター・左の壁",
+      "svg": "svg/furniture/poster-hill_wall-left.svg",
+      "png": "png/furniture/poster-hill_wall-left@2x.png",
+      "viewBox": [
+        -44,
+        -88,
+        88,
+        176
+      ],
+      "width": 88,
+      "height": 176,
+      "anchor": {
+        "x": 44,
+        "y": 88
+      }
+    },
+    {
+      "path": "furniture/poster-hill_wall-right",
+      "kind": "furniture",
+      "label": "おかのポスター・右の壁",
+      "svg": "svg/furniture/poster-hill_wall-right.svg",
+      "png": "png/furniture/poster-hill_wall-right@2x.png",
+      "viewBox": [
+        -44,
+        -88,
+        88,
+        176
+      ],
+      "width": 88,
+      "height": 176,
+      "anchor": {
+        "x": 44,
+        "y": 88
+      }
+    },
+    {
+      "path": "furniture/beanbag-berry",
+      "kind": "furniture",
+      "label": "ビーズクッション",
+      "svg": "svg/furniture/beanbag-berry.svg",
+      "png": "png/furniture/beanbag-berry@2x.png",
+      "viewBox": [
+        -84,
+        -93,
+        176,
+        151
+      ],
+      "width": 176,
+      "height": 151,
+      "anchor": {
+        "x": 84,
+        "y": 93
+      }
+    },
+    {
+      "path": "furniture/beanbag-berry_mirrored",
+      "kind": "furniture",
+      "label": "ビーズクッション・左右反転",
+      "svg": "svg/furniture/beanbag-berry_mirrored.svg",
+      "png": "png/furniture/beanbag-berry_mirrored@2x.png",
+      "viewBox": [
+        -92,
+        -93,
+        176,
+        151
+      ],
+      "width": 176,
+      "height": 151,
+      "anchor": {
+        "x": 92,
+        "y": 93
+      }
+    },
+    {
+      "path": "furniture/cactus-trio",
+      "kind": "furniture",
+      "label": "サボテン三兄弟",
+      "svg": "svg/furniture/cactus-trio.svg",
+      "png": "png/furniture/cactus-trio@2x.png",
+      "viewBox": [
+        -72,
+        -90,
+        156,
+        142
+      ],
+      "width": 156,
+      "height": 142,
+      "anchor": {
+        "x": 72,
+        "y": 90
+      }
+    },
+    {
+      "path": "furniture/cactus-trio_mirrored",
+      "kind": "furniture",
+      "label": "サボテン三兄弟・左右反転",
+      "svg": "svg/furniture/cactus-trio_mirrored.svg",
+      "png": "png/furniture/cactus-trio_mirrored@2x.png",
+      "viewBox": [
+        -84,
+        -90,
+        156,
+        142
+      ],
+      "width": 156,
+      "height": 142,
+      "anchor": {
+        "x": 84,
+        "y": 90
+      }
+    },
+    {
+      "path": "furniture/rug-sun",
+      "kind": "furniture",
+      "label": "おひさまラグ",
+      "svg": "svg/furniture/rug-sun.svg",
+      "png": "png/furniture/rug-sun@2x.png",
+      "viewBox": [
+        -157,
+        -91,
+        314,
+        182
+      ],
+      "width": 314,
+      "height": 182,
+      "anchor": {
+        "x": 157,
+        "y": 91
+      }
+    },
+    {
+      "path": "furniture/bed-mint",
+      "kind": "furniture",
+      "label": "ミントのベッド",
+      "svg": "svg/furniture/bed-mint.svg",
+      "png": "png/furniture/bed-mint@2x.png",
+      "viewBox": [
+        -172,
+        -175,
+        337,
+        284
+      ],
+      "width": 337,
+      "height": 284,
+      "anchor": {
+        "x": 172,
+        "y": 175
+      }
+    },
+    {
+      "path": "furniture/bed-mint_mirrored",
+      "kind": "furniture",
+      "label": "ミントのベッド・左右反転",
+      "svg": "svg/furniture/bed-mint_mirrored.svg",
+      "png": "png/furniture/bed-mint_mirrored@2x.png",
+      "viewBox": [
+        -165,
+        -175,
+        337,
+        284
+      ],
+      "width": 337,
+      "height": 284,
+      "anchor": {
+        "x": 165,
+        "y": 175
+      }
+    },
+    {
+      "path": "furniture/poster-night",
+      "kind": "furniture",
+      "label": "よぞらのポスター",
+      "svg": "svg/furniture/poster-night.svg",
+      "png": "png/furniture/poster-night@2x.png",
+      "viewBox": [
+        -50,
+        -64,
+        100,
+        128
+      ],
+      "width": 100,
+      "height": 128,
+      "anchor": {
+        "x": 50,
+        "y": 64
+      }
+    },
+    {
+      "path": "furniture/poster-night_wall-left",
+      "kind": "furniture",
+      "label": "よぞらのポスター・左の壁",
+      "svg": "svg/furniture/poster-night_wall-left.svg",
+      "png": "png/furniture/poster-night_wall-left@2x.png",
+      "viewBox": [
+        -44,
+        -88,
+        88,
+        176
+      ],
+      "width": 88,
+      "height": 176,
+      "anchor": {
+        "x": 44,
+        "y": 88
+      }
+    },
+    {
+      "path": "furniture/poster-night_wall-right",
+      "kind": "furniture",
+      "label": "よぞらのポスター・右の壁",
+      "svg": "svg/furniture/poster-night_wall-right.svg",
+      "png": "png/furniture/poster-night_wall-right@2x.png",
+      "viewBox": [
+        -44,
+        -88,
+        88,
+        176
+      ],
+      "width": 88,
+      "height": 176,
+      "anchor": {
+        "x": 44,
+        "y": 88
+      }
+    },
+    {
+      "path": "furniture/plant-pothos",
+      "kind": "furniture",
+      "label": "ポトス",
+      "svg": "svg/furniture/plant-pothos.svg",
+      "png": "png/furniture/plant-pothos@2x.png",
+      "viewBox": [
+        -54,
+        -166,
+        116,
+        210
+      ],
+      "width": 116,
+      "height": 210,
+      "anchor": {
+        "x": 54,
+        "y": 166
+      }
+    },
+    {
+      "path": "furniture/plant-pothos_mirrored",
+      "kind": "furniture",
+      "label": "ポトス・左右反転",
+      "svg": "svg/furniture/plant-pothos_mirrored.svg",
+      "png": "png/furniture/plant-pothos_mirrored@2x.png",
+      "viewBox": [
+        -62,
+        -166,
+        116,
+        210
+      ],
+      "width": 116,
+      "height": 210,
+      "anchor": {
+        "x": 62,
+        "y": 166
+      }
+    },
+    {
+      "path": "thumb/bed-oat",
+      "kind": "thumb",
+      "label": "ふかふかベッド（おみせの絵）",
+      "svg": "svg/thumb/bed-oat.svg",
+      "png": "png/thumb/bed-oat@2x.png",
+      "viewBox": [
+        -200,
+        -220,
+        400,
+        400
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 200,
+        "y": 220
+      }
+    },
+    {
+      "path": "thumb/desk-birch",
+      "kind": "thumb",
+      "label": "まどべの机（おみせの絵）",
+      "svg": "svg/thumb/desk-birch.svg",
+      "png": "png/thumb/desk-birch@2x.png",
+      "viewBox": [
+        -170,
+        -220,
+        340,
+        340
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 170,
+        "y": 220
+      }
+    },
+    {
+      "path": "thumb/shelf-walnut",
+      "kind": "thumb",
+      "label": "きろくの本棚（おみせの絵）",
+      "svg": "svg/thumb/shelf-walnut.svg",
+      "png": "png/thumb/shelf-walnut@2x.png",
+      "viewBox": [
+        -160,
+        -270,
+        320,
+        320
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 160,
+        "y": 270
+      }
+    },
+    {
+      "path": "thumb/table-round",
+      "kind": "thumb",
+      "label": "まるいちゃぶ台（おみせの絵）",
+      "svg": "svg/thumb/table-round.svg",
+      "png": "png/thumb/table-round@2x.png",
+      "viewBox": [
+        -110,
+        -135,
+        220,
+        220
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 110,
+        "y": 135
+      }
+    },
+    {
+      "path": "thumb/cushion-mint",
+      "kind": "thumb",
+      "label": "ざぶとん（おみせの絵）",
+      "svg": "svg/thumb/cushion-mint.svg",
+      "png": "png/thumb/cushion-mint@2x.png",
+      "viewBox": [
+        -90,
+        -105,
+        180,
+        180
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 90,
+        "y": 105
+      }
+    },
+    {
+      "path": "thumb/plant-monstera",
+      "kind": "thumb",
+      "label": "モンステラ（おみせの絵）",
+      "svg": "svg/thumb/plant-monstera.svg",
+      "png": "png/thumb/plant-monstera@2x.png",
+      "viewBox": [
+        -100,
+        -180,
+        200,
+        200
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 100,
+        "y": 180
+      }
+    },
+    {
+      "path": "thumb/rug-wave",
+      "kind": "thumb",
+      "label": "なみのラグ（おみせの絵）",
+      "svg": "svg/thumb/rug-wave.svg",
+      "png": "png/thumb/rug-wave@2x.png",
+      "viewBox": [
+        -260,
+        -260,
+        520,
+        520
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 260,
+        "y": 260
+      }
+    },
+    {
+      "path": "thumb/clock-round",
+      "kind": "thumb",
+      "label": "かべどけい（おみせの絵）",
+      "svg": "svg/thumb/clock-round.svg",
+      "png": "png/thumb/clock-round@2x.png",
+      "viewBox": [
+        -60,
+        -60,
+        120,
+        120
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 60,
+        "y": 60
+      }
+    },
+    {
+      "path": "thumb/lamp-amber",
+      "kind": "thumb",
+      "label": "あかりスタンド（おみせの絵）",
+      "svg": "svg/thumb/lamp-amber.svg",
+      "png": "png/thumb/lamp-amber@2x.png",
+      "viewBox": [
+        -140,
+        -260,
+        280,
+        280
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 140,
+        "y": 260
+      }
+    },
+    {
+      "path": "thumb/poster-hill",
+      "kind": "thumb",
+      "label": "おかのポスター（おみせの絵）",
+      "svg": "svg/thumb/poster-hill.svg",
+      "png": "png/thumb/poster-hill@2x.png",
+      "viewBox": [
+        -80,
+        -80,
+        160,
+        160
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 80,
+        "y": 80
+      }
+    },
+    {
+      "path": "thumb/beanbag-berry",
+      "kind": "thumb",
+      "label": "ビーズクッション（おみせの絵）",
+      "svg": "svg/thumb/beanbag-berry.svg",
+      "png": "png/thumb/beanbag-berry@2x.png",
+      "viewBox": [
+        -95,
+        -130,
+        190,
+        190
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 95,
+        "y": 130
+      }
+    },
+    {
+      "path": "thumb/cactus-trio",
+      "kind": "thumb",
+      "label": "サボテン三兄弟（おみせの絵）",
+      "svg": "svg/thumb/cactus-trio.svg",
+      "png": "png/thumb/cactus-trio@2x.png",
+      "viewBox": [
+        -85,
+        -140,
+        170,
+        170
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 85,
+        "y": 140
+      }
+    },
+    {
+      "path": "thumb/rug-sun",
+      "kind": "thumb",
+      "label": "おひさまラグ（おみせの絵）",
+      "svg": "svg/thumb/rug-sun.svg",
+      "png": "png/thumb/rug-sun@2x.png",
+      "viewBox": [
+        -260,
+        -260,
+        520,
+        520
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 260,
+        "y": 260
+      }
+    },
+    {
+      "path": "thumb/bed-mint",
+      "kind": "thumb",
+      "label": "ミントのベッド（おみせの絵）",
+      "svg": "svg/thumb/bed-mint.svg",
+      "png": "png/thumb/bed-mint@2x.png",
+      "viewBox": [
+        -200,
+        -220,
+        400,
+        400
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 200,
+        "y": 220
+      }
+    },
+    {
+      "path": "thumb/poster-night",
+      "kind": "thumb",
+      "label": "よぞらのポスター（おみせの絵）",
+      "svg": "svg/thumb/poster-night.svg",
+      "png": "png/thumb/poster-night@2x.png",
+      "viewBox": [
+        -80,
+        -80,
+        160,
+        160
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 80,
+        "y": 80
+      }
+    },
+    {
+      "path": "thumb/plant-pothos",
+      "kind": "thumb",
+      "label": "ポトス（おみせの絵）",
+      "svg": "svg/thumb/plant-pothos.svg",
+      "png": "png/thumb/plant-pothos@2x.png",
+      "viewBox": [
+        -100,
+        -180,
+        200,
+        200
+      ],
+      "width": 96,
+      "height": 96,
+      "anchor": {
+        "x": 100,
+        "y": 180
+      }
+    },
+    {
+      "path": "pet/komugi_stand",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／ふつう",
+      "svg": "svg/pet/komugi_stand.svg",
+      "png": "png/pet/komugi_stand@2x.png",
+      "viewBox": [
+        -81,
+        -109,
+        150,
+        123
+      ],
+      "width": 150,
+      "height": 123,
+      "anchor": {
+        "x": 81,
+        "y": 109
+      }
+    },
+    {
+      "path": "pet/komugi_happy",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／よろこぶ",
+      "svg": "svg/pet/komugi_happy.svg",
+      "png": "png/pet/komugi_happy@2x.png",
+      "viewBox": [
+        -81,
+        -109,
+        152,
+        123
+      ],
+      "width": 152,
+      "height": 123,
+      "anchor": {
+        "x": 81,
+        "y": 109
+      }
+    },
+    {
+      "path": "pet/komugi_love",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／なでられる",
+      "svg": "svg/pet/komugi_love.svg",
+      "png": "png/pet/komugi_love@2x.png",
+      "viewBox": [
+        -81,
+        -109,
+        152,
+        123
+      ],
+      "width": 152,
+      "height": 123,
+      "anchor": {
+        "x": 81,
+        "y": 109
+      }
+    },
+    {
+      "path": "pet/komugi_surprised",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／おどろく",
+      "svg": "svg/pet/komugi_surprised.svg",
+      "png": "png/pet/komugi_surprised@2x.png",
+      "viewBox": [
+        -81,
+        -109,
+        150,
+        123
+      ],
+      "width": 150,
+      "height": 123,
+      "anchor": {
+        "x": 81,
+        "y": 109
+      }
+    },
+    {
+      "path": "pet/komugi_sleepy",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／ねむい",
+      "svg": "svg/pet/komugi_sleepy.svg",
+      "png": "png/pet/komugi_sleepy@2x.png",
+      "viewBox": [
+        -81,
+        -109,
+        146,
+        123
+      ],
+      "width": 146,
+      "height": 123,
+      "anchor": {
+        "x": 81,
+        "y": 109
+      }
+    },
+    {
+      "path": "pet/komugi_tired",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／つかれた",
+      "svg": "svg/pet/komugi_tired.svg",
+      "png": "png/pet/komugi_tired@2x.png",
+      "viewBox": [
+        -81,
+        -109,
+        145,
+        123
+      ],
+      "width": 145,
+      "height": 123,
+      "anchor": {
+        "x": 81,
+        "y": 109
+      }
+    },
+    {
+      "path": "pet/komugi_bored",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／たいくつ",
+      "svg": "svg/pet/komugi_bored.svg",
+      "png": "png/pet/komugi_bored@2x.png",
+      "viewBox": [
+        -81,
+        -109,
+        149,
+        123
+      ],
+      "width": 149,
+      "height": 123,
+      "anchor": {
+        "x": 81,
+        "y": 109
+      }
+    },
+    {
+      "path": "pet/komugi_focused",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／しゅうちゅう",
+      "svg": "svg/pet/komugi_focused.svg",
+      "png": "png/pet/komugi_focused@2x.png",
+      "viewBox": [
+        -85,
+        -101,
+        158,
+        115
+      ],
+      "width": 158,
+      "height": 115,
+      "anchor": {
+        "x": 85,
+        "y": 101
+      }
+    },
+    {
+      "path": "pet/komugi_walk",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／あるく",
+      "svg": "svg/pet/komugi_walk.svg",
+      "png": "png/pet/komugi_walk@2x.png",
+      "viewBox": [
+        -80,
+        -121,
+        148,
+        135
+      ],
+      "width": 148,
+      "height": 135,
+      "anchor": {
+        "x": 80,
+        "y": 121
+      }
+    },
+    {
+      "path": "pet/komugi_sit",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／すわる",
+      "svg": "svg/pet/komugi_sit.svg",
+      "png": "png/pet/komugi_sit@2x.png",
+      "viewBox": [
+        -85,
+        -101,
+        158,
+        115
+      ],
+      "width": 158,
+      "height": 115,
+      "anchor": {
+        "x": 85,
+        "y": 101
+      }
+    },
+    {
+      "path": "pet/komugi_lie",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／ねそべる",
+      "svg": "svg/pet/komugi_lie.svg",
+      "png": "png/pet/komugi_lie@2x.png",
+      "viewBox": [
+        -94,
+        -81,
+        174,
+        95
+      ],
+      "width": 174,
+      "height": 95,
+      "anchor": {
+        "x": 94,
+        "y": 81
+      }
+    },
+    {
+      "path": "pet/komugi_sleep",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／ねむる",
+      "svg": "svg/pet/komugi_sleep.svg",
+      "png": "png/pet/komugi_sleep@2x.png",
+      "viewBox": [
+        -95,
+        -162,
+        181,
+        176
+      ],
+      "width": 181,
+      "height": 176,
+      "anchor": {
+        "x": 95,
+        "y": 162
+      }
+    },
+    {
+      "path": "pet/komugi_jump",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／ジャンプ",
+      "svg": "svg/pet/komugi_jump.svg",
+      "png": "png/pet/komugi_jump@2x.png",
+      "viewBox": [
+        -77,
+        -166,
+        143,
+        180
+      ],
+      "width": 143,
+      "height": 180,
+      "anchor": {
+        "x": 77,
+        "y": 166
+      }
+    },
+    {
+      "path": "pet/komugi_celebrate",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／おいわい",
+      "svg": "svg/pet/komugi_celebrate.svg",
+      "png": "png/pet/komugi_celebrate@2x.png",
+      "viewBox": [
+        -81,
+        -175,
+        140,
+        189
+      ],
+      "width": 140,
+      "height": 189,
+      "anchor": {
+        "x": 81,
+        "y": 175
+      }
+    },
+    {
+      "path": "pet/komugi_eat",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／たべる",
+      "svg": "svg/pet/komugi_eat.svg",
+      "png": "png/pet/komugi_eat@2x.png",
+      "viewBox": [
+        -85,
+        -101,
+        158,
+        115
+      ],
+      "width": 158,
+      "height": 115,
+      "anchor": {
+        "x": 85,
+        "y": 101
+      }
+    },
+    {
+      "path": "pet/komugi_study",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／べんきょう",
+      "svg": "svg/pet/komugi_study.svg",
+      "png": "png/pet/komugi_study@2x.png",
+      "viewBox": [
+        -85,
+        -101,
+        158,
+        115
+      ],
+      "width": 158,
+      "height": 115,
+      "anchor": {
+        "x": 85,
+        "y": 101
+      }
+    },
+    {
+      "path": "pet/komugi_yawn",
+      "kind": "pet",
+      "label": "こむぎ（いぬ）／あくび",
+      "svg": "svg/pet/komugi_yawn.svg",
+      "png": "png/pet/komugi_yawn@2x.png",
+      "viewBox": [
+        -77,
+        -120,
+        138,
+        134
+      ],
+      "width": 138,
+      "height": 134,
+      "anchor": {
+        "x": 77,
+        "y": 120
+      }
+    },
+    {
+      "path": "pet/omochi_stand",
+      "kind": "pet",
+      "label": "おもち（くま）／ふつう",
+      "svg": "svg/pet/omochi_stand.svg",
+      "png": "png/pet/omochi_stand@2x.png",
+      "viewBox": [
+        -72,
+        -119,
+        136,
+        133
+      ],
+      "width": 136,
+      "height": 133,
+      "anchor": {
+        "x": 72,
+        "y": 119
+      }
+    },
+    {
+      "path": "pet/omochi_happy",
+      "kind": "pet",
+      "label": "おもち（くま）／よろこぶ",
+      "svg": "svg/pet/omochi_happy.svg",
+      "png": "png/pet/omochi_happy@2x.png",
+      "viewBox": [
+        -72,
+        -119,
+        136,
+        133
+      ],
+      "width": 136,
+      "height": 133,
+      "anchor": {
+        "x": 72,
+        "y": 119
+      }
+    },
+    {
+      "path": "pet/omochi_love",
+      "kind": "pet",
+      "label": "おもち（くま）／なでられる",
+      "svg": "svg/pet/omochi_love.svg",
+      "png": "png/pet/omochi_love@2x.png",
+      "viewBox": [
+        -72,
+        -119,
+        136,
+        133
+      ],
+      "width": 136,
+      "height": 133,
+      "anchor": {
+        "x": 72,
+        "y": 119
+      }
+    },
+    {
+      "path": "pet/omochi_surprised",
+      "kind": "pet",
+      "label": "おもち（くま）／おどろく",
+      "svg": "svg/pet/omochi_surprised.svg",
+      "png": "png/pet/omochi_surprised@2x.png",
+      "viewBox": [
+        -72,
+        -119,
+        136,
+        133
+      ],
+      "width": 136,
+      "height": 133,
+      "anchor": {
+        "x": 72,
+        "y": 119
+      }
+    },
+    {
+      "path": "pet/omochi_sleepy",
+      "kind": "pet",
+      "label": "おもち（くま）／ねむい",
+      "svg": "svg/pet/omochi_sleepy.svg",
+      "png": "png/pet/omochi_sleepy@2x.png",
+      "viewBox": [
+        -72,
+        -119,
+        136,
+        133
+      ],
+      "width": 136,
+      "height": 133,
+      "anchor": {
+        "x": 72,
+        "y": 119
+      }
+    },
+    {
+      "path": "pet/omochi_tired",
+      "kind": "pet",
+      "label": "おもち（くま）／つかれた",
+      "svg": "svg/pet/omochi_tired.svg",
+      "png": "png/pet/omochi_tired@2x.png",
+      "viewBox": [
+        -72,
+        -118,
+        136,
+        132
+      ],
+      "width": 136,
+      "height": 132,
+      "anchor": {
+        "x": 72,
+        "y": 118
+      }
+    },
+    {
+      "path": "pet/omochi_bored",
+      "kind": "pet",
+      "label": "おもち（くま）／たいくつ",
+      "svg": "svg/pet/omochi_bored.svg",
+      "png": "png/pet/omochi_bored@2x.png",
+      "viewBox": [
+        -72,
+        -119,
+        136,
+        133
+      ],
+      "width": 136,
+      "height": 133,
+      "anchor": {
+        "x": 72,
+        "y": 119
+      }
+    },
+    {
+      "path": "pet/omochi_focused",
+      "kind": "pet",
+      "label": "おもち（くま）／しゅうちゅう",
+      "svg": "svg/pet/omochi_focused.svg",
+      "png": "png/pet/omochi_focused@2x.png",
+      "viewBox": [
+        -76,
+        -111,
+        143,
+        125
+      ],
+      "width": 143,
+      "height": 125,
+      "anchor": {
+        "x": 76,
+        "y": 111
+      }
+    },
+    {
+      "path": "pet/omochi_walk",
+      "kind": "pet",
+      "label": "おもち（くま）／あるく",
+      "svg": "svg/pet/omochi_walk.svg",
+      "png": "png/pet/omochi_walk@2x.png",
+      "viewBox": [
+        -71,
+        -127,
+        134,
+        141
+      ],
+      "width": 134,
+      "height": 141,
+      "anchor": {
+        "x": 71,
+        "y": 127
+      }
+    },
+    {
+      "path": "pet/omochi_sit",
+      "kind": "pet",
+      "label": "おもち（くま）／すわる",
+      "svg": "svg/pet/omochi_sit.svg",
+      "png": "png/pet/omochi_sit@2x.png",
+      "viewBox": [
+        -76,
+        -111,
+        143,
+        125
+      ],
+      "width": 143,
+      "height": 125,
+      "anchor": {
+        "x": 76,
+        "y": 111
+      }
+    },
+    {
+      "path": "pet/omochi_lie",
+      "kind": "pet",
+      "label": "おもち（くま）／ねそべる",
+      "svg": "svg/pet/omochi_lie.svg",
+      "png": "png/pet/omochi_lie@2x.png",
+      "viewBox": [
+        -83,
+        -89,
+        157,
+        103
+      ],
+      "width": 157,
+      "height": 103,
+      "anchor": {
+        "x": 83,
+        "y": 89
+      }
+    },
+    {
+      "path": "pet/omochi_sleep",
+      "kind": "pet",
+      "label": "おもち（くま）／ねむる",
+      "svg": "svg/pet/omochi_sleep.svg",
+      "png": "png/pet/omochi_sleep@2x.png",
+      "viewBox": [
+        -83,
+        -162,
+        169,
+        176
+      ],
+      "width": 169,
+      "height": 176,
+      "anchor": {
+        "x": 83,
+        "y": 162
+      }
+    },
+    {
+      "path": "pet/omochi_jump",
+      "kind": "pet",
+      "label": "おもち（くま）／ジャンプ",
+      "svg": "svg/pet/omochi_jump.svg",
+      "png": "png/pet/omochi_jump@2x.png",
+      "viewBox": [
+        -67,
+        -178,
+        127,
+        192
+      ],
+      "width": 127,
+      "height": 192,
+      "anchor": {
+        "x": 67,
+        "y": 178
+      }
+    },
+    {
+      "path": "pet/omochi_celebrate",
+      "kind": "pet",
+      "label": "おもち（くま）／おいわい",
+      "svg": "svg/pet/omochi_celebrate.svg",
+      "png": "png/pet/omochi_celebrate@2x.png",
+      "viewBox": [
+        -68,
+        -191,
+        125,
+        205
+      ],
+      "width": 125,
+      "height": 205,
+      "anchor": {
+        "x": 68,
+        "y": 191
+      }
+    },
+    {
+      "path": "pet/omochi_eat",
+      "kind": "pet",
+      "label": "おもち（くま）／たべる",
+      "svg": "svg/pet/omochi_eat.svg",
+      "png": "png/pet/omochi_eat@2x.png",
+      "viewBox": [
+        -76,
+        -111,
+        144,
+        125
+      ],
+      "width": 144,
+      "height": 125,
+      "anchor": {
+        "x": 76,
+        "y": 111
+      }
+    },
+    {
+      "path": "pet/omochi_study",
+      "kind": "pet",
+      "label": "おもち（くま）／べんきょう",
+      "svg": "svg/pet/omochi_study.svg",
+      "png": "png/pet/omochi_study@2x.png",
+      "viewBox": [
+        -76,
+        -111,
+        143,
+        125
+      ],
+      "width": 143,
+      "height": 125,
+      "anchor": {
+        "x": 76,
+        "y": 111
+      }
+    },
+    {
+      "path": "pet/omochi_yawn",
+      "kind": "pet",
+      "label": "おもち（くま）／あくび",
+      "svg": "svg/pet/omochi_yawn.svg",
+      "png": "png/pet/omochi_yawn@2x.png",
+      "viewBox": [
+        -67,
+        -132,
+        127,
+        146
+      ],
+      "width": 127,
+      "height": 146,
+      "anchor": {
+        "x": 67,
+        "y": 132
+      }
+    },
+    {
+      "path": "pet/potato_stand",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／ふつう",
+      "svg": "svg/pet/potato_stand.svg",
+      "png": "png/pet/potato_stand@2x.png",
+      "viewBox": [
+        -88,
+        -130,
+        152,
+        144
+      ],
+      "width": 152,
+      "height": 144,
+      "anchor": {
+        "x": 88,
+        "y": 130
+      }
+    },
+    {
+      "path": "pet/potato_happy",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／よろこぶ",
+      "svg": "svg/pet/potato_happy.svg",
+      "png": "png/pet/potato_happy@2x.png",
+      "viewBox": [
+        -88,
+        -130,
+        152,
+        144
+      ],
+      "width": 152,
+      "height": 144,
+      "anchor": {
+        "x": 88,
+        "y": 130
+      }
+    },
+    {
+      "path": "pet/potato_love",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／なでられる",
+      "svg": "svg/pet/potato_love.svg",
+      "png": "png/pet/potato_love@2x.png",
+      "viewBox": [
+        -88,
+        -130,
+        152,
+        144
+      ],
+      "width": 152,
+      "height": 144,
+      "anchor": {
+        "x": 88,
+        "y": 130
+      }
+    },
+    {
+      "path": "pet/potato_surprised",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／おどろく",
+      "svg": "svg/pet/potato_surprised.svg",
+      "png": "png/pet/potato_surprised@2x.png",
+      "viewBox": [
+        -88,
+        -130,
+        152,
+        144
+      ],
+      "width": 152,
+      "height": 144,
+      "anchor": {
+        "x": 88,
+        "y": 130
+      }
+    },
+    {
+      "path": "pet/potato_sleepy",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／ねむい",
+      "svg": "svg/pet/potato_sleepy.svg",
+      "png": "png/pet/potato_sleepy@2x.png",
+      "viewBox": [
+        -88,
+        -127,
+        152,
+        141
+      ],
+      "width": 152,
+      "height": 141,
+      "anchor": {
+        "x": 88,
+        "y": 127
+      }
+    },
+    {
+      "path": "pet/potato_tired",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／つかれた",
+      "svg": "svg/pet/potato_tired.svg",
+      "png": "png/pet/potato_tired@2x.png",
+      "viewBox": [
+        -88,
+        -126,
+        152,
+        140
+      ],
+      "width": 152,
+      "height": 140,
+      "anchor": {
+        "x": 88,
+        "y": 126
+      }
+    },
+    {
+      "path": "pet/potato_bored",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／たいくつ",
+      "svg": "svg/pet/potato_bored.svg",
+      "png": "png/pet/potato_bored@2x.png",
+      "viewBox": [
+        -88,
+        -129,
+        152,
+        143
+      ],
+      "width": 152,
+      "height": 143,
+      "anchor": {
+        "x": 88,
+        "y": 129
+      }
+    },
+    {
+      "path": "pet/potato_focused",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／しゅうちゅう",
+      "svg": "svg/pet/potato_focused.svg",
+      "png": "png/pet/potato_focused@2x.png",
+      "viewBox": [
+        -93,
+        -121,
+        160,
+        135
+      ],
+      "width": 160,
+      "height": 135,
+      "anchor": {
+        "x": 93,
+        "y": 121
+      }
+    },
+    {
+      "path": "pet/potato_walk",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／あるく",
+      "svg": "svg/pet/potato_walk.svg",
+      "png": "png/pet/potato_walk@2x.png",
+      "viewBox": [
+        -87,
+        -140,
+        150,
+        154
+      ],
+      "width": 150,
+      "height": 154,
+      "anchor": {
+        "x": 87,
+        "y": 140
+      }
+    },
+    {
+      "path": "pet/potato_sit",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／すわる",
+      "svg": "svg/pet/potato_sit.svg",
+      "png": "png/pet/potato_sit@2x.png",
+      "viewBox": [
+        -93,
+        -121,
+        160,
+        135
+      ],
+      "width": 160,
+      "height": 135,
+      "anchor": {
+        "x": 93,
+        "y": 121
+      }
+    },
+    {
+      "path": "pet/potato_lie",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／ねそべる",
+      "svg": "svg/pet/potato_lie.svg",
+      "png": "png/pet/potato_lie@2x.png",
+      "viewBox": [
+        -102,
+        -97,
+        176,
+        111
+      ],
+      "width": 176,
+      "height": 111,
+      "anchor": {
+        "x": 102,
+        "y": 97
+      }
+    },
+    {
+      "path": "pet/potato_sleep",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／ねむる",
+      "svg": "svg/pet/potato_sleep.svg",
+      "png": "png/pet/potato_sleep@2x.png",
+      "viewBox": [
+        -103,
+        -162,
+        189,
+        176
+      ],
+      "width": 189,
+      "height": 176,
+      "anchor": {
+        "x": 103,
+        "y": 162
+      }
+    },
+    {
+      "path": "pet/potato_jump",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／ジャンプ",
+      "svg": "svg/pet/potato_jump.svg",
+      "png": "png/pet/potato_jump@2x.png",
+      "viewBox": [
+        -83,
+        -190,
+        143,
+        204
+      ],
+      "width": 143,
+      "height": 204,
+      "anchor": {
+        "x": 83,
+        "y": 190
+      }
+    },
+    {
+      "path": "pet/potato_celebrate",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／おいわい",
+      "svg": "svg/pet/potato_celebrate.svg",
+      "png": "png/pet/potato_celebrate@2x.png",
+      "viewBox": [
+        -87,
+        -204,
+        144,
+        218
+      ],
+      "width": 144,
+      "height": 218,
+      "anchor": {
+        "x": 87,
+        "y": 204
+      }
+    },
+    {
+      "path": "pet/potato_eat",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／たべる",
+      "svg": "svg/pet/potato_eat.svg",
+      "png": "png/pet/potato_eat@2x.png",
+      "viewBox": [
+        -93,
+        -121,
+        161,
+        135
+      ],
+      "width": 161,
+      "height": 135,
+      "anchor": {
+        "x": 93,
+        "y": 121
+      }
+    },
+    {
+      "path": "pet/potato_study",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／べんきょう",
+      "svg": "svg/pet/potato_study.svg",
+      "png": "png/pet/potato_study@2x.png",
+      "viewBox": [
+        -93,
+        -121,
+        160,
+        135
+      ],
+      "width": 160,
+      "height": 135,
+      "anchor": {
+        "x": 93,
+        "y": 121
+      }
+    },
+    {
+      "path": "pet/potato_yawn",
+      "kind": "pet",
+      "label": "ぽてと（ねこ）／あくび",
+      "svg": "svg/pet/potato_yawn.svg",
+      "png": "png/pet/potato_yawn@2x.png",
+      "viewBox": [
+        -83,
+        -141,
+        143,
+        155
+      ],
+      "width": 143,
+      "height": 155,
+      "anchor": {
+        "x": 83,
+        "y": 141
+      }
+    },
+    {
+      "path": "room/room_day",
+      "kind": "room",
+      "label": "部屋（昼）",
+      "svg": "svg/room/room_day.svg",
+      "png": "png/room/room_day@2x.png",
+      "viewBox": [
+        53,
+        14,
+        894,
+        950
+      ],
+      "width": 894,
+      "height": 950,
+      "anchor": {
+        "x": -53,
+        "y": -14
+      }
+    },
+    {
+      "path": "room/room_night",
+      "kind": "room",
+      "label": "部屋（夜）",
+      "svg": "svg/room/room_night.svg",
+      "png": "png/room/room_night@2x.png",
+      "viewBox": [
+        53,
+        14,
+        894,
+        950
+      ],
+      "width": 894,
+      "height": 950,
+      "anchor": {
+        "x": -53,
+        "y": -14
+      }
+    },
+    {
+      "path": "room/room-tint_night",
+      "kind": "room-tint",
+      "label": "部屋の夜の色かぶせ（家具の上に重ねる）",
+      "svg": "svg/room/room-tint_night.svg",
+      "png": "png/room/room-tint_night@2x.png",
+      "viewBox": [
+        53,
+        14,
+        894,
+        950
+      ],
+      "width": 894,
+      "height": 950,
+      "anchor": {
+        "x": -53,
+        "y": -14
+      }
+    },
+    {
+      "path": "icon/app-icon",
+      "kind": "icon",
+      "label": "アプリアイコン",
+      "svg": "svg/icon/app-icon.svg",
+      "png": "png/icon/app-icon@2x.png",
+      "viewBox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "width": 64,
+      "height": 64,
+      "anchor": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-95 -130 190 190" width="96" height="96">
+  <defs>
+    <filter id="d-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <ellipse id="shadow" rx="70" ry="34" cx="4" cy="6" fill="#2a2140" opacity="0.2" filter="url(#d-soft-shadow)"/>
+  <path id="body-shade" d="M -70 0 C -78 -60 -30 -96 4 -92 C 46 -90 80 -56 70 -2 C 60 30 -58 30 -70 0 Z" fill="#e07e9b"/>
+  <path id="body" d="M -60 -10 C -64 -60 -24 -84 6 -80 C 40 -78 66 -50 58 -14 C 40 6 -40 8 -60 -10 Z" fill="#ff8fb0"/>
+  <path id="highlight" d="M -40 -40 C -20 -30 20 -30 40 -44" fill="none" stroke="#ffb1c8" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+</svg>

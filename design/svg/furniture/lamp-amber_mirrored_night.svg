@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -300 300 340" width="300" height="340">
+  <defs>
+    <radialGradient id="d-lamp-glow">
+      <stop offset="0" stop-color="#ffe2a0" stop-opacity="0.75"/>
+      <stop offset="0.45" stop-color="#ffc860" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ffb648" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="d-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <g transform="matrix(-1 0 0 1 0 0)">
+    <circle id="glow" cx="0" cy="-150" r="150" fill="url(#d-lamp-glow)" opacity="0.925"/>
+    <ellipse id="shadow" rx="34" ry="16" cx="4" cy="6" fill="#2a2140" opacity="0.2" filter="url(#d-soft-shadow)"/>
+    <ellipse id="base" rx="26" ry="12" cx="0" cy="0" fill="#5a4a3a"/>
+    <rect id="pole" x="-3" y="-150" width="6" height="150" fill="#5a4a3a"/>
+    <path id="shade" d="M -36 -150 L 36 -150 L 22 -206 L -22 -206 Z" fill="#ffcf7a" stroke="#252340" stroke-width="1.2" stroke-opacity="0.15"/>
+    <ellipse id="shade-bottom" rx="36" ry="8" cx="0" cy="-150" fill="#ffe2af" opacity="0.948"/>
+  </g>
+</svg>

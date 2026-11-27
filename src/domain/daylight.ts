@@ -19,9 +19,9 @@ export type Light = {
   label: '朝' | '昼' | '夕方' | '夜' | '深夜';
 };
 
-type Key = { h: number; light: Omit<Light, 'label'> };
+export type Key = { h: number; light: Omit<Light, 'label'> };
 
-const keys: Key[] = [
+export const keys: Key[] = [
   { h: 0, light: { skyTop: '#141a3a', skyBottom: '#2b2f5e', wallL: '#6d6a8e', wallR: '#5d5a7e', floorA: '#6f5f74', floorB: '#655568', tint: 'rgba(30,28,80,0.28)', lampGlow: 1, sun: 0 } },
   { h: 5, light: { skyTop: '#2c3570', skyBottom: '#c99ab8', wallL: '#a59cb2', wallR: '#938aa3', floorA: '#a48a88', floorB: '#977e7d', tint: 'rgba(60,50,110,0.16)', lampGlow: 0.6, sun: 0.1 } },
   { h: 7, light: { skyTop: '#9cc0ff', skyBottom: '#ffd9c2', wallL: '#f6eee6', wallR: '#ebe0d4', floorA: '#e0b994', floorB: '#d6ad87', tint: 'rgba(255,200,150,0.08)', lampGlow: 0, sun: 0.7 } },

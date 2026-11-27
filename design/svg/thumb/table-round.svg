@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-110 -135 220 220" width="96" height="96">
+  <defs>
+    <filter id="d-soft-shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <ellipse id="shadow" rx="77.5" ry="40.92" cx="4" cy="10" fill="#2a2140" opacity="0.2" filter="url(#d-soft-shadow)"/>
+  <g id="leg-1">
+    <polygon id="leg-1-right" points="-23.4,-17.5 -30.3,-13.5 -30.3,-51.5 -23.4,-55.5" fill="#6f5135" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="leg-1-left" points="-37.2,-17.5 -30.3,-13.5 -30.3,-51.5 -37.2,-55.5" fill="#7f5c3d" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="leg-1-top" points="-30.3,-59.5 -23.4,-55.5 -30.3,-51.5 -37.2,-55.5" fill="#927153" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+  </g>
+  <g id="leg-2">
+    <polygon id="leg-2-right" points="37.2,17.5 30.3,21.5 30.3,-16.5 37.2,-20.5" fill="#6f5135" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="leg-2-left" points="23.4,17.5 30.3,21.5 30.3,-16.5 23.4,-20.5" fill="#7f5c3d" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="leg-2-top" points="30.3,-24.5 37.2,-20.5 30.3,-16.5 23.4,-20.5" fill="#927153" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+  </g>
+  <g id="leg-3">
+    <polygon id="leg-3-right" points="-22.5,17 -29.4,21 -29.4,-17 -22.5,-21" fill="#6f5135" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="leg-3-left" points="-36.4,17 -29.4,21 -29.4,-17 -36.4,-21" fill="#7f5c3d" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+    <polygon id="leg-3-top" points="-29.4,-25 -22.5,-21 -29.4,-17 -36.4,-21" fill="#927153" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12" stroke-linejoin="round"/>
+  </g>
+  <g id="tabletop" transform="translate(0 -42)">
+    <ellipse id="top-edge" rx="75.64" ry="43.4" cx="0" cy="7" fill="#9a6e49" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12"/>
+    <rect id="top-side" x="-75.64" y="0" width="151.28" height="7" fill="#9a6e49"/>
+    <ellipse id="top-surface" rx="75.64" ry="43.4" cx="0" cy="0" fill="#c59368" stroke="#252340" stroke-width="1.2" stroke-opacity="0.12"/>
+    <ellipse id="top-ring" rx="58.9" ry="32.24" cx="0" cy="0" fill="none" stroke="#b48256" stroke-width="2"/>
+    <ellipse id="dish" rx="22" ry="11" cx="14" cy="-4" fill="#ffffff" stroke="#252340" stroke-width="1" stroke-opacity="0.15"/>
+    <ellipse id="dish-food" rx="15" ry="6.5" cx="14" cy="-6" fill="#ffe9c9"/>
+  </g>
+</svg>
