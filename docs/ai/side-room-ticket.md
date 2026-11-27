@@ -21,7 +21,7 @@
 | `src/side-room/zones.ts` / `zones.test.ts` | 場所（ゾーン）の定義と、スクロール位置から今の場所を出す純粋関数とテスト |
 | `scripts/side-room-shot.mjs` | 撮影（下の「確かめ方」） |
 
-**してはいけないこと**: `src/screens/home/`・`src/App.tsx`・`src/store.ts`・既存の `src/art/` の描画を変えない（import して使うのはよい）。`vite.config.ts` の `rollupOptions.input` に足さない（公開版に載せるかは本人に聞いてから）。依存を足さない。push・PR・マージをしない。
+**してはいけないこと**: `src/screens/home/`・`src/App.tsx`・`src/store.ts`・既存の `src/art/` の描画を変えない（import して使うのはよい）。`vite.config.ts` の `rollupOptions.input` に足さない（公開版に載せるかは本人に聞いてから。→ 2026-11-28 本人の承認で指揮が足した）。依存を足さない。push・PR・マージをしない。
 
 ## 画面の構成（375×812、上から）
 
