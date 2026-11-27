@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { applyEvent, energyFromSleep, rewardFor, tick, type LifeEvent } from './life';
+import { applyEvent, energyFromSleep, FOCUS_MIN_FOR_REWARD, judgeReward, rewardFor, tick, type LifeEvent } from './life';
 import { addXp, conditionOf, type PetSave } from './pet';
 
 const base: PetSave = {
@@ -42,6 +42,49 @@ describe('報酬', () => {
 
   it('睡眠は長さに比例した経験値を出さない', () => {
     expect(applyEvent(base, ev('s', 'sleep', 600), []).reward).toBeNull();
+  });
+});
+
+describe('報酬の判定', () => {
+  it('報酬が付くときは理由が null', () => {
+    expect(judgeReward(ev('f', 'focus', 25), [])).toEqual({ reward: { xp: 10, coins: 4, bond: 0 }, reason: null });
+  });
+
+  it('同じ eventId は duplicate', () => {
+    const r = applyEvent(base, ev('a', 'meal'), []);
+    expect(judgeReward(ev('a', 'meal'), [r.event])).toEqual({ reward: null, reason: 'duplicate' });
+  });
+
+  it('20 分未満や値なしの集中は too-short', () => {
+    expect(judgeReward(ev('f1', 'focus', 10), [])).toEqual({ reward: null, reason: 'too-short' });
+    expect(judgeReward(ev('f2', 'focus'), [])).toEqual({ reward: null, reason: 'too-short' });
+  });
+
+  it('1 日の上限を超えたら daily-cap', () => {
+    const log: LifeEvent[] = [];
+    for (const id of ['m1', 'm2', 'm3']) log.push(applyEvent(base, ev(id, 'meal'), log).event);
+    expect(judgeReward(ev('m4', 'meal'), log)).toEqual({ reward: null, reason: 'daily-cap' });
+  });
+
+  it('ちょうど 20 分の集中は報酬が付く', () => {
+    expect(judgeReward(ev('f20', 'focus', FOCUS_MIN_FOR_REWARD), [])).toEqual({ reward: { xp: 10, coins: 4, bond: 0 }, reason: null });
+  });
+
+  it('重複は too-short より優先される', () => {
+    const short = applyEvent(base, ev('fs', 'focus', 10), []);
+    expect(judgeReward(ev('fs', 'focus', 10), [short.event])).toEqual({ reward: null, reason: 'duplicate' });
+  });
+
+  it('ルール自体が報酬を出さないものは none', () => {
+    expect(judgeReward(ev('s', 'sleep', 600), [])).toEqual({ reward: null, reason: 'none' });
+  });
+
+  it('applyEvent が noReward を返す', () => {
+    expect(applyEvent(base, ev('f', 'focus', 10), []).noReward).toBe('too-short');
+    const log: LifeEvent[] = [];
+    for (const id of ['m1', 'm2', 'm3']) log.push(applyEvent(base, ev(id, 'meal'), log).event);
+    expect(applyEvent(base, ev('m4', 'meal'), log).noReward).toBe('daily-cap');
+    expect(applyEvent(base, ev('f2', 'focus', 25), []).noReward).toBeNull();
   });
 });
 

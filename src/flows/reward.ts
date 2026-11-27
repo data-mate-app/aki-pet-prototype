@@ -1,5 +1,5 @@
 import type { ApplyResult } from '../domain/life';
-import { REWARD_RULES } from '../domain/life';
+import { FOCUS_MIN_FOR_REWARD, REWARD_RULES } from '../domain/life';
 import { useFx, type Point } from '../ui/fx';
 import { useIsland } from '../ui/Island';
 import { feedback } from '../ui/feedback';
@@ -12,7 +12,7 @@ import { feedback } from '../ui/feedback';
  *   3. Island に「何を記録したか」と「何が増えたか」
  *   4. レベルが上がったら、コインが届いたあとに祝う
  *
- * 報酬がない（その日の上限に達した）ときも、記録は残ったことをはっきり伝える。
+ * 報酬がないとき（その日の上限・集中が短い・重複など）も、記録は残ったことをはっきり伝える。
  */
 export function celebrate(result: ApplyResult, from: Point, label?: string) {
   const fx = useFx.getState();
@@ -21,10 +21,16 @@ export function celebrate(result: ApplyResult, from: Point, label?: string) {
   const r = result.reward;
 
   if (!r) {
+    const noRewardDetail =
+      result.noReward === 'too-short'
+        ? `ごほうびは${FOCUS_MIN_FOR_REWARD}分から。記録はちゃんと残るよ`
+        : result.noReward === 'daily-cap'
+          ? 'きょうの報酬はもう受け取りずみ。記録はちゃんと残るよ'
+          : '記録はちゃんと残るよ';
     feedback('light', 'pop');
     island.show({
       title: `${name}を記録した`,
-      detail: 'きょうの報酬はもう受け取りずみ。記録はちゃんと残るよ',
+      detail: noRewardDetail,
       tone: 'default',
       duration: 2600,
     });
