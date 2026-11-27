@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -400 433 650" width="433" height="650">
+  <g id="surface-wall-right">
+    <g id="wallpaper">
+      <polygon id="wall-right" points="0,0 433,250 433,-150 0,-400" fill="#ebe5da"/>
+    </g>
+    <g id="wainscot">
+      <polygon id="wainscot-right" points="0,0 433,250 433,140 0,-110" fill="#a0785a" fill-opacity="0.14"/>
+      <polygon id="wainscot-rail-right" points="0,-110 433,140 433,134 0,-116" fill="#ffffff" fill-opacity="0.4"/>
+      <line id="wainscot-groove-right-1" x1="43.301" y1="11" x2="43.301" y2="-83" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-right-2" x1="86.603" y1="36" x2="86.603" y2="-58" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-right-3" x1="129.904" y1="61" x2="129.904" y2="-33" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-right-4" x1="173.205" y1="86" x2="173.205" y2="-8" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-right-5" x1="216.506" y1="111" x2="216.506" y2="17" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-right-6" x1="259.808" y1="136" x2="259.808" y2="42" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-right-7" x1="303.109" y1="161" x2="303.109" y2="67" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-right-8" x1="346.41" y1="186" x2="346.41" y2="92" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-right-9" x1="389.711" y1="211" x2="389.711" y2="117" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+    </g>
+    <g id="baseboard">
+      <polygon id="baseboard-right" points="0,0 433,250 433,238 0,-12" fill="#e2d6c6"/>
+    </g>
+  </g>
+</svg>

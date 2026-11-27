@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-433 -400 433 650" width="433" height="650">
+  <defs>
+    <linearGradient id="d-wall-l" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#978fab"/>
+      <stop offset="1" stop-color="#978fab" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+  <g id="surface-wall-left">
+    <g id="wallpaper">
+      <polygon id="wall-left" points="0,0 -433,250 -433,-150 0,-400" fill="url(#d-wall-l)"/>
+    </g>
+    <g id="wainscot">
+      <polygon id="wainscot-left" points="0,0 -433,250 -433,140 0,-110" fill="#a0785a" fill-opacity="0.1"/>
+      <polygon id="wainscot-rail-left" points="0,-110 -433,140 -433,134 0,-116" fill="#ffffff" fill-opacity="0.55"/>
+      <line id="wainscot-groove-left-1" x1="-43.301" y1="11" x2="-43.301" y2="-83" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-left-2" x1="-86.603" y1="36" x2="-86.603" y2="-58" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-left-3" x1="-129.904" y1="61" x2="-129.904" y2="-33" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-left-4" x1="-173.205" y1="86" x2="-173.205" y2="-8" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-left-5" x1="-216.506" y1="111" x2="-216.506" y2="17" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-left-6" x1="-259.808" y1="136" x2="-259.808" y2="42" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-left-7" x1="-303.109" y1="161" x2="-303.109" y2="67" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-left-8" x1="-346.41" y1="186" x2="-346.41" y2="92" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+      <line id="wainscot-groove-left-9" x1="-389.711" y1="211" x2="-389.711" y2="117" fill="#000000" stroke="#785032" stroke-width="1.5" stroke-opacity="0.12"/>
+    </g>
+    <polygon id="corner-shade" points="0,0 -43.3,25 -43.3,-375 0,-400" fill="#252340" fill-opacity="0.05"/>
+    <g id="baseboard">
+      <polygon id="baseboard-left" points="0,0 -433,250 -433,238 0,-12" fill="#efe6da"/>
+    </g>
+  </g>
+</svg>
