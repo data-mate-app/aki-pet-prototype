@@ -1,0 +1,478 @@
+/*
+ * 横スクロールのへや（別案）。部屋の絵を端末の全面に敷き、UI はガラスのチップで重ねる。
+ * 重なり: つまみ 10 < マップ 20 < ヘッダー 30 < タブバー 50（TabBar.css）< ステータスバー 100（App.css）
+ */
+
+/* PC でも 375×812 の端末として出す */
+@media (min-width: 641px) {
+  .device.sr-device {
+    width: 375px;
+    height: 812px;
+  }
+}
+
+.sr-app {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  background: #5b587d;
+  color: var(--ink);
+}
+
+/* ---------- 部屋 ---------- */
+
+.sr-scroll {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sr-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.sr-snap {
+  position: absolute;
+  top: 0;
+  width: 375px;
+  height: 1px;
+  scroll-snap-align: start;
+  pointer-events: none;
+}
+
+.sr-band {
+  position: relative;
+  flex: none;
+  overflow: hidden;
+  background: #5d5a7e;
+}
+
+.sr-band > svg {
+  position: absolute;
+  inset: 0;
+}
+
+.sr-pet {
+  position: absolute;
+  pointer-events: none;
+  /* 部屋の夜に馴染ませる */
+  filter: brightness(0.93) saturate(0.97);
+}
+
+.sr-bubble {
+  position: absolute;
+  width: 132px;
+  padding: 6px 0 7px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.93);
+  box-shadow: 0 6px 16px -6px rgba(20, 16, 50, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+  animation: sr-float 4.4s ease-in-out infinite;
+}
+
+.sr-bubble::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  background: inherit;
+  border-radius: 0 0 4px 0;
+  transform: rotate(45deg);
+}
+
+@keyframes sr-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* 電球・星のまたたき（ずらして） */
+.sr-twinkle {
+  animation: sr-twinkle 3.2s ease-in-out infinite;
+}
+
+.sr-star {
+  animation-duration: 2.8s;
+}
+
+@keyframes sr-twinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* 上の天井の陰・下の暗がり（文字を読みやすく） */
+.sr-shade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.sr-shade-top {
+  top: 0;
+  height: 210px;
+  background: linear-gradient(180deg, rgba(20, 22, 50, 0.55), rgba(20, 22, 50, 0));
+}
+
+.sr-shade-bottom {
+  bottom: 0;
+  height: 172px;
+  background: linear-gradient(180deg, rgba(20, 22, 50, 0), rgba(20, 22, 50, 0.4));
+}
+
+/* ---------- 上のステータス ---------- */
+
+.sr-row {
+  position: absolute;
+  z-index: 30;
+  top: 54px;
+  left: 14px;
+  right: 14px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sr-pet-id {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 0 6px 0 4px;
+}
+
+.sr-name {
+  font-size: 24px;
+  line-height: 1;
+  white-space: nowrap;
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(20, 16, 50, 0.55), 0 0 2px rgba(20, 16, 50, 0.4);
+}
+
+.sr-lv {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #6b3d00;
+  background: linear-gradient(180deg, #ffe08c, #ffbf4d);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 8px rgba(20, 16, 50, 0.3);
+}
+
+.sr-xp {
+  width: 64px;
+}
+
+.sr-xp .bar {
+  background: rgba(255, 255, 255, 0.34);
+  box-shadow: 0 1px 4px rgba(20, 16, 50, 0.25);
+}
+
+.sr-row-r {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sr-sound {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.84);
+  opacity: 0.9;
+}
+
+.sr-coin {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px 5px 6px;
+  border-radius: 999px;
+  font-size: 17px;
+  font-weight: 900;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.sr-vitals {
+  position: absolute;
+  z-index: 30;
+  top: 102px;
+  left: 14px;
+  right: 14px;
+  height: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.sr-vital {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px 0 7px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(20px) saturate(1.7);
+  -webkit-backdrop-filter: blur(20px) saturate(1.7);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9), 0 4px 14px rgba(20, 16, 50, 0.22);
+}
+
+.sr-vital-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.sr-vital-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--ink-3);
+}
+
+.sr-vital-value {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.sr-vital-value[data-unknown='true'] {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.sr-chips {
+  position: absolute;
+  z-index: 30;
+  top: 156px;
+  left: 14px;
+  right: 14px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.sr-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(20px) saturate(1.7);
+  -webkit-backdrop-filter: blur(20px) saturate(1.7);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.9), 0 4px 14px rgba(20, 16, 50, 0.2);
+}
+
+.sr-where-sep {
+  width: 1px;
+  height: 14px;
+  margin: 0 2px;
+  background: rgba(37, 35, 64, 0.2);
+}
+
+.sr-where-name {
+  min-width: 3.4em;
+}
+
+/* ---------- 左右のつまみ ---------- */
+
+.sr-peek {
+  position: absolute;
+  z-index: 10;
+  top: 404px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(37, 35, 64, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.sr-peek-name,
+.sr-peek-arrow {
+  font: inherit;
+}
+
+.sr-peek-arrow {
+  margin-top: -1px;
+}
+
+.sr-peek-l {
+  left: 8px;
+}
+
+.sr-peek-r {
+  right: 8px;
+}
+
+/* ---------- へやマップ ---------- */
+
+.sr-map {
+  position: absolute;
+  z-index: 20;
+  left: 14px;
+  right: 14px;
+  bottom: 96px;
+  height: 52px;
+  padding: 4px 4px 0;
+  border-radius: var(--r-l);
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.sr-map-cells {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  height: 38px;
+}
+
+.sr-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  padding: 0 4px 0 11px;
+  border-radius: 20px;
+  text-align: left;
+  line-height: 1.15;
+  color: var(--ink-2);
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.sr-cell[data-here='true'] {
+  color: var(--ink);
+  background: #ffffff;
+  box-shadow:
+    0 3px 10px -2px rgba(37, 35, 64, 0.3),
+    0 1px 2px rgba(37, 35, 64, 0.12);
+}
+
+.sr-cell-top {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sr-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.sr-cell-name {
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.sr-cell-value {
+  padding-left: 12px;
+  font-size: 16px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.sr-unit {
+  margin-left: 1px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sr-cell-value[data-unknown='true'] {
+  font-size: 14px;
+  color: var(--ink-3);
+}
+
+.sr-here-pet {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff3dc;
+  box-shadow: 0 0 0 1.5px #ffffff, 0 1px 4px rgba(37, 35, 64, 0.25);
+}
+
+.sr-rail {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 5px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(37, 35, 64, 0.14);
+}
+
+.sr-rail-thumb {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 2px;
+  background: var(--ink-2);
+  transition: left 0.12s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sr-twinkle,
+  .sr-bubble {
+    animation: none;
+  }
+  .sr-scroll {
+    scroll-behavior: auto;
+  }
+  .sr-rail-thumb,
+  .sr-cell {
+    transition: none;
+  }
+}
