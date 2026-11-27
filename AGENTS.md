@@ -2,12 +2,12 @@
 
 ## プロジェクト
 
-- プロジェクト識別子: `aki-pet-prototype`（GitHub `hasseeee/aki-pet-prototype`、private）
+- プロジェクト識別子: `aki-pet-prototype`（GitHub `data-mate-app/aki-pet-prototype`、public。2026-11-27 に個人アカウントから移管）
 - 目的・完成条件: [docs/ai/project.md](docs/ai/project.md)
 - 作業状態・引き継ぎ: [docs/ai/handoff.md](docs/ai/handoff.md)
 - 設計判断の正本: キャラデータは [docs/character-model.md](docs/character-model.md)。それ以外は未設定（ADR なし）
 - 検証コマンド: `pnpm verify`（`tsc -b` → `vitest run` → `vite build`）。開発サーバーは `pnpm dev`（port 5320）
-- 公開版: https://hasseeee.github.io/aki-pet-prototype/ （GitHub Pages。ソースは private のまま）
+- 公開版: https://data-mate-app.github.io/aki-pet-prototype/ （GitHub Pages。org が Free プランのため、Pages を続けるためにリポジトリを public にした）
 - AGMSG チーム・役割対応: 未設定（このリポジトリ用のチームはまだ作っていない）
 - AGMSG 起動・受信方法: 未設定
 - 関連する共有ノート: 製品概要は ChatGPT プロジェクト「秋プロ」。家具の配置・作画の進め方は New Roots の開発を参考にした

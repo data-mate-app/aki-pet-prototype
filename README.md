@@ -7,7 +7,7 @@
 
 ## 触ってみる
 
-**https://hasseeee.github.io/aki-pet-prototype/**
+**https://data-mate-app.github.io/aki-pet-prototype/**
 
 - スマホでもPCでも開ける。スマホはホーム画面に追加すると全画面で使える。
 - 記録は開いた端末のブラウザにだけ残る（人どうしで共有されない）。最初からやり直すときはデモ操作の「データを消して最初から」。
