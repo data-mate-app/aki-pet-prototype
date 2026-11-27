@@ -29,6 +29,8 @@ export type Slot = {
   accepts: FurnitureCategory[];
   /** ペットがこの場所の家具を使うときに立つ位置（家具からのずれ） */
   petOffset?: { x: number; y: number };
+  /** 同じ group の置き場所には一度に 1 つしか置けない（ラグのように、重ねると絵が崩れるもの） */
+  group?: string;
 };
 
 export type FurnitureId = string;
@@ -45,6 +47,35 @@ export function slotAccepts(slot: Slot, category: FurnitureCategory): boolean {
 
 export function compatibleSlots(slots: Slot[], category: FurnitureCategory): Slot[] {
   return slots.filter((s) => slotAccepts(s, category));
+}
+
+/**
+ * 自動で置くときの置き場所。優先順位:
+ * 1) 空きで、group があればその group のどこにも家具がない場所
+ * 2) group の中で家具が置かれている場所（今あるものをその場で置き換える）
+ * 3) 最初の受け入れ先（家具は placeFurniture が持ち物へ戻す）
+ */
+export function autoSlot(slots: Slot[], placement: Placement, category: FurnitureCategory): Slot | null {
+  const comp = compatibleSlots(slots, category);
+  const groupUsed = (g: string) => slots.some((s) => s.group === g && placement[s.id]);
+  const free = comp.find((sl) => !placement[sl.id] && !(sl.group && groupUsed(sl.group)));
+  if (free) return free;
+  return comp.find((sl) => sl.group && placement[sl.id]) ?? comp[0] ?? null;
+}
+
+/**
+ * ふさがっている置き場所。家具が置かれた場所と、その group の場所すべて。
+ * exclude の家具（ドラッグ中のもの）は置かれていないものとして数える。
+ */
+export function occupiedSlots(slots: Slot[], placement: Placement, exclude?: FurnitureId | null): Set<string> {
+  const out = new Set<string>();
+  for (const s of slots) {
+    const f = placement[s.id];
+    if (!f || f === exclude) continue;
+    out.add(s.id);
+    if (s.group) for (const o of slots) if (o.group === s.group) out.add(o.id);
+  }
+  return out;
 }
 
 export function slotOf(placement: Placement, furniture: FurnitureId): string | null {
@@ -102,13 +133,24 @@ export function placeFurniture(
 
   let displaced: FurnitureId | null = null;
   let swappedTo: string | null = null;
+  const fromSlot = from ? slots.find((s) => s.id === from) : undefined;
+  const sameGroupMove = !!target.group && fromSlot?.group === target.group;
   if (occupant && occupant !== furniture) {
-    const fromSlot = from ? slots.find((s) => s.id === from) : undefined;
-    if (fromSlot && slotAccepts(fromSlot, category(occupant))) {
+    if (!sameGroupMove && fromSlot && slotAccepts(fromSlot, category(occupant))) {
       next[fromSlot.id] = occupant;
       swappedTo = fromSlot.id;
     } else {
       displaced = occupant;
+    }
+  }
+  // 同じ group の他の置き場所の家具は外す（古い保存データで複数あっても全部）。displaced には最初の 1 つ
+  if (target.group) {
+    for (const s of slots) {
+      if (s.group !== target.group || s.id === slotId || s.id === swappedTo) continue;
+      const f = next[s.id];
+      if (!f || f === furniture) continue;
+      next[s.id] = null;
+      displaced ??= f;
     }
   }
   return { ok: true, placement: next, displaced, swappedTo };

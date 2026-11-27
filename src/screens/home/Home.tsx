@@ -8,7 +8,7 @@ import { foodById, speciesById } from '../../data/species';
 import { labelFor, lightAt } from '../../domain/daylight';
 import { dayKey, summarize } from '../../domain/life';
 import { conditionOf, VOICE, xpToNext, type Action, type PetSave } from '../../domain/pet';
-import { compatibleSlots, nearestSlot, placeFurniture, removeFurniture, slotOf, storedFurniture, type Placement } from '../../domain/room';
+import { autoSlot, compatibleSlots, nearestSlot, occupiedSlots, placeFurniture, removeFurniture, slotOf, storedFurniture, type Placement } from '../../domain/room';
 import { celebrate } from '../../flows/reward';
 import { hourOf, now, useApp, useNow } from '../../store';
 import { BottomSheet } from '../../ui/BottomSheet';
@@ -246,7 +246,9 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
   const onPetDown = (e: React.PointerEvent) => {
     if (editingRef.current) return;
     e.stopPropagation();
+    if (gestureOn.current) return;
     gestureOn.current = true;
+    const pid = e.pointerId;
     const sx = e.clientX;
     const sy = e.clientY;
     const t0 = performance.now();
@@ -257,6 +259,7 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
     let hearts = 0;
     const asleep = !!useApp.getState().pet.asleepSince;
     const move = (ev: PointerEvent) => {
+      if (ev.pointerId !== pid) return;
       path += Math.hypot(ev.clientX - lx, ev.clientY - ly);
       lx = ev.clientX;
       ly = ev.clientY;
@@ -274,7 +277,8 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
         feedback('selection');
       }
     };
-    const up = () => {
+    const up = (ev: PointerEvent) => {
+      if (ev.pointerId !== pid) return;
       window.removeEventListener('pointermove', move);
       window.removeEventListener('pointerup', up);
       window.removeEventListener('pointercancel', up);
@@ -464,8 +468,7 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
       poke(id);
       return;
     }
-    const comp = compatibleSlots(SLOTS, categoryOf(id)) as RoomSlot[];
-    const slot = comp.find((sl) => !st.placement[sl.id]) ?? comp[0];
+    const slot = autoSlot(SLOTS, st.placement, categoryOf(id)) as RoomSlot | null;
     if (!slot) return;
     const res = placeFurniture(SLOTS, st.placement, id, categoryOf, slot.id);
     if (!res.ok) return;
@@ -494,7 +497,9 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
   const onPieceDown = (e: React.PointerEvent, id: string) => {
     if (useApp.getState().pet.asleepSince) return;
     e.stopPropagation();
+    if (gestureOn.current) return;
     gestureOn.current = true;
+    const pid = e.pointerId;
     const sx = e.clientX;
     const sy = e.clientY;
     let lx = sx;
@@ -513,6 +518,7 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
       }, 420);
     }
     const move = (ev: PointerEvent) => {
+      if (ev.pointerId !== pid) return;
       lx = ev.clientX;
       ly = ev.clientY;
       if (started) {
@@ -533,6 +539,7 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
       }
     };
     const up = (ev: PointerEvent) => {
+      if (ev.pointerId !== pid) return;
       window.removeEventListener('pointermove', move);
       window.removeEventListener('pointerup', up);
       window.removeEventListener('pointercancel', up);
@@ -554,12 +561,15 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
   };
 
   const onTrayDown = (e: React.PointerEvent, id: string) => {
+    if (gestureOn.current) return;
     gestureOn.current = true;
+    const pid = e.pointerId;
     const sx = e.clientX;
     const sy = e.clientY;
     let started = false;
     let scrolled = false;
     const move = (ev: PointerEvent) => {
+      if (ev.pointerId !== pid) return;
       if (started) {
         dragMove(ev.clientX, ev.clientY);
         return;
@@ -572,6 +582,7 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
       } else if (Math.abs(dx) > 10) scrolled = true;
     };
     const up = (ev: PointerEvent) => {
+      if (ev.pointerId !== pid) return;
       window.removeEventListener('pointermove', move);
       window.removeEventListener('pointerup', up);
       window.removeEventListener('pointercancel', up);
@@ -776,7 +787,7 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
   const selectedPiece = selected ? placed.find((x) => x.def.id === selected) ?? null : null;
   const dragCat = dragId ? categoryOf(dragId) : null;
   const markerSlots = useMemo(() => (dragCat ? (compatibleSlots(SLOTS, dragCat) as RoomSlot[]) : []), [dragCat]);
-  const occupied = useMemo(() => new Set(placed.filter((x) => x.def.id !== dragId).map((x) => x.slot.id)), [placed, dragId]);
+  const occupied = useMemo(() => occupiedSlots(SLOTS, placement, dragId), [placement, dragId]);
   const tasksDone = tasks.filter((x) => x.done).length;
   const petPose = visualSleep ? 'sleep' : p.look.pose;
   const petExpr = visualSleep ? 'sleepy' : (p.look.expression ?? cond.modulation.idleExpression);
