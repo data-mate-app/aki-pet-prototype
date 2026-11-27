@@ -8,7 +8,7 @@ import { foodById, speciesById } from '../../data/species';
 import { labelFor, lightAt } from '../../domain/daylight';
 import { dayKey, summarize } from '../../domain/life';
 import { conditionOf, VOICE, xpToNext, type Action, type PetSave } from '../../domain/pet';
-import { autoSlot, compatibleSlots, nearestSlot, placeFurniture, removeFurniture, slotOf, storedFurniture, type Placement } from '../../domain/room';
+import { autoSlot, compatibleSlots, nearestSlot, occupiedSlots, placeFurniture, removeFurniture, slotOf, storedFurniture, type Placement } from '../../domain/room';
 import { celebrate } from '../../flows/reward';
 import { hourOf, now, useApp, useNow } from '../../store';
 import { BottomSheet } from '../../ui/BottomSheet';
@@ -787,7 +787,7 @@ export function Home({ active, onNavigate, onTabBarHidden, placeRequest, onPlace
   const selectedPiece = selected ? placed.find((x) => x.def.id === selected) ?? null : null;
   const dragCat = dragId ? categoryOf(dragId) : null;
   const markerSlots = useMemo(() => (dragCat ? (compatibleSlots(SLOTS, dragCat) as RoomSlot[]) : []), [dragCat]);
-  const occupied = useMemo(() => new Set(placed.filter((x) => x.def.id !== dragId).map((x) => x.slot.id)), [placed, dragId]);
+  const occupied = useMemo(() => occupiedSlots(SLOTS, placement, dragId), [placement, dragId]);
   const tasksDone = tasks.filter((x) => x.done).length;
   const petPose = visualSleep ? 'sleep' : p.look.pose;
   const petExpr = visualSleep ? 'sleepy' : (p.look.expression ?? cond.modulation.idleExpression);
