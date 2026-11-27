@@ -4,7 +4,7 @@
 
 - ブランチ: `main`
 - 状態: プロトタイプの全画面が動く。音（効果音・部屋の曲・集中中の雨音）付き。`pnpm verify` 成功（型チェック・テスト 4 ファイル 25 件・本番ビルド）。
-- 公開: https://data-mate-app.github.io/aki-pet-prototype/ （GitHub Pages、`main` へのマージで自動更新。2026-11-27 に Organization `data-mate-app` へ移管し public にした。旧 URL の hasseeee.github.io は使えない）
+- 公開: https://data-mate-app.github.io/aki-pet-prototype/ （GitHub Pages、`main` へのマージで自動更新。2026-11-27 に Organization `data-mate-app` へ移管し public にした。旧 URL の hasseeee.github.io/aki-pet-prototype/ は、個人のホームページ（リポジトリ `hasseeee/hasseeee.github.io` の `preview` ブランチ）に置いた転送ページで新しい URL へ飛ぶ。localStorage の記録は引き継がれない）
 
 ## 確かめたこと（ブラウザ、スマホ幅 375×812 と PC 幅 1440×900）
 
