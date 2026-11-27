@@ -17,6 +17,14 @@
 - PC 幅のデモ操作（時刻を夜へ早送り → 部屋の光が変わる）
 - コンソール: 再読み込み後にエラーなし（合成イベントによる `navigator.vibrate` のブラウザ警告のみ）
 
+## 人向けの扱い方ガイドを足した（2026-11-28、ブランチ `chore/contributing-guide`）
+
+本人の依頼「レポジトリの扱い方、PRの出し方、クローンの仕方、ブランチの切り方、それらのガイドのドキュメントも用意して。」。これから加わる開発者・デザイナー向けに [CONTRIBUTING.md](../../CONTRIBUTING.md) を書き、README からリンクした。AI 向けの約束（AGENTS.md）は写さず、場所だけ示した。
+
+- GitHub 側の設定は `gh api` で確かめた（2026-11-28）: main のブランチ保護なし・リポジトリのルールセットなし・マージ方法は 3 つとも許可（使ってきたのは squash だけ）・マージ後のブランチ自動削除は無効・PR テンプレートなし・PR で走る CI なし・github-pages 環境は main だけ。Organization のルールセットは権限（admin:org）がなく未確認。
+- ガイドのコマンドは新しいフォルダへのクローン（HTTPS・SSH・gh）から `pnpm verify`・`pnpm dev`・`pnpm preview`・`pnpm design:export` まで手元で通した。`gh workflow run deploy.yml --ref main` だけは公開が走るため実行していない。
+- 決まっていないこと（fork からの PR、レビューの担当、マージしてよい人、ライセンス、公開版を壊したときの戻し方、Issue の使い方、Node・pnpm の版の指定）は「未設定」と書いた。入れるかは本人が決める。
+
 ## 横スクロールの「へや」別案モックアップ（2026-11-28、ブランチ `feature/side-room-mockup`）
 
 本人の依頼「部屋のまわりの余白が寂しいので、部屋の中を横に広がる空間として見せる別案を」。今の「へや」画面は置き換えず、別ページ `side-room.html` として作った（`pnpm dev` で `/side-room.html`）。設計と作業の範囲は [side-room-ticket.md](side-room-ticket.md)。
