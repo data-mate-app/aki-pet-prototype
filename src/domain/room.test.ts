@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { nearestSlot, placeFurniture, removeFurniture, storedFurniture, type FurnitureCategory, type Slot } from './room';
+import { autoSlot, nearestSlot, placeFurniture, removeFurniture, storedFurniture, type FurnitureCategory, type Slot } from './room';
 
 const slots: Slot[] = [
   { id: 'floor-a', kind: 'floor', x: 300, y: 700, depth: 2, scale: 1, accepts: ['bed', 'seat', 'plant'] },
@@ -51,5 +51,19 @@ describe('storedFurniture / removeFurniture', () => {
     const placement = { 'floor-a': 'bed', 'floor-b': null };
     expect(storedFurniture(['bed', 'sofa', 'fern'], placement)).toEqual(['sofa', 'fern']);
     expect(storedFurniture(['bed', 'sofa'], removeFurniture(placement, 'bed'))).toEqual(['bed', 'sofa']);
+  });
+});
+
+describe('autoSlot', () => {
+  it('空きを優先する', () => {
+    expect(autoSlot(slots, { 'floor-a': 'sofa' }, 'bed')?.id).toBe('floor-b');
+  });
+
+  it('全部埋まっていれば最初の受け入れ先を返す', () => {
+    expect(autoSlot(slots, { 'floor-a': 'sofa', 'floor-b': 'fern' }, 'bed')?.id).toBe('floor-a');
+  });
+
+  it('受け入れ先が無ければ null', () => {
+    expect(autoSlot(slots, {}, 'desk')).toBeNull();
   });
 });
